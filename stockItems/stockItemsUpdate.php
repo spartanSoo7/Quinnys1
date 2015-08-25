@@ -55,7 +55,28 @@ $STOCK_TOTAL = trim($STOCK_TOTAL);
                 </div>
             </td>
             <td>
-                <input id="STOCK_TYPE_ID" name="STOCK_TYPE_ID" type="number" size="50" value="<?php echo $STOCK_TYPE_ID ?>" maxlength="50" minlength="4" required/> <!--needs to be changed to a dropdownlist-->
+                <select name="STOCK_TYPE_ID" id="STOCK_TYPE_ID">
+
+                    <?php
+                    $result = mysql_query("SELECT * FROM STOCK_TYPE_TABLE");
+                    $num = mysql_num_rows ($result);
+                    $icount = 0 ;
+
+
+                    //its broke
+                    while ($icount < $num) {
+                        if(mysql_result($result,$icount,"STOCK_TYPE_ID") == $STOCK_TYPE_ID){
+                            echo"<option id='1' value = '".mysql_result($result,$icount,"STOCK_TYPE_ID")."' selected>".mysql_result($result,$icount,"STOCK_TYPE_NAME")."</option>";
+                        }
+                        else{
+                            echo"<option id='1' value = '".mysql_result($result,$icount,"STOCK_TYPE_ID")."'>".mysql_result($result,$icount,"STOCK_TYPE_NAME")."</option>";
+                        }
+
+                        $icount++;
+                    }
+
+                    ?>
+                </select>
             </td>
         </tr>
 

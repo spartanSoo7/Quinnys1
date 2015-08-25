@@ -15,8 +15,11 @@
 
 
 <?php
-$result = mysql_query("SELECT * FROM STOCK_ITEMS_TABLE");
+$result = mysql_query("SELECT i.*, t.* FROM STOCK_ITEMS_TABLE i
+inner join STOCK_TYPE_TABLE t on i.STOCK_TYPE_ID = t.STOCK_TYPE_ID ORDER BY STOCK_TYPE_NAME");
+
 $num = mysql_num_rows ($result);
+
 
 
 echo "<table id = 'viewTable'>";
@@ -36,7 +39,9 @@ while ($icount < $num)
     $id = mysql_result($result,$icount,"STOCK_ID");
     echo "<tr>";
     echo "    <td> " .mysql_result($result,$icount,"STOCK_NAME"). "</td>";
-    echo "    <td> " .mysql_result($result,$icount,"STOCK_TYPE_ID"). "</td>";           //need to get type name instead of ID
+
+
+    echo "    <td> " .mysql_result($result,$icount,"STOCK_TYPE_NAME"). "</td>";           //need to get type name instead of ID
     echo "    <td> " .mysql_result($result,$icount,"SIZE"). "</td>";
     echo "    <td> " .mysql_result($result,$icount,"COLOUR1"). "</td>";
     echo "    <td> " .mysql_result($result,$icount,"COLOUR2"). "</td>";

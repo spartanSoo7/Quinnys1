@@ -31,14 +31,20 @@ include_once("../include/databaselogin.php");
                 </div>
             </td>
             <td>
-                <input id="STOCK_TYPE_ID" name="STOCK_TYPE_ID" type="number" size="50" value="" maxlength="50" minlength="4" required/>
+                <select name="STOCK_TYPE_ID" id="STOCK_TYPE_ID">
 
+                <?php
+                $result = mysql_query("SELECT * FROM STOCK_TYPE_TABLE");
+                $num = mysql_num_rows ($result);
+                $icount = 0 ;
 
-                <select name="STOCK_TYPE_ID">
-                    <option id="volvo">Volvo</option>
+                while ($icount < $num) {
+                    echo"<option id='1' value = '".mysql_result($result,$icount,"STOCK_TYPE_ID")."'>".mysql_result($result,$icount,"STOCK_TYPE_NAME")."</option>";
+                    $icount++;
+                }
+
+                ?>
                 </select>
-
-                <!--needs to be changed to a dropdownlist-->
             </td>
         </tr>
 
