@@ -1,5 +1,7 @@
 <?php
 include_once("../include/databaselogin.php");
+require("../include/securitycheck.php");
+
 
 $CUSTOMER_ID = $_POST['CUSTOMER_ID'];
 $CUSTOMER_NAME = mysql_real_escape_string($_POST['CUSTOMER_NAME']);

@@ -1,5 +1,6 @@
 <?php
 include_once("../include/databaselogin.php");
+require("../include/securitycheck.php");
 
 //$STOCK_ID = $_POST['STOCK_ID'];
 $STOCK_NAME = mysql_real_escape_string($_POST['STOCK_NAME']);

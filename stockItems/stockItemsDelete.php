@@ -22,7 +22,7 @@ $SIZE = trim($SIZE);
 ?>
 
 <div id = "centerTitle">
-    <h2>Deleting a stock type:</h2>
+    <h2>Deleting a stock Item:</h2>
     <p>Stock name:  <?php echo $STOCK_NAME ?></p>
     <p>Stock type name:  <?php echo $STOCK_TYPE_NAME ?></p>
     <p>Size:  <?php echo $SIZE ?></p>

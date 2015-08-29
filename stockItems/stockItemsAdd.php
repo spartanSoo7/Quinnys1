@@ -5,7 +5,7 @@ include '../include/header.php';
 include_once("../include/databaselogin.php");
 ?>
 <div id = "backBtn">
-    <a href="stockTypeView.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
+    <a href="stockItemsView.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
 </div>
 <div id = "centerTitle">
     <h2>Add Stock Type: </h2>
@@ -39,7 +39,10 @@ include_once("../include/databaselogin.php");
                 $icount = 0 ;
 
                 while ($icount < $num) {
-                    echo"<option id='1' value = '".mysql_result($result,$icount,"STOCK_TYPE_ID")."'>".mysql_result($result,$icount,"STOCK_TYPE_NAME")."</option>";
+                    $activeStock = mysql_result($result,$icount,"STOCK_TYPE_ACTIVE");
+                    if($activeStock == 0){
+                        echo"<option id='1' value = '".mysql_result($result,$icount,"STOCK_TYPE_ID")."'>".mysql_result($result,$icount,"STOCK_TYPE_NAME")."</option>";
+                    }
                     $icount++;
                 }
 

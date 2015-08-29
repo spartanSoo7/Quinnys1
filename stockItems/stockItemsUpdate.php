@@ -31,7 +31,7 @@ $COLOUR3 = trim($COLOUR3);
 $STOCK_TOTAL = trim($STOCK_TOTAL);
 
 
-//ADD MORE, NOT DONE DELETE,
+
 ?>
 
 <form id="FormName" action="stockItemsUpdated.php" method="post" name="FormName">
@@ -63,12 +63,14 @@ $STOCK_TOTAL = trim($STOCK_TOTAL);
                     $icount = 0 ;
 
 
-                    //its broke
-                    while ($icount < $num) {
+                    //its gooooood
+                    while ($icount < $num)
+                    {
+                        $activeStock = mysql_result($result,$icount,"STOCK_TYPE_ACTIVE");
                         if(mysql_result($result,$icount,"STOCK_TYPE_ID") == $STOCK_TYPE_ID){
                             echo"<option id='1' value = '".mysql_result($result,$icount,"STOCK_TYPE_ID")."' selected>".mysql_result($result,$icount,"STOCK_TYPE_NAME")."</option>";
                         }
-                        else{
+                        else if($activeStock == 0){
                             echo"<option id='1' value = '".mysql_result($result,$icount,"STOCK_TYPE_ID")."'>".mysql_result($result,$icount,"STOCK_TYPE_NAME")."</option>";
                         }
 

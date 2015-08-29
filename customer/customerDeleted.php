@@ -1,5 +1,6 @@
 <?php
 include_once("../include/databaselogin.php");
+require("../include/securitycheck.php");
 
 $id = $_GET['CUSTOMER_ID'];
 

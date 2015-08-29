@@ -12,3 +12,4 @@
 </ul>
 <?php include '../include/footer.php';?>
 
+<!--HTML 5 NUMBER validation isnt allowing decimals-->
