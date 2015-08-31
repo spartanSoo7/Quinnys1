@@ -32,7 +32,7 @@ if ($results)
 }
 else
 {
-    echo "Error! Could not add to information to customer table";
+    echo "Error! Could not add to information to stock table";
 }
 mysql_close();
 ?>

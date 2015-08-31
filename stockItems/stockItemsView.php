@@ -65,7 +65,7 @@ while ($icount < $num)
     $icount++;
 }
 echo "<tr><td colspan='8' align='center'><a href='stockItemsAdd.php'> Add a new stock Item</a></td></tr>";
-echo "<tr><td colspan='9' align='center'> You have ".$icount." stock(s) </td> </tr>";
+echo "<tr><td colspan='9' align='center'> You have ".$icount." stock item(s) </td> </tr>";
 
 echo "</table>";
 
