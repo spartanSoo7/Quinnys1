@@ -19,11 +19,16 @@
 
 $result = mysql_query("SELECT * FROM CUSTOMER_TABLE");
 $num = mysql_num_rows ($result);
+?>
 
+<table id="viewTable">;
+    <tr>
+        <th>Customer Name</th>
+        <th>Active?</th>
+        <th>Update/Delete</th>
+    </tr>
 
-echo "<table border='1' align='center' width='50%' class = 'viewTable'>";
-echo "<tr> <th>Customer Name</th><th>Update/Delete</th></tr>";
-$icount = 0 ;
+<?php $icount = 0 ;
 
 while ($icount < $num)
 {

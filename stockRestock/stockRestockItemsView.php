@@ -10,7 +10,7 @@
 </div>
 
 <div id = "centerTitle">
-    <h2>Here are all the stock Items that are currently active in the system: </h2>
+    <h2>Here are the total stock levels: </h2>
 </div>
 
 
@@ -32,14 +32,15 @@ echo "<tr>
             <th>Type</th>
             <th>Size</th>
             <th>Main Colour</th>
-            <th>Out</th>
-            <th>In</th>
+            <th>Total in stock</th>
+            <th>Toatal out</th>
             <th>Total needed</th>
             <th>Total owned</th>
             <th>Restock</th>
       </tr>";
-$icount = 0 ;
-
+$icount = 0;
+$neededCust = 0;
+$needOwned = 0;
 while ($icount < $num)
 {
     $id = mysql_result($result,$icount,"STOCK_ID");
@@ -49,14 +50,34 @@ while ($icount < $num)
         echo "<tr>";
         echo "    <td> " .mysql_result($result,$icount,"STOCK_NAME"). "</td>";
 
+        //if shortage at all/any customer
+        $stockOut = mysql_result($result,$icount,"STOCK_OUT");
+        $stockNeeded = mysql_result($result,$icount,"STOCK_NEEDED");
+
+        //if need is lager than owned
+        $stockTotal = mysql_result($result,$icount,"STOCK_TOTAL");
 
         echo "    <td> " .mysql_result($result,$icount,"STOCK_TYPE_NAME"). "</td>";           //needs to get type name instead of ID
         echo "    <td> " .mysql_result($result,$icount,"SIZE"). "</td>";
         echo "    <td> " .mysql_result($result,$icount,"COLOUR1"). "</td>";
-        echo "    <td> " .mysql_result($result,$icount,"STOCK_OUT"). "</td>";
         echo "    <td> " .mysql_result($result,$icount,"STOCK_IN"). "</td>";
-        echo "    <td> " .mysql_result($result,$icount,"STOCK_NEEDED"). "</td>";
-        echo "    <td> " .mysql_result($result,$icount,"STOCK_TOTAL"). "</td>";
+
+        echo "    <td";
+            if($stockNeeded > $stockOut){
+                echo " style = 'background-color: #FF6666;'";
+                $neededCust++;
+            }
+        echo ">" .$stockOut. "</td>";
+
+        echo "    <td> " .$stockNeeded. "</td>";
+        echo "    <td";
+
+        if($stockNeeded > $stockTotal)
+        {
+            echo " style = 'background-color: #FF6666;'";
+            $needOwned++;
+        }
+        echo ">" .$stockTotal. "</td>";
 
         echo "    <td align='center'>
                     <a href=\"stockRestockItem.php?STOCK_ID=$id\" style ='padding-bottom: 10px; margin: 5px; display: block;'> Restock </a>
@@ -66,7 +87,14 @@ while ($icount < $num)
     }
 
 }
-echo "<tr><td colspan='9' align='center'> You have ".$icount." stock items(s) active</td> </tr>";
+if($needOwned > 0)
+{
+    echo "<tr><td colspan='9' align='center' style='padding: 5px; background-color: #FF6666;'> You have ".$needOwned." stock items(s) have a higher number needed than total stock</td> </tr>";
+}
+if($neededCust > 0)
+{
+    echo "<tr><td colspan='9' align='center' style='padding: 5px; background-color: #FF6666;'> You have ".$neededCust." stock items(s) have a higher number needed than at the customer</td> </tr>";
+}
 
 echo "</table>";
 

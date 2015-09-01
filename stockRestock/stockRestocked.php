@@ -10,6 +10,7 @@ include_once("../include/databaselogin.php");
 <?php
 
 
+
 $STOCK_ID = $_POST['STOCK_ID'];
 
 $RESTOCK_DATE  = null; //$get current datetime;
@@ -35,11 +36,11 @@ echo "<br>starting stock in " .$STOCK_IN;
 echo "<br>updated stock total " .$updatedTotal;
 echo "<br>updated stock in "  .$updatedIn;
 
-/**$query = "INSERT INTO STOCK_RESTOCK_TABLE (
-	STOCK_ID, RESTOCK_DATE, RESTOCK_QUANTITY
+$query = "INSERT INTO STOCK_RESTOCK_TABLE (
+	STOCK_ID, RESTOCK_QUANTITY
 	)
 	VALUES (
-	'$id', '$RESTOCK_DATE', '$RESTOCK_QUANTITY'
+	'$STOCK_ID', '$RESTOCK_QUANTITY'
 	)";
 
 $results = mysql_query($query);
@@ -50,7 +51,7 @@ if ($results)
     $update = "UPDATE STOCK_ITEMS_TABLE SET
       STOCK_IN = '$updatedIn',
       STOCK_TOTAL = '$updatedTotal'
-      WHERE STOCK_ID = '$id' ";
+      WHERE STOCK_ID = '$STOCK_ID' ";
 
     mysql_query($update);
 
@@ -60,7 +61,7 @@ else
 {
     echo "Error! Could not add to information to stock table";
 }
-mysql_close();**/
+mysql_close();
 ?>
 
 
