@@ -24,6 +24,66 @@ include_once("../include/databaselogin.php");
             </td>
         </tr>
         <tr>
+            <td width = "150">
+                <div align="left">
+                    <label for="CUSTOMER_EMAIL">Customer Email Address: </label>
+                </div>
+            </td>
+            <td>
+                <input id="CUSTOMER_EMAIL" name="CUSTOMER_EMAIL" type="email" size="50" value="" maxlength="50" minlength="5" />
+            </td>
+        </tr>
+        <tr>
+            <td width = "150">
+                <div align="left">
+                    <label for="CUSTOMER_PHONE1">Customer Primary Phone Number: </label>
+                </div>
+            </td>
+            <td>
+                <input id="CUSTOMER_PHONE1" name="CUSTOMER_PHONE1" type="text" size="15" value="" maxlength="15" minlength="5" />
+            </td>
+        </tr>
+        <tr>
+            <td width = "150">
+                <div align="left">
+                    <label for="CUSTOMER_PHONE2">Customer Secondary Phone Number: </label>
+                </div>
+            </td>
+            <td>
+                <input id="CUSTOMER_PHONE2" name="CUSTOMER_PHONE2" type="text" size="15" value="" maxlength="15" minlength="5" />
+            </td>
+        </tr>
+        <tr>
+            <td width = "150">
+                <div align="left">
+                    <label for="CUSTOMER_POSTAL_ADDRESS">Customer Postal Address: </label>
+                </div>
+            </td>
+            <td>
+                <input id="CUSTOMER_POSTAL_ADDRESS" name="CUSTOMER_POSTAL_ADDRESS" type="text" size="15" value="" maxlength="50" minlength="5" />
+            </td>
+        </tr>
+        <tr>
+            <td width = "150">
+                <div align="left">
+                    <label for="CUSTOMER_PHYSICAL_ADDRESS">Customer Physical Address: </label>
+                </div>
+            </td>
+            <td>
+                <input id="CUSTOMER_PHYSICAL_ADDRESS" name="CUSTOMER_PHYSICAL_ADDRESS" type="text" size="15" value="" maxlength="50" minlength="5" />
+            </td>
+        </tr>
+        <tr>
+            <td width = "150">
+                <div align="left">
+                    <label for="CUSTOMER_CONTACT_NAME">Customer Contact Name: </label>
+                </div>
+            </td>
+            <td>
+                <input id="CUSTOMER_CONTACT_NAME" name="CUSTOMER_CONTACT_NAME" type="text" size="15" value="" maxlength="25" minlength="3" />
+            </td>
+        </tr>
+        <tr>
             <td width="150"></td>
             <td>
                 <input type="submit" name="submitButtonName" value="Add Customer"/>
@@ -31,4 +91,7 @@ include_once("../include/databaselogin.php");
         </tr>
     </table>
 </form>
-<?php include '../include/footer.php';?>
+<?php
+    $conn->close();
+    include '../include/footer.php';
+?>

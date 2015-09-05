@@ -20,7 +20,7 @@ include_once("../include/databaselogin.php");
                 </div>
             </td>
             <td>
-                <input id="STOCK_TYPE_NAME" name="STOCK_TYPE_NAME" type="text" size="50" value="" maxlength="50" minlength="5" required/>
+                <input id="STOCK_TYPE_NAME" name="STOCK_TYPE_NAME" type="text" size="50" value="" maxlength="50" minlength="3" required/>
             </td>
         </tr>
         <tr>

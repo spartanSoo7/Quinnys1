@@ -1,3 +1,9 @@
+<!--
+
+NOT IN USE WILL BREAK DATABASE INTEGRITY
+NOT USING MYSQLI
+
+-->
 <?php
 include_once("../include/databaselogin.php");
 require("../include/securitycheck.php");

@@ -10,28 +10,37 @@ include_once("../include/databaselogin.php");
       </div>
 
 <?php
-$id = $_GET['STOCK_TYPE_ID'];
-$qP = "SELECT * FROM STOCK_TYPE_TABLE WHERE STOCK_TYPE_ID = '$id'  ";
-$rsP = mysql_query($qP);
-$row = mysql_fetch_array($rsP);
-extract($row);
-$STOCK_TYPE_NAME = trim($STOCK_TYPE_NAME);
-//$ACTIVE = trim($ACTIVE);
+$STOCK_TYPE_ID = $_GET['STOCK_TYPE_ID'];
+
+//MYSQLI
+$sql = "SELECT * FROM `stock_type_table` WHERE STOCK_TYPE_ID = '$STOCK_TYPE_ID' ";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+      // output data of each row
+      while ($row = $result->fetch_assoc()) {
+            ?>
+
+            <div id="centerTitle" style="text-align: center">
+                  <h2>Deactivating stock item:</h2>
+
+                  <p style="text-align: center">Stock type name: <?php echo $row["STOCK_TYPE_NAME"] ?></p>
+            </div>
+            <?php
+      }
+}
 ?>
 
-      <div id = "centerTitle">
-            <h2>Deactivating stock type:</h2>
-            <p>Stock type name:  <?php echo $STOCK_TYPE_NAME ?></p>
-      </div>
 
 
 
-      <div id ="centerTitle">
+      <h2 style="text-align: center">
             </br>
             </br>
-            <h2>Are you sure?</h2>
-            <h2><a href="stockTypeDeactivated.php?STOCK_TYPE_ID=<?php echo "$id" ?>">Yes</a> - <a href="stockTypeView.php">No</a></h2>
-      </div>
+            Are you sure?
+            <a href="stockTypeDeactivated.php?STOCK_TYPE_ID=<?php echo "$STOCK_TYPE_ID" ?>">Yes</a> - <a href="stockTypeView.php">No</a>
+      </h2>
+
 
 
 <?php include '../include/footer.php';?>

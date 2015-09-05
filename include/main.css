@@ -55,6 +55,18 @@ main{
     height: 70%;
 }
 
+#homeLink{
+    width: 150px;
+    float: left;
+    text-align: center;
+    font-size: 28px;
+    background-color: red;
+    padding: 50px;
+    margin: 15px;
+    color: #111;
+    border-radius: 2px;
+}
+
 #backBtn{
     float: left;
 
@@ -66,7 +78,7 @@ main{
 }
 
 #viewTable{
-    width: 50%;
+    width: 60%;
     margin: 0px auto;
     border-collapse: collapse;
     text-align: center;
@@ -79,8 +91,26 @@ main{
     border-collapse: collapse;
 }
 
+.detailsTable{
+    width: 50%;
+    margin: 0px auto;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 18px;
+}
+
+.detailsTable tr{
+    height: 35px;
+    border-bottom: 1px solid #333333;
+}
+
+.detailsTable td{
+    text-align: right;
+}
+
 #viewTable th, #viewTable td {
     border: 1px solid #333333;
+    padding: 1px;
 }
 
 #updateTable th, #updateTable td {

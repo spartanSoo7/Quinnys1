@@ -12,7 +12,7 @@ include_once("../include/databaselogin.php");
 </div>
 
 <form id="FormName" action="stockItemsAdded.php" method="post" name="FormName">
-    <table class = "updateTable" border='0' align='center' width='50%'>
+    <table class = "updateTable">
         <tr>
             <td width = "150">
                 <div align="left">
@@ -20,7 +20,7 @@ include_once("../include/databaselogin.php");
                 </div>
             </td>
             <td>
-                <input id="STOCK_NAME" name="STOCK_NAME" type="text" size="50" value="" maxlength="50" minlength="5" required/>
+                <input id="STOCK_NAME" name="STOCK_NAME" type="text" size="50" value="" maxlength="50" minlength="4" required/>
             </td>
         </tr>
 
@@ -31,22 +31,27 @@ include_once("../include/databaselogin.php");
                 </div>
             </td>
             <td>
-                <select name="STOCK_TYPE_ID" id="STOCK_TYPE_ID">
+                <select name="STOCK_TYPE_ID" id="STOCK_TYPE_ID" required>
+                    <option selected disabled hidden value=''></option>
+<?php
+    $sql = "SELECT * FROM `stock_type_table`;";
+    $result2 = $conn->query($sql);
 
-                <?php
-                $result = mysql_query("SELECT * FROM STOCK_TYPE_TABLE");
-                $num = mysql_num_rows ($result);
-                $icount = 0 ;
 
-                while ($icount < $num) {
-                    $activeStock = mysql_result($result,$icount,"STOCK_TYPE_ACTIVE");
-                    if($activeStock == 0){
-                        echo"<option id='1' value = '".mysql_result($result,$icount,"STOCK_TYPE_ID")."'>".mysql_result($result,$icount,"STOCK_TYPE_NAME")."</option>";
-                    }
-                    $icount++;
-                }
+    if ($result2->num_rows > 0) {
+        // output data of each row
+        while ($row = $result2->fetch_assoc())
+        {
+            $activeStock = $row["STOCK_TYPE_ACTIVE"];
+            if ($activeStock == 0)
+            {
+                echo "<option id='" .$row["STOCK_TYPE_ID"]. "' value = '" .$row["STOCK_TYPE_ID"]. "'>" .$row["STOCK_TYPE_NAME"]. "</option>";
+            }
+echo "loop";
 
-                ?>
+        }
+    }
+?>
                 </select>
             </td>
         </tr>

@@ -8,30 +8,18 @@ include_once("../include/databaselogin.php");
       <div id = "backBtn">
             <a href="customerView.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
       </div>
-
-<?php
-$id = $_GET['CUSTOMER_ID'];
-$qP = "SELECT * FROM CUSTOMER_TABLE WHERE CUSTOMER_ID = '$id'  ";
-$rsP = mysql_query($qP);
-$row = mysql_fetch_array($rsP);
-extract($row);
-$CUSTOMER_NAME = trim($CUSTOMER_NAME);
-//$ACTIVE = trim($ACTIVE);
-?>
-
       <div id = "centerTitle">
             <h2>Deactivating Customer:</h2>
-            <p>Customer name:  <?php echo $CUSTOMER_NAME ?></p>
       </div>
 
+<?php
+      include 'customerDetails.php';
+?>
 
-
-      <div id ="centerTitle">
-            </br>
-            </br>
-            <h2>Are you sure?</h2>
-            <h2><a href="customerDeactivated.php?CUSTOMER_ID=<?php echo "$id" ?>">Yes</a> - <a href="customerView.php">No</a></h2>
-      </div>
-
+      <h2 style="text-align: center">
+            Are you sure you want to deactivate this customer?
+       </br>
+            <a href="customerDeactivated.php?CUSTOMER_ID=<?php echo "$CUSTOMER_ID" ?>">Yes</a> - <a href="customerView.php">No</a>
+       </h2>
 
 <?php include '../include/footer.php';?>

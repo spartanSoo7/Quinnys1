@@ -1,30 +1,26 @@
-<h2>ERROR </h2>
-
 <?php
-include_once("../include/databaselogin.php");
+include '../include/head.php';
 require("../include/securitycheck.php");
-
-var_dump($_GET);
-
-if (!isset($_GET['STOCK_ID']) || empty($_GET['STOCK_ID']))
-    die("stock_id not set");
+include '../include/header.php';
+include_once("../include/databaselogin.php");
 
 
-$id = $_GET['STOCK_ID'];
+//MYSQLI
+$STOCK_ID = $_GET['STOCK_ID'];
 
 
-//$STOCK_TOTAL = trim($STOCK_TOTAL);  no changing stock levels here, you'll break the other stock levels (instock, out, needed) it will no longer total properly
+$sql = "UPDATE STOCK_ITEMS_TABLE SET
+  `ACTIVE` = '0'
+WHERE STOCK_ID ='$STOCK_ID'";
 
+if (mysqli_query($conn, $sql)) {
+    echo "Record updated successfully </br>";
+    header( 'Location:stockItemsView.php' );
+} else {
+    echo "Error updating record: " . mysqli_error($conn);
+}
 
-
-$update = "UPDATE `quinssdb4`.`stock_items_table` SET `ACTIVE` = '0' WHERE `stock_items_table`.`STOCK_ID` = $id";
-echo "</br>" .$update;
-$result = mysql_query($update);
-
-//check result
-//if (!$result)die("error ".$update);
-
-header( 'Location:stockItemsView.php' );
-
-mysql_close();
+$conn->close();
+include '../include/footer.php';
 ?>
+

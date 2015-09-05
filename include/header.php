@@ -4,11 +4,29 @@
             <a href="../home/index.php" style="float: left;">
                 <img border="0" alt="Quinnys logo" height = "90px" src="../img/logo.png">
             </a>
+
+            <script>
+
+            jQuery(document).ready(function(){
+            if (jQuery(window).width() < 800) {
+                $("h1").remove();
+            }
+            });
+            jQuery(window).resize(function () {
+            if (jQuery(window).width() < 900) {
+                $("h1").remove();
+            }
+            });
+
+
+
+
+                </script>
             <div id = "Title">
                 <h1>Stock management</h1>
             </div>
 
-            <div id = headerRight>
+            <div id = "headerRight">
                 <?php
                     if (session_status() == PHP_SESSION_NONE) {
                         session_start();

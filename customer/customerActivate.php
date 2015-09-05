@@ -1,37 +1,27 @@
 <?php
-include '../include/head.php';
-require("../include/securitycheck.php");
-include '../include/header.php';
-include_once("../include/databaselogin.php");
+      include '../include/head.php';
+      require("../include/securitycheck.php");
+      include '../include/header.php';
+      include_once("../include/databaselogin.php");
 ?>
 
       <div id = "backBtn">
-            <a href="customerView.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
+            <a href="stockItemsView.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
+      </div>
+      <div id = "centerTitle">
+            <h2>Activating Stock Item:</h2>
       </div>
 
 <?php
-$id = $_GET['CUSTOMER_ID'];
-$qP = "SELECT * FROM CUSTOMER_TABLE WHERE CUSTOMER_ID = '$id'  ";
-$rsP = mysql_query($qP);
-$row = mysql_fetch_array($rsP);
-extract($row);
-$CUSTOMER_NAME = trim($CUSTOMER_NAME);
-//$ACTIVE = trim($ACTIVE);
+    include 'stockItemsDetails.php';
 ?>
 
-      <div id = "centerTitle">
-            <h2>Activating Customer:</h2>
-            <p>Customer name:  <?php echo $CUSTOMER_NAME ?></p>
-      </div>
 
-
-
-      <div id ="centerTitle">
-            </br>
-            </br>
-            <h2>Are you sure?</h2>
-            <h2><a href="customerActivated.php?CUSTOMER_ID=<?php echo "$id" ?>">Yes</a> - <a href="customerView.php">No</a></h2>
-      </div>
-
-
-<?php include '../include/footer.php';?>
+    <h2 style="text-align: center">
+        Are you sure you want to Activate this stock item?
+        </br>
+        <a href="customerActivated.php?STOCK_ID=<?php echo "$STOCK_ID" ?>">Yes</a> - <a href="stockItemsView.php">No</a>
+    </h2>
+<?php
+      include '../include/footer.php';
+?>

@@ -1,26 +1,28 @@
-<h2>ERROR </h2>
-
 <?php
-include_once("../include/databaselogin.php");
+include '../include/head.php';
 require("../include/securitycheck.php");
-
-var_dump($_GET);
-
-if (!isset($_GET['CUSTOMER_ID']) || empty($_GET['CUSTOMER_ID']))
-    die("CUSTOMER_ID not set");
+include '../include/header.php';
+include_once("../include/databaselogin.php");
 
 
-$id = $_GET['CUSTOMER_ID'];
+//MYSQLI
+$CUSTOMER_ID = $_GET['CUSTOMER_ID'];
 
 
-$update = "UPDATE `quinssdb4`.`customer_table` SET `CUSTOMER_ACTIVE` = '1' WHERE `customer_table`.`CUSTOMER_ID` = $id";
-echo "</br>" .$update;
-$result = mysql_query($update);
+$sql = "UPDATE CUSTOMER_TABLE SET
+  `CUSTOMER_ACTIVE` = '1'
+WHERE CUSTOMER_ID ='$CUSTOMER_ID'";
 
-//check result
-//if (!$result)die("error ".$update);
+//echo $sql. "</BR>";
+if (mysqli_query($conn, $sql)) {
+    echo "Record updated successfully </br>";
+    header( 'Location:customerView.php' );
+} else {
+    echo "Error updating record: " . mysqli_error($conn);
+}
 
-header( 'Location:customerView.php' );
 
-mysql_close();
+
+$conn->close();
+include '../include/footer.php';
 ?>
