@@ -8,7 +8,6 @@ include_once("../include/databaselogin.php");
 //MYSQLI
 $STOCK_ID = $_GET['STOCK_ID'];
 
-
 $sql = "UPDATE STOCK_ITEMS_TABLE SET
   `ACTIVE` = '0'
 WHERE STOCK_ID ='$STOCK_ID'";

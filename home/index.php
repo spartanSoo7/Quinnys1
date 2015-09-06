@@ -8,10 +8,10 @@
 
     <a href='../stockRestock/stockRestockItemsView.php'>
         <div id = "homeLink"
-            onMouseOver="this.style.backgroundColor='rgb(1,168,226)'"
-            onMouseOut="this.style.backgroundColor='#00BDFF'"
-            style="background-color: #00BDFF;">
-            Stock levels
+            onMouseOver="this.style.backgroundColor='rgb(1,168,226)';"
+            onMouseOut="this.style.backgroundColor='#00BDFF';"
+            style="background-color: rgb(1, 168, 226); font-size: 22px;">
+            Total Stock levels/ Restock
         </div>
     </a>
     <a href='../stockItems/stockItemsView.php'>

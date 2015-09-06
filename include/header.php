@@ -43,6 +43,46 @@
                     }
                     ?>
             </div>
+            <nav>
+                <ul>
+                    <li onMouseOver="this.style.backgroundColor='rgb(172, 131, 251)'; this.style.width='29%'"
+                        onMouseOut="this.style.backgroundColor='rgb(182, 144, 255)'; this.style.width='14%'"
+                        style="background-color: rgb(182, 144, 255);">
+                        <a href='../home/index.php'>
+                            Home
+                        </a>
+                    </li>
+                    <li onMouseOver="this.style.backgroundColor='rgb(1,168,226)'; this.style.width='29%'"
+                        onMouseOut="this.style.backgroundColor='#00BDFF'; this.style.width='14%'"
+                        style="background-color: rgb(1, 168, 226); left: -30px">
+                        <a href='../stockRestock/stockRestockItemsView.php'>
+                            Restock
+                        </a>
+                    </li>
+                    <li onMouseOver="this.style.backgroundColor='#03C73D'; this.style.width='29%'"
+                        onMouseOut="this.style.backgroundColor='#06E047'; this.style.width='14%'"
+                        style="background-color: #06E047; left: -60px">
+                        <a href='../stockItems/stockItemsView.php'>
+                            Stock Items
+                        </a>
+                    </li>
+                    <li onMouseOver="this.style.backgroundColor='#E09F03'; this.style.width='29%'"
+                        onMouseOut="this.style.backgroundColor='#FFB401'; this.style.width='14%'"
+                        style="background-color: #FFB401; left: -90px">
+                        <a href='../customer/customerView.php'>
+                            Customers
+                        </a>
+                    </li>
+                    <li onMouseOver="this.style.backgroundColor='#E23C02'; "
+                        onMouseOut="this.style.backgroundColor='#FF4200';"
+                        style="background-color: #FF4200; left: -120px; width: 29%;">
+                        <a href='../stockType/stockTypeView.php'>
+                            Stock Types
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
         </header>
         <div id = "wrapper">
             <main>

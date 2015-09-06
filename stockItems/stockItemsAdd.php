@@ -62,8 +62,8 @@ echo "loop";
                     <label for="HIRE_COST">Hire Cost: </label>
                 </div>
             </td>
-            <td>
-                <input id="HIRE_COST" name="HIRE_COST" type="number" size="50" value="" maxlength="25" minlength="1" required/>
+            <td>                                                            <!--to allow decimals upto 2 places-->
+                <input id="HIRE_COST" name="HIRE_COST" type="number" pattern="[0-9]+([\.|,][0-9]+)?" step="0.01" min="0" size="50" value="" maxlength="15" minlength="1" required/>
             </td>
         </tr>
 
@@ -73,8 +73,8 @@ echo "loop";
                     <label for="REPLACE_COST">Replacement Cost: </label>
                 </div>
             </td>
-            <td>
-                <input id="REPLACE_COST" name="REPLACE_COST" type="number" size="50" value="" maxlength="15" minlength="1" required/>
+            <td>                                                            <!--to allow decimals upto 2 places-->
+                <input id="REPLACE_COST" name="REPLACE_COST" type="number" pattern="[0-9]+([\.|,][0-9]+)?" step="0.01" min="0" size="50" value="" maxlength="15" minlength="1" required/>
             </td>
         </tr>
 

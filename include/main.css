@@ -1,5 +1,10 @@
-a{
-    /*text-decoration: none;*/
+html{
+    color: #333;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    /*min-width: 750px;*/
+    overflow-x: hidden;
 }
 
 li{
@@ -11,11 +16,44 @@ header a{
     color: #1633E6;
 }
 
-html{
-    color: #333;
-    margin: 0px;
+nav{					/**the menu (nav) for the webpages**/
+    height: 54px;
     padding: 0px;
-    font-family: sans-serif;
+    margin: 0px 0px 0px 4%;
+    width: 101%;
+    overflow: hidden;
+
+}
+
+nav ul{
+    height: 120%;
+    padding: 0px;
+    /*margin: 5px auto 0px auto;	/*top margin*/
+
+}
+
+nav li{			/**targets the list inside the menu div**/
+    float: left;
+    list-style: none;
+    font-size: 22px;
+    background-color: #06E047;
+    padding: 1px 30px 1px 0px;
+    height: 38px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 14%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    top: 2px;
+}
+
+nav li a{		/**Targets the links inside the menu**/
+    font-weight: bold;
+    color: #333333;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0% 10px 33%;
 }
 
 body {
@@ -31,10 +69,10 @@ body {
 }
 
 header{
-    border-bottom: 3px solid navy;
-    height: 90px;
-    padding: 10px;
-    min-height: 48px;
+    border-bottom: 3px solid #333333;
+    padding: 1% 1% 0% 1%;
+    height: 163px;
+    width: 98%;
 }
 
 #Title{
@@ -56,6 +94,7 @@ main{
 }
 
 #homeLink{
+    height: 32px;
     width: 150px;
     float: left;
     text-align: center;
@@ -65,6 +104,9 @@ main{
     margin: 15px;
     color: #111;
     border-radius: 2px;
+    overflow: hidden;
+    -webkit-transition: width 0.5s; /* Safari */
+    transition: width 0.5s;
 }
 
 #backBtn{
@@ -73,12 +115,13 @@ main{
 }
 
 #centerTitle{
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
+    text-align: center;
 }
 
 #viewTable{
-    width: 60%;
+    width: 90%;
     margin: 0px auto;
     border-collapse: collapse;
     text-align: center;
@@ -86,7 +129,7 @@ main{
 }
 
 .updateTable{
-    width: 50%;
+    width: 90%;
     margin: 0px auto;
     border-collapse: collapse;
 }
