@@ -25,7 +25,7 @@ $result = $conn->query($sql);
 
 echo "<table id = 'viewTable'>";
 echo "<tr>
-            <th>Name/ Description</th>
+            <th style='width: 15%'>Name/ Description</th>
             <th>Type</th>
             <th>Size</th>
             <th>Main Colour</th>
@@ -73,7 +73,6 @@ if ($result->num_rows > 0) {
 }
 echo "<tr><td colspan='8' align='center'><a href='stockItemsAdd.php'> Add a new stock Item</a></td></tr>";
 echo "<tr><td colspan='9' align='center'> You have ".$icount." stock item(s) </td> </tr>";
-
 echo "</table>";
 
 

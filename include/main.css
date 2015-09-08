@@ -3,7 +3,6 @@ html{
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
-    /*min-width: 750px;*/
     overflow-x: hidden;
 }
 
@@ -20,7 +19,7 @@ nav{					/**the menu (nav) for the webpages**/
     height: 54px;
     padding: 0px;
     margin: 0px 0px 0px 4%;
-    width: 101%;
+    width: 130%;
     overflow: hidden;
 
 }
@@ -46,6 +45,8 @@ nav li{			/**targets the list inside the menu div**/
     overflow: hidden;
     position: relative;
     top: 2px;
+    -webkit-transition: width 0.5s; /* Safari */
+    transition: width 0.5s;
 }
 
 nav li a{		/**Targets the links inside the menu**/
@@ -63,8 +64,9 @@ body {
 
 
 #wrapper{
-    width: 100%;
+    width: 90%;
     padding: 0px;
+    margin: 0px auto;
     background-color: #ffffff;
 }
 
@@ -86,12 +88,6 @@ header{
     font-size: 20px;
 }
 
-main{
-    padding: 2%;
-    margin: 0px auto;
-    width: 90%;
-    height: 70%;
-}
 
 #homeLink{
     height: 32px;
@@ -105,8 +101,6 @@ main{
     color: #111;
     border-radius: 2px;
     overflow: hidden;
-    -webkit-transition: width 0.5s; /* Safari */
-    transition: width 0.5s;
 }
 
 #backBtn{
@@ -115,13 +109,13 @@ main{
 }
 
 #centerTitle{
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     text-align: center;
 }
 
 #viewTable{
-    width: 90%;
+    width: 100%;
     margin: 0px auto;
     border-collapse: collapse;
     text-align: center;
@@ -129,13 +123,13 @@ main{
 }
 
 .updateTable{
-    width: 90%;
+    width: 100%;
     margin: 0px auto;
     border-collapse: collapse;
 }
 
 .detailsTable{
-    width: 50%;
+    width: 60%;
     margin: 0px auto;
     border-collapse: collapse;
     text-align: left;
@@ -149,11 +143,13 @@ main{
 
 .detailsTable td{
     text-align: right;
+    width: 60%;
 }
 
 #viewTable th, #viewTable td {
     border: 1px solid #333333;
-    padding: 1px;
+    padding: 8px 3px;
+    word-wrap:break-word
 }
 
 #updateTable th, #updateTable td {

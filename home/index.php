@@ -38,6 +38,14 @@
             Stock types
         </div>
     </a>
+    <a href='../customerStock/customerStockView.php'>
+        <div id = "homeLink"
+         onMouseOver="this.style.backgroundColor='rgb(245, 90, 153)'"
+         onMouseOut="this.style.backgroundColor='rgb(247, 108, 164)'"
+         style="background-color: rgb(247, 108, 164); font-size: 21px; ">
+            Customer Stock Levels
+        </div>
+    </a>
 
 
 <?php include '../include/footer.php';?>

@@ -16,30 +16,6 @@ $STOCK_OUT = 0;
 $STOCK_NEEDED = 0;
 $STOCK_IN = $STOCK_TOTAL;
 
-/*$sql = "INSERT INTO STOCK_ITEMS_TABLE (STOCK_NAME, STOCK_TYPE_ID, HIRE_COST, REPLACE_COST, SIZE, COLOUR1, COLOUR2, COLOUR3, STOCK_TOTAL, STOCK_OUT, STOCK_NEEDED, STOCK_IN)
-VALUES (
-  '$STOCK_NAME',
-  '$STOCK_TYPE_ID',
-  '$HIRE_COST',
-  '$REPLACE_COST',
-  '$SIZE',
-  '$COLOUR1',
-  '$COLOUR2',
-  '$COLOUR3',
-  '$STOCK_TOTAL',
-  '$STOCK_OUT',
-  '$STOCK_NEEDED',
-  '$STOCK_IN'
-)";*/
-
-/*
-if ($conn->query($sql) === TRUE) {
-	echo "New record created successfully";
-	header( 'Location:stockItemsView.php' );
-} else {
-	echo "Error: " . $conn->error;
-}
-*/
 
 // prepare and bind
 $stmt = $conn->prepare("INSERT INTO STOCK_ITEMS_TABLE (

@@ -21,7 +21,7 @@ $sql = "SELECT CUSTOMER_ID, CUSTOMER_ACTIVE, CUSTOMER_NAME FROM CUSTOMER_TABLE O
 $result = $conn->query($sql);
 ?>
 
-<table id="viewTable">;
+<table id="viewTable" style="width: 80%;">;
     <tr>
         <th>Customer Name</th>
         <th>View</th>

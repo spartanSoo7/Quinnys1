@@ -15,6 +15,7 @@ include_once("../include/databaselogin.php");
 <?php
 include 'stockItemsDetails.php';
 ?>
+</table>
 
       <h2 style="text-align: center">
             Are you sure you want to deactivate this stock item?

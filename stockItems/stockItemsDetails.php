@@ -9,6 +9,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
+        $active = $row["ACTIVE"];
+        $id = $row["STOCK_ID"];
+
         ?>
 
 
@@ -77,7 +80,38 @@ if ($result->num_rows > 0) {
                     <?php echo $row["COLOUR3"] ?>
                 </td>
             </tr>
-        </table>
+        <tr>
+            <th>
+                In Stock:
+            </th>
+            <td>
+                <?php echo $row["STOCK_IN"] ?>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Total Stock:
+            </th>
+            <td>
+                <?php echo $row["STOCK_TOTAL"] ?>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Stock Out:
+            </th>
+            <td>
+                <?php echo $row["STOCK_OUT"] ?>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Stock on Hold:
+            </th>
+            <td>
+                <?php echo $row["STOCK_NEEDED"] ?>
+            </td>
+        </tr>
         <?php
     }
 }

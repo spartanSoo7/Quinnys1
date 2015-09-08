@@ -15,7 +15,7 @@ include_once("../include/databaselogin.php");
 <?php
       include 'customerDetails.php';
 ?>
-
+        </table>
       <h2 style="text-align: center">
             Are you sure you want to deactivate this customer?
        </br>

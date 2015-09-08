@@ -16,7 +16,7 @@
     include 'stockItemsDetails.php';
 ?>
 
-
+    </table>
     <h2 style="text-align: center">
         Are you sure you want to Activate this stock item?
         </br>

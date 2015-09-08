@@ -33,15 +33,15 @@ echo "<tr>
        <td colspan='5'>Stock levels</td>
 </tr>";
 echo "<tr>
-            <th>Name/ Description</th>
-            <th>Type</th>
+            <th style='/*width: 15%*/;'>Name/ Description</th>
+            <th style='width: 8%;'>Type</th>
             <th>Size</th>
             <th>Main Colour</th>
-            <th>Total in stock</th>
-            <th>Toatal out</th>
-            <th>Total hold</th>
-            <th>Total Needed</th>
-            <th>Total owned</th>
+            <th style='width: 6%;'>Total in stock</th>
+            <th style='width: 6%;'>Toatal out</th>
+            <th style='width: 6%;'>Total hold</th>
+            <th style='width: 6%;'>Total Needed</th>
+            <th style='width: 6%;'>Total owned</th>
             <th>Restock</th>
       </tr>";
 
