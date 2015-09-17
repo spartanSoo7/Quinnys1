@@ -15,8 +15,6 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc() ) {
         $STOCK_IN = $row["STOCK_IN"];
         $STOCK_TOTAL = $row["STOCK_TOTAL"];
-        echo $STOCK_IN;
-        echo "stock total" .$STOCK_TOTAL;
     }
 }
 
@@ -41,7 +39,7 @@ if ($result->num_rows > 0) {
                 <tr>
                         <th><label for="RESTOCK_QUANTITY">Restock amount: </label></th>
                         <td><input id="RESTOCK_QUANTITY" name="RESTOCK_QUANTITY" type="number" size="10" value=""
-                                   maxlength="10" minlength="1" required/></td>
+                                   maxlength="9" minlength="1" required/></td>
                         <th></th>
 
 
@@ -60,5 +58,4 @@ if ($result->num_rows > 0) {
 
 
 <?php
-
 include '../include/footer.php';?>

@@ -12,86 +12,71 @@ include_once("../include/databaselogin.php");
 </div>
 
 <form id="FormName" action="customerAdded.php" method="post" name="FormName">
-    <table class = "updateTable" border='0' align='center' width='50%'>
+    <table class = "updateTable">
         <tr>
-            <td width = "150">
-                <div align="left">
-                    <label for="CUSTOMER_NAME">Customer Name: </label>
-                </div>
-            </td>
+            <th>
+                <label for="CUSTOMER_NAME">Customer Name: </label>
+            </th>
             <td>
-                <input id="CUSTOMER_NAME" name="CUSTOMER_NAME" type="text" size="50" value="" maxlength="50" minlength="5" required/>
+                <input id="CUSTOMER_NAME" name="CUSTOMER_NAME" type="text"  value="" maxlength="50" minlength="5" required/>
             </td>
         </tr>
         <tr>
-            <td width = "150">
-                <div align="left">
-                    <label for="CUSTOMER_EMAIL">Customer Email Address: </label>
-                </div>
+            <th>
+                <label for="CUSTOMER_EMAIL">Customer Email Address: </label>
             </td>
             <td>
-                <input id="CUSTOMER_EMAIL" name="CUSTOMER_EMAIL" type="email" size="50" value="" maxlength="50" minlength="5" />
+                <input id="CUSTOMER_EMAIL" name="CUSTOMER_EMAIL" type="email"  value="" maxlength="50" minlength="5" />
             </td>
         </tr>
         <tr>
-            <td width = "150">
-                <div align="left">
-                    <label for="CUSTOMER_PHONE1">Customer Primary Phone Number: </label>
-                </div>
-            </td>
+            <th>
+                <label for="CUSTOMER_PHONE1">Customer Primary Phone Number: </label>
+            </th>
             <td>
-                <input id="CUSTOMER_PHONE1" name="CUSTOMER_PHONE1" type="text" size="15" value="" maxlength="15" minlength="5" />
+                <input id="CUSTOMER_PHONE1" name="CUSTOMER_PHONE1" type="text"  value="" maxlength="15" minlength="5" />
             </td>
         </tr>
         <tr>
-            <td width = "150">
-                <div align="left">
-                    <label for="CUSTOMER_PHONE2">Customer Secondary Phone Number: </label>
-                </div>
-            </td>
+            <th>
+                <label for="CUSTOMER_PHONE2">Customer Secondary Phone Number: </label>
+            </th>
             <td>
-                <input id="CUSTOMER_PHONE2" name="CUSTOMER_PHONE2" type="text" size="15" value="" maxlength="15" minlength="5" />
+                <input id="CUSTOMER_PHONE2" name="CUSTOMER_PHONE2" type="text"  value="" maxlength="15" minlength="5" />
             </td>
         </tr>
         <tr>
-            <td width = "150">
-                <div align="left">
-                    <label for="CUSTOMER_POSTAL_ADDRESS">Customer Postal Address: </label>
-                </div>
-            </td>
+            <th>
+                <label for="CUSTOMER_POSTAL_ADDRESS">Customer Postal Address: </label>
+            </th>
             <td>
-                <input id="CUSTOMER_POSTAL_ADDRESS" name="CUSTOMER_POSTAL_ADDRESS" type="text" size="15" value="" maxlength="50" minlength="5" />
+                <input id="CUSTOMER_POSTAL_ADDRESS" name="CUSTOMER_POSTAL_ADDRESS" type="text"  value="" maxlength="50" minlength="5" />
             </td>
         </tr>
         <tr>
-            <td width = "150">
-                <div align="left">
-                    <label for="CUSTOMER_PHYSICAL_ADDRESS">Customer Physical Address: </label>
-                </div>
-            </td>
+            <th>
+                <label for="CUSTOMER_PHYSICAL_ADDRESS">Customer Physical Address: </label>
+            </th>
             <td>
-                <input id="CUSTOMER_PHYSICAL_ADDRESS" name="CUSTOMER_PHYSICAL_ADDRESS" type="text" size="15" value="" maxlength="50" minlength="5" />
+                <input id="CUSTOMER_PHYSICAL_ADDRESS" name="CUSTOMER_PHYSICAL_ADDRESS" type="text"  value="" maxlength="50" minlength="5" />
             </td>
         </tr>
         <tr>
-            <td width = "150">
-                <div align="left">
-                    <label for="CUSTOMER_CONTACT_NAME">Customer Contact Name: </label>
-                </div>
-            </td>
+            <th>
+                <label for="CUSTOMER_CONTACT_NAME">Customer Contact Name: </label>
+            </th>
             <td>
-                <input id="CUSTOMER_CONTACT_NAME" name="CUSTOMER_CONTACT_NAME" type="text" size="15" value="" maxlength="25" minlength="3" />
+                <input id="CUSTOMER_CONTACT_NAME" name="CUSTOMER_CONTACT_NAME" type="text"  value="" maxlength="25" minlength="3" />
             </td>
         </tr>
-        <tr>
-            <td width="150"></td>
-            <td>
-                <input type="submit" name="submitButtonName" value="Add Customer"/>
+        <tr style="border-bottom: 0px; ">
+            <td colspan="2" style="text-align: center">
+                <input type="submit" id = "submit" name="submitButtonName" value="Add Customer"/>
             </td>
         </tr>
     </table>
 </form>
 <?php
-    $conn->close();
-    include '../include/footer.php';
+$conn->close();
+include '../include/footer.php';
 ?>

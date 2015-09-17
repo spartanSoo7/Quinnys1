@@ -1,6 +1,8 @@
 <?php
 $CUSTOMER_ID = $_GET['CUSTOMER_ID'];
 
+    require("../include/securitycheck.php");
+
 
 $sql = "SELECT
           CUSTOMER_ID,

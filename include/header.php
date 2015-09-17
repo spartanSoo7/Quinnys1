@@ -55,14 +55,14 @@
                     else if (strpos($url,'RestockItems') !== false){
                         include '../nav/stockRestock.html';
                     }
-                    else if (strpos($url,'Items') !== false){
+                    else if (strpos($url,'stock') !== false){
                         include '../nav/stockItems.html';
                     }
                     else if (strpos($url,'customer') !== false){
                         include '../nav/customer.html';
                     }
-                    else if (strpos($url,'stockType') !== false){
-                        include '../nav/stockType.html';
+                    else if (strpos($url,'hire') !== false){
+                        include '../nav/hire.html';
                     }
                     ?>
 

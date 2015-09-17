@@ -46,6 +46,14 @@
             Customer Stock Levels
         </div>
     </a>
+    <a href='../hireLine/hireLineView.php'>
+        <div id = "homeLink"
+            onMouseOver="this.style.backgroundColor='rgb(245, 90, 153)'"
+            onMouseOut="this.style.backgroundColor='rgb(247, 108, 164)'"
+         style="background-color: rgb(247, 108, 164); font-size: 21px; ">
+        Hire lines
+    </div>
+</a>
 
 
 <?php include '../include/footer.php';?>

@@ -13,7 +13,7 @@
     <h2>Here are all the types of stock currently in the system: </h2>
 </div>
 
-<table border='1' align='center' width='50%' class = 'viewTable'>
+<table id = 'viewTable' style="max-width: 900px;">
     <tr>
         <th>Stock Type</th>
         <th>Active?</th>

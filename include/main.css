@@ -73,17 +73,25 @@ body {
 header{
     border-bottom: 3px solid #333333;
     padding: 1% 1% 0% 1%;
-    height: 163px;
+    height: 144px;
     width: 98%;
+    overflow: hidden;
 }
 
 #Title{
-    margin-left: 20%;
-    float: left;
+    width: 40%;
+    margin: 0 auto;
+}
+
+#Title h1{
+    text-align: center;
+    font-size: 32px;
 }
 
 #headerRight{
-    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     text-align: right;
     font-size: 20px;
 }
@@ -105,13 +113,36 @@ header{
 
 #backBtn{
     float: left;
-
+    font-size: 1.5em;
 }
 
 #centerTitle{
     width: 70%;
     margin: 0 auto;
     text-align: center;
+}
+
+#login{
+    margin: 0px auto;
+    width: 30%;
+}
+
+#login table{
+    width: 100%;
+}
+
+#login th{
+    text-align: left;
+    font-size: 20px;
+}
+
+#login td{
+    text-align: right;
+    font-size: 20px;
+}
+
+#login input{
+    font-size: 20px;
 }
 
 #viewTable{
@@ -122,18 +153,13 @@ header{
     margin-top: 40px;
 }
 
-.updateTable{
-    width: 100%;
-    margin: 0px auto;
-    border-collapse: collapse;
-}
-
 .detailsTable{
     width: 60%;
     margin: 0px auto;
     border-collapse: collapse;
     text-align: left;
     font-size: 18px;
+    min-width: 400px;
 }
 
 .detailsTable tr{
@@ -146,18 +172,71 @@ header{
     width: 60%;
 }
 
+.updateTable{
+    border: 0px;
+    align: center;
+    width: 40%;
+    margin: 0px auto;
+    min-width: 400px;
+}
+
+.updateTable2{
+    border: 0px;
+    align: center;
+    width: 60%;
+    margin: 30px auto;
+    min-width: 400px;
+    font-size: 18px;
+}
+
+.updateTable th{
+    text-align: left;
+    width: 50%;
+}
+
+.updateTable td{
+    text-align: right;
+    width: 50%;
+}
+
+.updateTable td input{
+    width: 100%;
+}
+
+#submit{
+    width: 50%;
+}
+
+.updateTable2 th{
+    width: 40%;
+    text-align: left;
+}
+.updateTable2 td{
+    width: 60%;
+}
+.updateTable2 td input{
+    width: 50%;
+}
+
+select{
+    font-size: 16px;
+    padding: 0.5%;
+    margin-top: 2%;
+}
+
 #viewTable th, #viewTable td {
     border: 1px solid #333333;
     padding: 8px 3px;
     word-wrap:break-word
 }
 
-#updateTable th, #updateTable td {
-    border: 0px solid #333333;
-    padding-bottom: 5px;
-}
-
 footer{
     margin: 0px;
-    padding: 0px;
+    padding: 20px;
+}
+
+input{
+    font-size: 16px;
+    padding: 0.5%;
+    margin-top: 2%;
 }

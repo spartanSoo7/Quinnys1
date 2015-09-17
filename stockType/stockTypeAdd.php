@@ -14,19 +14,16 @@ include_once("../include/databaselogin.php");
 <form id="FormName" action="stockTypeAdded.php" method="post" name="FormName">
     <table class = "updateTable" border='0' align='center' width='50%'>
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th>
                     <label for="STOCK_TYPE_NAME">Stock Type Name: </label>
-                </div>
-            </td>
+            </th>
             <td>
                 <input id="STOCK_TYPE_NAME" name="STOCK_TYPE_NAME" type="text" size="50" value="" maxlength="50" minlength="3" required/>
             </td>
         </tr>
-        <tr>
-            <td width="150"></td>
-            <td>
-                <input type="submit" name="submitButtonName" value="Add Stock Type"/>
+        <tr style="border-bottom: 0px; ">
+            <td colspan="2" style="text-align: center">
+                <input style="text-align: center;" type="submit" id="submit" name="submitButtonName" value="Add Stock Type"/>
             </td>
         </tr>
     </table>

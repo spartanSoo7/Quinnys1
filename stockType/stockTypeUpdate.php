@@ -27,18 +27,16 @@ if ($result->num_rows > 0) {
         <form id="FormName" action="stockTypeUpdated.php" method="post" name="FormName">
             <table class="updateTable" border='0' align='center' width='50%'>
                 <tr>
-                    <td width="150">
-                        <div align="left">
-                            <label for="STOCK_TYPE_NAME">Stock Type Name </label></div>
-                    </td>
+                    <th>
+                            <label for="STOCK_TYPE_NAME">Stock Type Name </label>
+                    </th>
                     <td>
                         <input id="STOCK_TYPE_NAME" name="STOCK_TYPE_NAME" type="text" size="30"
                                value="<?php echo $row["STOCK_TYPE_NAME"]?>" maxlength="35" required/></td>
                 </tr>
-                <tr>
-                    <td width="150"></td>
-                    <td>
-                        <input type="submit" name="submitButtonName" value="Update"/>
+                <tr style="border-bottom: 0px; ">
+                    <td style="text-align: center;" colspan='2'>
+                        <input type="submit" id="submit" name="submitButtonName" value="Update"/>
                         <input type="hidden" name="STOCK_TYPE_ID" value="<?php echo $STOCK_TYPE_ID ?>"/>
                     </td>
                 </tr>

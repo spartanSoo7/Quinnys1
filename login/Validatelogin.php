@@ -2,42 +2,46 @@
 include '../include/head.php';
 include '../include/header.php';
 include_once("../include/databaselogin.php");
-session_start();
+
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 if ($username && $password)
 {
-	$query = mysql_query("SELECT * FROM login_table");
-	
-	$numrow = mysql_num_rows($query);
-	
-	if ($numrow != 0)
+
+	$sql = "SELECT * FROM `login_table`";
+	$result = $conn->query($sql);
+
+	if ($result->num_rows > 0)
+	{
+		// output data of each row
+		while ($row = $result->fetch_assoc() )
 		{
-		while ($row = mysql_fetch_assoc($query))
+			 $dbusername = $row["LOGIN_NAME"];
+			 $dbpassword = $row["LOGIN_PASSWORD"];
+
+			if ($username==$dbusername&&$password==$dbpassword)
 			{
-			 $dbusername = $row['LOGIN_NAME'];
-			 $dbpassword = $row['LOGIN_PASSWORD'];
+				header ("Location: loginSuccess.php");
+				$_SESSION["username"] = $dbusername;
+				$_SESSION['logininfo'] = "1";
 			}
-		if ($username==$dbusername&&$password==$dbpassword)
+			else
 			{
-			header ("Location: loginSuccess.php");
-			$_SESSION["username"] = $dbusername;
-			$_SESSION['logininfo'] = "1";
-				
-			}
-			else 
-			{
-					header ("Location: ../login/login.php");
+				header ("Location: ../login/login.php");
 			}
 		}
-		else echo "That user doesn't exist!";
+
 	}
+}
 else
 {
 	header ("Location: ../login/adminlogin.php");
 }
-
+$conn->close();
 include '../include/footer.php';
 ?>

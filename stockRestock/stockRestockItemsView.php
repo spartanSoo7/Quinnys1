@@ -38,7 +38,7 @@ echo "<tr>
             <th>Size</th>
             <th>Main Colour</th>
             <th style='width: 6%;'>Total in stock</th>
-            <th style='width: 6%;'>Toatal out</th>
+            <th style='width: 6%;'>Total out</th>
             <th style='width: 6%;'>Total hold</th>
             <th style='width: 6%;'>Total Needed</th>
             <th style='width: 6%;'>Total owned</th>

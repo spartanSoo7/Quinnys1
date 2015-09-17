@@ -14,24 +14,19 @@ include_once("../include/databaselogin.php");
 <form id="FormName" action="stockItemsAdded.php" method="post" name="FormName">
     <table class = "updateTable">
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th>
                     <label for="STOCK_NAME">Name/ Description: </label>
-                </div>
-            </td>
+            </th>
             <td>
-                <input id="STOCK_NAME" name="STOCK_NAME" type="text" size="50" value="" maxlength="50" minlength="4" required/>
+                <input id="STOCK_NAME" name="STOCK_NAME" type="text" value="" maxlength="50" minlength="4" required/>
             </td>
         </tr>
-
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th>
                     <label for="STOCK_TYPE_ID">Stock Type Name: </label>
-                </div>
-            </td>
+            </th>
             <td>
-                <select name="STOCK_TYPE_ID" id="STOCK_TYPE_ID" required>
+                <select name="STOCK_TYPE_ID" id="STOCK_TYPE_ID" style="width: 50%; float: left; margin-top: 5px;" required>
                     <option selected disabled hidden value=''></option>
 <?php
     $sql = "SELECT * FROM `stock_type_table`;";
@@ -47,23 +42,21 @@ include_once("../include/databaselogin.php");
             {
                 echo "<option id='" .$row["STOCK_TYPE_ID"]. "' value = '" .$row["STOCK_TYPE_ID"]. "'>" .$row["STOCK_TYPE_NAME"]. "</option>";
             }
-echo "loop";
 
         }
     }
 ?>
                 </select>
+                <a href=../stockType/stockTypeAdd.php style ='margin: 5px; display: block;'> Add new? </a>
             </td>
         </tr>
 
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th>
                     <label for="HIRE_COST">Hire Cost: </label>
-                </div>
-            </td>
+            </th>
             <td>                                                            <!--to allow decimals upto 2 places-->
-                <input id="HIRE_COST" name="HIRE_COST" type="number" pattern="[0-9]+([\.|,][0-9]+)?" step="0.01" min="0" size="50" value="" maxlength="15" minlength="1" required/>
+                <input id="HIRE_COST" name="HIRE_COST" type="number" pattern="[0-9]+([\.|,][0-9]+)?" step="0.01" min="0" value="" maxlength="15" minlength="1" required/>
             </td>
         </tr>
 
@@ -74,68 +67,57 @@ echo "loop";
                 </div>
             </td>
             <td>                                                            <!--to allow decimals upto 2 places-->
-                <input id="REPLACE_COST" name="REPLACE_COST" type="number" pattern="[0-9]+([\.|,][0-9]+)?" step="0.01" min="0" size="50" value="" maxlength="15" minlength="1" required/>
+                <input id="REPLACE_COST" name="REPLACE_COST" type="number" pattern="[0-9]+([\.|,][0-9]+)?" step="0.01" min="0" value="" maxlength="15" minlength="1" required/>
             </td>
         </tr>
 
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th>
                     <label for="SIZE">Size: </label>
-                </div>
-            </td>
+            </th>
             <td>
-                <input id="SIZE" name="SIZE" type="text" size="50" value="" maxlength="15" minlength="2" />
+                <input id="SIZE" name="SIZE" type="text" value="" maxlength="15" minlength="2" />
             </td>
         </tr>
 
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th>
                     <label for="COLOUR1">Main colour: </label>
-                </div>
-            </td>
+            </th>
             <td>
-                <input id="COLOUR1" name="COLOUR1" type="text" size="50" value="" maxlength="25" minlength="3" required/>
+                <input id="COLOUR1" name="COLOUR1" type="text" value="" maxlength="25" minlength="3" required/>
             </td>
         </tr>
 
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th>
                     <label for="COLOUR2">Secondary colour: </label>
-                </div>
-            </td>
+            </th>
             <td>
-                <input id="COLOUR2" name="COLOUR2" type="text" size="50" value="" maxlength="25" minlength="3"/>
+                <input id="COLOUR2" name="COLOUR2" type="text" value="" maxlength="25" minlength="3"/>
             </td>
         </tr>
 
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th>
                     <label for="COLOUR3">Tertiary colour: </label>
-                </div>
-            </td>
+            </th>
             <td>
-                <input id="COLOUR3" name="COLOUR3" type="text" size="50" value="" maxlength="25" minlength="3"/>
+                <input id="COLOUR3" name="COLOUR3" type="text" value="" maxlength="25" minlength="3"/>
             </td>
         </tr>
 
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th>
                     <label for="STOCK_TOTAL">Starting Stock Total: </label>
-                </div>
-            </td>
+            </th>
             <td>
-                <input id="STOCK_TOTAL" name="STOCK_TOTAL" type="number" size="50" value="" maxlength="11" minlength="3" required/>
+                <input id="STOCK_TOTAL" name="STOCK_TOTAL" type="number" value="" maxlength="9" minlength="3" required/>
             </td>
         </tr>
 
-        <tr>
-            <td width="150"></td>
-            <td>
+        <tr style="border-bottom: 0px; ">
+            <td colspan="2" style="text-align: center">
                 <input type="submit" name="submitButtonName" value="Add Stock Item"/>
             </td>
         </tr>
