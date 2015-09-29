@@ -16,9 +16,13 @@ include_once("../include/databaselogin.php");
 
 <?php
     include 'hireLineDetails.php';
-echo"<tr>
-        <th style = 'background-color: #FF8944; text-align: center; border-right: 1px solid #333333; width: 60%; ";
+?>
+    <tr>
+    </tr>
+    <tr>
+        <th colspan='2' style = 'background-color: #FF8944; text-align: center;  width: 60%;
 
+<?php
     if ($CUSTOMER_ACTIVE == 1 && $active == 1)
     {
         echo "'>Stock & Customer are both Disabled after this order has taken place
@@ -47,8 +51,13 @@ echo"<tr>
 ?>
 
         </th>
-        <td style='text-align: center;'>
-            <a href=hireLineUpdate.php?HIRE_LINE_NUMBER=<?php echo $HIRE_LINE_NUMBER; ?> style ='padding-bottom: 10px; margin: 5px; display: block;'>Update</a>
+    </tr>
+    <tr>
+        <td style="text-align: center; width: 50%; border-right: solid 1px">
+            <a href=hireLineDelete.php?HIRE_LINE_NUMBER=<?php echo $HIRE_LINE_NUMBER; ?> style =" margin: 5px; display: block;">Delete</a>
+        </td>
+        <td style="text-align: center; width: 50%; ">
+            <a href=hireLineUpdate.php?HIRE_LINE_NUMBER=<?php echo $HIRE_LINE_NUMBER; ?> style ="margin: 5px; display: block;">Update</a>
         </td>
     </tr>
 </table>

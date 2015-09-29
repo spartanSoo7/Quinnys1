@@ -1,12 +1,20 @@
 <?php
 include '../include/head.php';
-require("../include/securitycheck.php");
-include '../include/header.php';
+include '../include/head.php';
 include_once("../include/databaselogin.php");
+require("../include/securitycheck.php");
+?>
+<style>
 
+  HTML{
+      color: white;
+  }
 
-$HIRE_LINE_NUMBER = $_POST['HIRE_LINE_NUMBER'];
-$HIRE_QUANTITY = $_POST['HIRE_QUANTITY'];
+</style>
+
+<?php
+$HIRE_LINE_NUMBER = $_GET['HIRE_LINE_NUMBER'];
+echo $HIRE_LINE_NUMBER;
 
 
 $sql = "SELECT
@@ -43,7 +51,7 @@ if ($result->num_rows > 0) {
     // output data of each row
 
     while ($row = $result->fetch_assoc()) {
-
+        //set all the variables required
         $HIRE_NUMBER = $row["HIRE_NUMBER"];
         $CUSTOMER_ID =$row["CUSTOMER_ID"];
         $STOCK_ID = $row["STOCK_ID"];
@@ -62,43 +70,41 @@ else{
 }
 
 
+/*
+ * change to delete
+ * 
+ * 
+ */
 
-//calc hire line total price
-$HIRE_LINE_COST_TOTAL = $HIRE_COST * $HIRE_QUANTITY;
 
-//calc new total at customer            //orginal hire quantity
-$newTotalCust = ($TOTAL_QUANTITY_IN - $origQuantity) + $HIRE_QUANTITY;
-
-//change hire line table
+//delete hire line table row
 
 // prepare and bind
-$stmt = $conn->prepare("UPDATE hire_transaction_table SET
-    HIRE_QUANTITY = ?,
-    HIRE_LINE_COST_TOTAL = ?
-WHERE HIRE_LINE_NUMBER = '$HIRE_LINE_NUMBER' ");
+$stmt = $conn->prepare("
+  DELETE FROM hire_transaction_table
+  WHERE
+  HIRE_LINE_NUMBER = ?
+");
 
 if ( false===$stmt )
 {
     //if not a valid/ready statement object
     include '../include/Error.php';
-
+    echo "SQL statment";
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
-$stmt->bind_param("ii", $quantity, $total);
+$stmt->bind_param("i", $id);
 
 if ( false===$stmt )
 {
     //if can't bind the parameters.
     include '../include/Error.php';
-
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
 
 // set parameters and execute
-$quantity = $HIRE_QUANTITY;
-$total = $HIRE_LINE_COST_TOTAL;
-
+$id = $HIRE_LINE_NUMBER;
 
 $stmt->execute();
 
@@ -106,17 +112,21 @@ if ( false===$stmt )
 {
     //if execute() failed
     include '../include/Error.php';
-
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
-//echo "<br>hire transaction table updated successfully";
+echo "<br>hire transaction table deleted successfully";
 
 
-
+/*
+ * end of change to delete
+ */
 
 
 //change stock totals at customer
+
+//calc new total at customer            //orginal hire quantity
+$newTotalCust = $TOTAL_QUANTITY_IN - $origQuantity;
 
 // prepare and bind
 $stmt = $conn->prepare("UPDATE total_at_customer_table SET
@@ -145,7 +155,7 @@ $totalIn = $newTotalCust;
 
 $stmt->execute();
 
-//echo "<br>Total at customer table updated successfully";
+echo "<br>Total at customer table updated successfully";
 
 
 
@@ -154,24 +164,24 @@ $stmt->execute();
 //get total stock in + $origQuantity - $HIRE_QUANTITY
 //get total stock out - $origQuantity + $HIRE_QUANTITY
 
-//-5 = 8 - 13
-$quantityDiff = $origQuantity  - $HIRE_QUANTITY;
+//-5 = 8 - 13   //changed for delete
+$quantityDiff = $origQuantity;
 
 $newTotalStockIn = $STOCK_IN  + $quantityDiff;
 
 $newTotalStockOut = $STOCK_OUT - $quantityDiff;
 
-/*echo "<br><br>
+echo "<br><br>
         origional quantity: " .$origQuantity.
-        "<br>new quantity" .$HIRE_QUANTITY. "<br><br>
+    "<br>new quantity" .$HIRE_QUANTITY. "<br><br>
 
         differnce: " .$quantityDiff. "<br><br>
         --------------------------------------
 
         <br><br>original stock in at quinnys: " .$STOCK_IN. "<br>original Stock out at quinnys: " . $STOCK_OUT.
-"<br><br>
+    "<br><br>
 newTotalStockIn: " .$newTotalStockIn. "<br> newTotalStockOut: " .$newTotalStockOut. "<br>
-";*/
+";
 
 
 //change stock table
@@ -202,7 +212,6 @@ if ( false===$stmt )
 $out = $newTotalStockOut;
 $in = $newTotalStockIn;
 
-
 $stmt->execute();
 
 if ( false===$stmt )
@@ -212,12 +221,10 @@ if ( false===$stmt )
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
-echo "<br><h1 style='text-align: center'>Records updated successfully</h1>";
+echo "<br>stock table updated successfully";
 
-include '../include/footer.php';
 
 $stmt->close();
 $conn->close();
-
-header("refresh:3; url=hireLineView.php");
+header( 'Location:hireLineView.php' );
 ?>

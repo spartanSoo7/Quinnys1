@@ -20,7 +20,7 @@
 
                 </script>
             <div id = "Title">
-                <h1>Stock management</h1>
+                <h1>Stock Management</h1>
             </div>
 
             <div id = "headerRight">

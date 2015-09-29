@@ -1,6 +1,8 @@
 <?php
-include_once("../include/databaselogin.php");
+include '../include/head.php';
 require("../include/securitycheck.php");
+include '../include/header.php';
+include_once("../include/databaselogin.php");
 
 
 $STOCK_ID = $_POST['STOCK_ID'];
@@ -24,6 +26,7 @@ VALUES (?, ?, ?, ?, ?)");
 if ( false===$stmt )
 {
     //if not a valid/ready statement object
+    include '../include/Error.php';
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
@@ -32,6 +35,7 @@ $stmt->bind_param("iiiii", $sockID, $customerID, $totalIn, $totalNeed, $active);
 if ( false===$stmt )
 {
     //if can't bind the parameters.
+    include '../include/Error.php';
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
 
@@ -47,12 +51,17 @@ $stmt->execute();
 if ( false===$stmt )
 {
     //if execute() failed
+    include '../include/Error.php';
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
-echo "New records created successfully";
+
+echo "<h1 style='text-align: center'>Customer stock totals/Hold level has been Added successfully </h1> </br>";
+
+include '../include/footer.php';
 
 $stmt->close();
 $conn->close();
-header( 'Location:customerStockView.php' );
+
+header("refresh:3; url=customerStockView.php");
 ?>

@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
                     Hire Cost:
                 </th>
                 <td>
-                    <?php echo $row["HIRE_COST"] ?>
+                    $<?php echo $row["HIRE_COST"] ?>
                 </td>
             </tr>
             <tr>
@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
                     Replacement Cost:
                 </th>
                 <td>
-                    <?php echo $row["REPLACE_COST"] ?>
+                    $<?php echo $row["REPLACE_COST"] ?>
                 </td>
             </tr>
             <tr>

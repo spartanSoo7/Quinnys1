@@ -6,11 +6,13 @@ include_once("../include/databaselogin.php");
 ?>
 
 <div id = "backBtn">
-    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
+    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Home </a>
 </div>
 
 <div id = "centerTitle">
     <h2>Customer Stock Levels: </h2>
+    <a href="../customerStock/customerStockPrint.php" style ='padding-bottom: 10px; margin: 5px; display: block;'>Print friendly version (all)</a>
+    <a href="../customerStock/customerStockPrintCust.php" style ='padding-bottom: 10px; margin: 5px; display: block;'>Print friendly version (only customers needing stock)</a>
 </div>
 
 <?php
@@ -45,7 +47,7 @@ FROM
    inner join STOCK_TYPE_TABLE t
     on i.STOCK_TYPE_ID = t.STOCK_TYPE_ID
 
-ORDER BY HIRE_ACTIVE ASC, CUSTOMER_ACTIVE ASC, CUSTOMER_NAME ASC, ACTIVE ASC
+ORDER BY CUSTOMER_ACTIVE ASC, ACTIVE ASC, HIRE_ACTIVE ASC, CUSTOMER_NAME ASC
 ";?>
 
 <table id = 'viewTable'>

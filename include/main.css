@@ -240,3 +240,32 @@ input{
     padding: 0.5%;
     margin-top: 2%;
 }
+
+#custForm{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+#custForm input{
+    padding: 2px 15px;
+}
+
+
+#custFormFloat{
+    float: left;
+    height: 34px;
+    display: block;
+    margin-right: 10px;
+    line-height: 32px;
+}
+
+#miniMenu{
+    width: 20%;
+    float: right;
+    position: relative;
+    top: -60px;
+}

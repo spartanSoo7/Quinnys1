@@ -5,24 +5,42 @@
         </div>
 	<div id="login">
 
+		<style>
+            table{
+                width: 50%;
+            }
+            th{
+                width: 50%;
+                text-align: left;
+                padding: 0px;
+                margin: 0px;
+            }
+            td{
+                width: 50%;
+                text-align: right;
+                padding: 0px;
+                margin: 0px;
+            }
+
+        </style>
 				<form method="post" action="Validatelogin.php">
 					<table border="0" cellpadding="3" cellspacing="1">
 						<tr>
 							<th>
-								<strong>Username: </strong>
+								<strong>Username:</strong>
 							</th>
 							<td>
 								<strong>
-									<input name="username" type="text">
+									<input name="username" type="text" size="20">
 								</strong>
 							</td>
 						</tr>
 						<tr>
 							<th>
-								<strong>Password: </strong>
+								<strong>Password:</strong>
 							</th>
 							<td>
-								<strong><input name="password" type="password"></strong>
+								<strong><input name="password" type="password" size="20"></strong>
 							</td>
 						</tr>
 						<tr>

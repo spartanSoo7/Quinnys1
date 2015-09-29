@@ -3,12 +3,7 @@ include '../include/head.php';
 require("../include/securitycheck.php");
 include '../include/header.php';
 include_once("../include/databaselogin.php");
-?>
 
-    <h2>something may have broken </h2>
-
-<?php
-//Array ( [RESTOCK_QUANTITY] => 111 [submitButtonName] => Add Stock [STOCK_ID] => 4 [STOCK_TOTAL] => 500 [STOCK_IN] => 500 )
 
 $STOCK_ID = $_POST['STOCK_ID'];
 $RESTOCK_DATE  = null; //$get current datetime;
@@ -39,22 +34,8 @@ $QUANTITY = $RESTOCK_QUANTITY;
 $stmt->execute();
 
 
-echo "New record created successfully";
 
-/*
-
-
-//need to update stock
-   /* $update = "UPDATE STOCK_ITEMS_TABLE SET
-      STOCK_IN = '$updatedIn',
-      STOCK_TOTAL = '$updatedTotal'
-      WHERE STOCK_ID = '$STOCK_ID' ";
-
-    mysql_query($update);
-
-    header( 'Location:stockRestockItemsView.php' ) ;
-
-*/
+echo "<h1 style='text-align: center'>New Restock record created successfully</h1></br>";
 
 
 
@@ -75,9 +56,11 @@ $total = $updatedTotal;
 
 $stmt->execute();
 
-echo "records updated successfully";
+echo "<h1 style='text-align: center'>records updated successfully</h1></br>";
 
 $stmt->close();
 $conn->close();
-header( 'Location:stockRestockItemsView.php' );
+header("refresh:3; url=stockRestockItemsView.php");
+
+include '../include/footer.php';
 ?>

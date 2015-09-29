@@ -6,7 +6,7 @@
 ?>
 
 <div id = "backBtn">
-    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
+    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Home </a>
 </div>
 
 <div id = "centerTitle">
@@ -60,7 +60,5 @@ echo "<tr><td colspan='5' align='center'> You have ".$icount." stock type(s) </t
 echo "</table>";
 
 $conn->close();
-?>
-
-<?php include '../include/footer.php';?>
+include '../include/footer.php';?>
 

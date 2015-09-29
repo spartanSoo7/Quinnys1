@@ -13,13 +13,12 @@ WHERE HIRE_NUMBER ='$HIRE_NUMBER'";
 
 //echo $sql. "</BR>";
 if (mysqli_query($conn, $sql)) {
-    echo "Record updated successfully </br>";
-    header( 'Location:customerStockView.php' );
+    echo "<h1 style='text-align: center'>Customer stock totals/Hold level has been Deactivated successfully </h1> </br>";
+    header("refresh:3; url=customerStockView.php");
 } else {
+    include '../include/Error.php';
     echo "Error updating record: " . mysqli_error($conn);
 }
-
-
 
 $conn->close();
 include '../include/footer.php';

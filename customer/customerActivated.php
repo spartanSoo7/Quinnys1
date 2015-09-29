@@ -13,9 +13,10 @@ WHERE CUSTOMER_ID ='$CUSTOMER_ID'";
 
 //echo $sql. "</BR>";
 if (mysqli_query($conn, $sql)) {
-    echo "Record updated successfully </br>";
-    header( 'Location:customerView.php' );
+    echo "<h1 style='text-align: center'>Customer activated successfully </h1> </br>";
+    header("refresh:3; url=customerView.php");
 } else {
+    include '../include/Error.php';
     echo "Error updating record: " . mysqli_error($conn);
 }
 

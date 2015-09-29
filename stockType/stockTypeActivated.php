@@ -14,9 +14,11 @@ WHERE STOCK_TYPE_ID ='$STOCK_TYPE_ID'";
 
 
 if (mysqli_query($conn, $sql)) {
-    echo "Record updated successfully </br>";
-    header( 'Location:stockTypeView.php' );
+
+    echo "<h1 style='text-align: center'>The stock type has been activated successfully </h1> </br>";
+    header("refresh:3; url=stockTypeView.php");
 } else {
+    include '../include/Error.php';
     echo "Error updating record: " . mysqli_error($conn);
 }
 

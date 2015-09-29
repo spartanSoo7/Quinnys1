@@ -6,7 +6,7 @@
 ?>
 
 <div id = "backBtn">
-    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
+    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Home </a>
 </div>
 
 <div id = "centerTitle">
@@ -21,7 +21,7 @@ $sql = "SELECT CUSTOMER_ID, CUSTOMER_ACTIVE, CUSTOMER_NAME FROM CUSTOMER_TABLE O
 $result = $conn->query($sql);
 ?>
 
-<table id="viewTable" style="width: 80%;">;
+<table id="viewTable" style="width: 80%;">
     <tr>
         <th>Customer Name</th>
         <th>View</th>

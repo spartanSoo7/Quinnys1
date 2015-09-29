@@ -6,7 +6,7 @@
 ?>
 
 <div id = "backBtn">
-    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
+    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Home </a>
 </div>
 
 <div id = "centerTitle">

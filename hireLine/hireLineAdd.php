@@ -70,7 +70,6 @@ ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
 
                     $result2 = $conn->query($sql);
 
-
                     if ($result2->num_rows > 0) {
                         // output data of each row
                         while ($row = $result2->fetch_assoc())
@@ -98,6 +97,7 @@ ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
                 <label for="HIRE_QUANTITY">Quantity Being Hired: </label>
             </th>
             <td>
+                <!--partial update from stock select to set max stock limit would be nice-->
                 <input id="HIRE_QUANTITY" name="HIRE_QUANTITY" style="width: 100%;" type="number" value="" maxlength="9" minlength="1" required/>
             </td>
         </tr>

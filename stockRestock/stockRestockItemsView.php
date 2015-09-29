@@ -6,17 +6,17 @@
 ?>
 
 <div id = "backBtn">
-    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
+    <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Home </a>
 </div>
 
 <div id = "centerTitle">
-    <h2>Here are the total stock levels: </h2>
+    <h2>Here are the total stock levels broken: </h2>
 </div>
 
 
 <?php
 $sql = "SELECT i.*, t.* FROM STOCK_ITEMS_TABLE i
-          inner join STOCK_TYPE_TABLE t on i.STOCK_TYPE_ID = t.STOCK_TYPE_ID ORDER BY STOCK_TYPE_NAME;";
+          inner join STOCK_TYPE_TABLE t on i.STOCK_TYPE_ID = t.STOCK_TYPE_ID ORDER BY STOCK_TYPE_ACTIVE, ACTIVE, STOCK_TYPE_NAME, STOCK_NAME";
 $result = $conn->query($sql);
 
 /*
@@ -53,11 +53,20 @@ if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
         $STOCK_ID = $row["STOCK_ID"];
-        $active = $row["STOCK_TYPE_ACTIVE"];
+        $activeType = $row["STOCK_TYPE_ACTIVE"];
 
-        if ($active == 0) {
-            echo "<tr>";
-            echo "    <td> " .$row["STOCK_NAME"]. "</td>";
+        echo "    <tr ";
+        if ( ($activeType == 1 || $row["ACTIVE"]) || ($activeType == 1 && $row["ACTIVE"]) ){     //if stock type disabled or stock item disabled or stockktype and stock item disabled
+            echo " style = 'background-color: rgba(255, 102, 102, 0.61);'";
+        }
+        echo ">";
+
+
+        echo "    <td ";
+        if ($row["ACTIVE"] == 1) {
+            echo " style = 'background-color: #FF6666;'";
+        }
+        echo ">" .$row["STOCK_NAME"]. "</td>";
 
             //if shortage at all/any customer
             $stockOut = $row["STOCK_OUT"];
@@ -67,7 +76,13 @@ if ($result->num_rows > 0) {
             //if need is lager than owned
             $stockTotal = $row["STOCK_TOTAL"];
 
-            echo "    <td> " .$row["STOCK_TYPE_NAME"]. "</td>";           //needs to get type name instead of ID
+            //if stocktype disabled
+            echo "    <td ";
+            if ($activeType == 1) {
+                echo " style = 'background-color: #FF6666;'";
+            }
+            echo ">" .$row["STOCK_TYPE_NAME"]. "</td>";
+
             echo "    <td> " .$row["SIZE"]. "</td>";
             echo "    <td> " .$row["COLOUR1"]. "</td>";
             echo "    <td> " .$row["STOCK_IN"]. "</td>";
@@ -99,10 +114,8 @@ if ($result->num_rows > 0) {
                     <a href=\"stockRestockItem.php?STOCK_ID=$STOCK_ID\"> Restock </a>
               </td>";
             echo "<tr>";
-
         }
         $icount++; //make sure this is outside of the IF statement, to not embarrise yourself infron of the client... again
-    }
 }
 if($needOwned > 0)
 {
@@ -112,7 +125,7 @@ if($neededCust > 0)
 {
     echo "<tr><td colspan='10' align='center' style='padding: 5px; background-color: #FF8944;'> You have <b>".$neededCust."</b> stock items(s) that needs more at the customer(s)</td> </tr>";
 }
-
+echo "<tr><td colspan='10' align='center' style='padding: 5px; '> You have <b>".$icount."</b> stock items</td> </tr>";
 echo "</table>";
 
 

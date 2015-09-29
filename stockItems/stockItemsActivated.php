@@ -13,13 +13,17 @@ $sql = "UPDATE STOCK_ITEMS_TABLE SET
 WHERE STOCK_ID ='$STOCK_ID'";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Record updated successfully </br>";
-    header( 'Location:stockItemsView.php' );
+
+    echo "<h1 style='text-align: center'>The stock item has been activated successfully </h1> </br>";
+    header("refresh:3; url=stockItemsView.php");
+
 } else {
+    include '../include/Error.php';
     echo "Error updating record: " . mysqli_error($conn);
 }
 
 $conn->close();
 include '../include/footer.php';
+
 ?>
 

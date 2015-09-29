@@ -1,6 +1,8 @@
 <?php
-include_once("../include/databaselogin.php");
+include '../include/head.php';
 require("../include/securitycheck.php");
+include '../include/header.php';
+include_once("../include/databaselogin.php");
 
 
 $STOCK_NAME = $conn->real_escape_string($_POST['STOCK_NAME']);
@@ -37,14 +39,16 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 if ( false===$stmt )
 {
   //if not a valid/ready statement object
+  include '../include/Error.php';
   die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
 $stmt->bind_param("siddssssiiii", $name, $type, $hire, $replace, $stock_size, $col1, $col2, $col3, $tot, $out, $need, $in);
 
-if ( false===$rc )
+if ( false===$stmt )
 {
   //if can't bind the parameters.
+  include '../include/Error.php';
   die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
 
@@ -64,16 +68,20 @@ $in = $STOCK_IN;
 
 $stmt->execute();
 
-if ( false===$rc )
+if ( false===$stmt )
 {
   //if execute() failed
+  include '../include/Error.php';
   die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
+echo "<h1 style='text-align: center'>The stock item has been added successfully </h1> </br>";
 
-echo "New records created successfully";
+include '../include/footer.php';
 
 $stmt->close();
 $conn->close();
-header( 'Location:stockItemsView.php' );
+
+header("refresh:3; url=stockItemsView.php");
+
 ?>

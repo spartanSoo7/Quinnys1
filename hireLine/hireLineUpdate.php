@@ -11,12 +11,14 @@ include_once("../include/databaselogin.php");
         <a href="hireLineView.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
     </div>
     <div id = "centerTitle">
-        <h2>Update Hire Lines: </h2>
+        <h2>Update Hire Line: </h2>
     </div>
 
 
 <?php
-$HIRE_LINE_NUMBER = $_GET['HIRE_LINE_NUMBER'];
+    include 'hireLineDetails.php';
+echo "</table>";
+    $HIRE_LINE_NUMBER = $_GET['HIRE_LINE_NUMBER'];
 //MYSQLI
 $sql = "SELECT * FROM `hire_transaction_table` WHERE HIRE_LINE_NUMBER = '$HIRE_LINE_NUMBER';";
 $result = $conn->query($sql);
@@ -30,7 +32,6 @@ if ($result->num_rows > 0) {
         ?>
         <form id="FormName" action="hireLineUpdated.php" method="post" name="FormName">
             <table class="updateTable">
-                <?php include 'hireLineDetails.php';?>
                 <tr style="border-bottom: 0px;">
                     <th style="padding: 3% 5%;">
                         <label for="HIRE_QUANTITY">Update hire quantity: </label>

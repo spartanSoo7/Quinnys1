@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
         $CUSTOMER_ACTIVE = $row["CUSTOMER_ACTIVE"];
         //$HIRE_NUMBER = $row["HIRE_NUMBER"];
         $HIRE_ACTIVE = $row["HIRE_ACTIVE"];
-        //$HIRE_LINE_NUMBER = $row["HIRE_LINE_NUMBER"];
+        $HIRE_LINE_NUMBER = $row["HIRE_LINE_NUMBER"];
         //$CUSTOMER_ID =$row["CUSTOMER_ID"];
         //$STOCK_ID = $row["STOCK_ID"];
         $HIRE_COST = $row["HIRE_COST"];
@@ -54,6 +54,7 @@ if ($result->num_rows > 0) {
         //$STOCK_OUT = $row["STOCK_OUT"];
         $STOCK_IN = $row["STOCK_IN"];
         $origQuantity = $row["HIRE_QUANTITY"];
+
 
 
         ?>
@@ -158,6 +159,9 @@ if ($result->num_rows > 0) {
             if ($stockNeeded > 0) {
                 echo " style = 'background-color: #FF6666;'";
             }
+            else{
+                echo " style = 'background-color: #59E059;'";
+            }
             ?>
             >
             <th>
@@ -196,7 +200,7 @@ if ($result->num_rows > 0) {
                 Total cost
             </th>
             <td>
-                <?php echo $row["HIRE_LINE_COST_TOTAL"] ?>
+                $<?php echo $row["HIRE_LINE_COST_TOTAL"] ?>
             </td>
         </tr>
         <tr>
@@ -207,7 +211,7 @@ if ($result->num_rows > 0) {
         </tr>
         <tr>
             <th>
-                total stock out
+                Total stock out
             </th>
             <td><?php echo $row["STOCK_OUT"];?> </td>
         </tr>
