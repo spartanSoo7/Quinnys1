@@ -11,9 +11,153 @@ include_once("../include/databaselogin.php");
 
 <div id = "centerTitle">
     <h2>Customer Stock Levels: </h2>
-    <a href="../customerStock/customerStockPrint.php" style ='padding-bottom: 10px; margin: 5px; display: block;'>Print friendly version (all)</a>
-    <a href="../customerStock/customerStockPrintCust.php" style ='padding-bottom: 10px; margin: 5px; display: block;'>Print friendly version (only customers needing stock)</a>
+    <a href="../customerStock/customerStockPrint.php">Print friendly version (all active hold levels)</a>
+</br>
+</br>
+    <a href="../customerStock/customerStockPrintCust.php">Print friendly version (only active hold levels NEEDING stock)</a>
 </div>
+
+<!---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+if(isset($_POST['submit']))
+{
+    $CUSTOMER_ID = $_POST['CUSTOMER_ID'];
+    $STOCK_ID = $_POST['STOCK_ID'];
+    ?>
+
+    <div id="custForm">
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+
+
+        <div id="custFormFloat" style="width: 27%; font-size: 14px; height: 64px; min-width: 320px; margin-top: 2px; ">
+            Stock (Name/ Description  |  Type  |  Size  |  Colour)
+            <select name="STOCK_ID" id="STOCK_ID" style="width: 100%; font-size: 16px; " required>
+<?php
+$sql = "
+SELECT
+  i.*,
+  t.*
+FROM
+  STOCK_ITEMS_TABLE i inner join STOCK_TYPE_TABLE t
+on
+  i.STOCK_TYPE_ID = t.STOCK_TYPE_ID
+ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
+";
+
+            $result3 = $conn->query($sql);
+
+                if ($result3->num_rows > 0)
+                {
+                    // output data of each row
+                    if($STOCK_ID == "All"){
+                        echo "<option id='All' value = 'All' selected>All</option>";
+                    }
+                    else{
+                        echo "<option id='All' value = 'All'>All</option>";
+                    }
+                    while ($row = $result3->fetch_assoc())
+                    {
+                        $activeStock = $row["ACTIVE"];
+                        if ($activeStock == 0)
+                        {
+                            $name = $row["STOCK_NAME"];
+                            $outputString = $row["STOCK_NAME"]. " | " .$row["STOCK_TYPE_NAME"]. " |  " .$row["SIZE"]. " |  " .$row["COLOUR1"];
+
+                            echo "<option id='" .$row["STOCK_ID"]. "' value = '" .$row["STOCK_ID"]. "'";
+
+                            if ($row["STOCK_ID"] == $STOCK_ID)
+                            {
+                                echo "selected";
+                            }
+                            echo ">" .$outputString. "</option>";
+                        }
+                    }
+                }
+                ?>
+            </select>
+        </div>
+
+        <div id="custFormFloat" style="width: 20%; font-size: 14px; height: 64px; min-width: 209px; margin-top: 3px; ">
+            Customer (Name and Address)
+            <select name="CUSTOMER_ID" id="CUSTOMER_ID" style="width: 100%; font-size: 17px; " required>
+<?php
+    $sql = "
+      SELECT
+        `CUSTOMER_ID`,
+        `CUSTOMER_NAME`,
+        `CUSTOMER_ACTIVE`,
+        `CUSTOMER_PHYSICAL_ADDRESS`
+      FROM `customer_table`
+    ";
+
+    $result2 = $conn->query($sql);
+
+            if ($result2->num_rows > 0)
+            {
+                // output data of each row
+                if($CUSTOMER_ID == "All")
+                {
+                    echo "<option id='All' value = 'All' selected>All</option>";
+                }
+                else
+                {
+                    echo "<option id='All' value = 'All'>All</option>";
+                }
+
+                while ($row = $result2->fetch_assoc())
+                {
+                    $activeCustomer = $row["CUSTOMER_ACTIVE"];
+
+                        if ($activeCustomer == 0)
+                        {
+                            echo "<option id='" . $row["CUSTOMER_ID"] . "' value = '" . $row["CUSTOMER_ID"] . "'";
+
+                            if ($row["CUSTOMER_ID"] == $CUSTOMER_ID)
+                            {
+                                echo "selected";
+                            }
+
+                            echo ">" . $row["CUSTOMER_NAME"] . " | " . $row["CUSTOMER_PHYSICAL_ADDRESS"] . "</option>";
+                        }
+                }
+            }
+?>
+            </select>
+       </div>
+
+        <div id = "custFormFloat" style="width: 6%; margin-top: 34px; height: 17px; ">
+            <input type="submit" name="submit" value="Go!">
+        </div>
+    </form>
+</div>
+
+//}
+
+
+<!-------------------------->
+
 
 <?php
 //MYSQLI
@@ -47,7 +191,7 @@ FROM
    inner join STOCK_TYPE_TABLE t
     on i.STOCK_TYPE_ID = t.STOCK_TYPE_ID
 
-ORDER BY CUSTOMER_ACTIVE ASC, ACTIVE ASC, HIRE_ACTIVE ASC, CUSTOMER_NAME ASC
+ORDER BY CUSTOMER_ACTIVE ASC, ACTIVE ASC, HIRE_ACTIVE ASC, CUSTOMER_NAME ASC, STOCK_TYPE_NAME
 ";?>
 
 <table id = 'viewTable'>

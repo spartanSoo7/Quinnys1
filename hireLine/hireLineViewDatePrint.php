@@ -241,7 +241,7 @@ ORDER BY DAMAGED_DATE ASC
 
 
         /*
-         * Display tottal cost
+         * Display total cost
          */
 
         echo    "<tr>

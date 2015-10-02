@@ -39,7 +39,7 @@ if ( false===$stmt )
 
 $stmt->bind_param("sssssss", $name, $email, $phone1, $phone2, $post_add, $phys_add, $con_name);
 
-if ( false===$rc )
+if ( false===$stmt )
 {
     //if can't bind the parameters.
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
@@ -56,7 +56,7 @@ $con_name = $CUSTOMER_CONTACT_NAME;
 
 $stmt->execute();
 
-if ( false===$rc )
+if ( false===$stmt )
 {
     //if execute() failed
     die('execute() failed: ' . htmlspecialchars($stmt->error));

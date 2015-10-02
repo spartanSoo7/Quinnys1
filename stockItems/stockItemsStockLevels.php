@@ -10,7 +10,8 @@
 </div>
 
 <div id = "centerTitle">
-    <h2>Here are the total stock levels broken: </h2>
+    <h2>Here are the total stock levels: </h2>
+    <a href="../stockRestock/stockRestockView.php">View restock records</a>
 </div>
 
 
@@ -110,8 +111,10 @@ if ($result->num_rows > 0) {
             echo ">" .$stockTotal. "</td>";
 
 
-            echo "    <td align='center'>
-                    <a href=\"stockRestockItem.php?STOCK_ID=$STOCK_ID\"> Restock </a>
+            echo "<td>
+                <a href='../stockRestock/stockRestockItem.php?STOCK_ID=" .$STOCK_ID. "'>
+                    Restock
+                </a>
               </td>";
             echo "<tr>";
         }

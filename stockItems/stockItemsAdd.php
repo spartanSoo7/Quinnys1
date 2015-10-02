@@ -8,7 +8,7 @@ include_once("../include/databaselogin.php");
     <a href="stockItemsView.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
 </div>
 <div id = "centerTitle">
-    <h2>Add Stock Type: </h2>
+    <h2>Add Stock Item: </h2>
 </div>
 
 <form id="FormName" action="stockItemsAdded.php" method="post" name="FormName">
@@ -61,11 +61,9 @@ include_once("../include/databaselogin.php");
         </tr>
 
         <tr>
-            <td width = "150">
-                <div align="left">
+            <th width = "150">
                     <label for="REPLACE_COST">Replacement Cost: </label>
-                </div>
-            </td>
+            </th>
             <td>                                                            <!--to allow decimals upto 2 places-->
                 <input id="REPLACE_COST" name="REPLACE_COST" type="number" pattern="[0-9]+([\.|,][0-9]+)?" step="0.01" min="0" value="" maxlength="15" minlength="1" required/>
             </td>

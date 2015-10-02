@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
 ?>
 
       <div id = "backBtn">
-            <a href="stockRestockItemsView.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
+            <a href="../stockItems/stockItemsStockLevels.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
       </div>
 
       <div id = "centerTitle">

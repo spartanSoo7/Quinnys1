@@ -13,6 +13,17 @@
     <h2>Here are all the stock Items that are currently in the system: </h2>
 </div>
 
+    <div id = "miniMenu">
+        <a href='stockItemsAdd.php' style="float: right;">
+            <div id = "homeLink"
+                 onMouseOver="this.style.backgroundColor='#03C73D'"
+                 onMouseOut="this.style.backgroundColor='#06E047'"
+                 style="background-color: #06E047; font-size: 16px; padding: 10px;  height: 20px;">
+                Add New Stock Item
+            </div>
+        </a>
+    </div>
+
 
 <?php
 

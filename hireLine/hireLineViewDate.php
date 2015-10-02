@@ -111,7 +111,7 @@ if(isset($_POST['submit']))
             </select>
         </div>
 
-        <div id = "custFormFloat" style="width: 6%; margin-top: 34px;">
+        <div id = "custFormFloat" style="width: 6%; margin-top: 34px; height: 17px; ">
             <input type="submit" name="submit" value="Go!">
         </div>
     </form>
@@ -126,6 +126,14 @@ if(isset($_POST['submit']))
     $startDateFormatted = $startDateFormatted. ' 00:00:00';
     $endDateFormatted = $endDateFormatted. ' 23:59:59';  //without telling the query the end date ends at midnight it doesnt out put data on that day
 
+    if($startDateFormatted > $endDateFormatted){
+        echo "<h2 style = 'text-align: center; '>Start date is after end date</h2>";
+        die();
+    }
+    elseif($checkDam == 1 && $checkHire == 1){
+        echo "<h2 style = 'text-align: center; '>You must select atleast one bill type<br>(hire lines and/ or damaged stock)</h2>";
+        die();
+    }
 
 //MYSQLI for customer display
     $sqlCust = "SELECT
@@ -244,7 +252,7 @@ ORDER BY DAMAGED_DATE ASC
                     " .$row["STOCK_TYPE_NAME"]. "
                 </td>
                 <td>
-                    Hired
+                    Hire
                 </td>
                 <td>
                     " .$row["HIRE_QUANTITY"]. "

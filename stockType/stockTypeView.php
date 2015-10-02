@@ -13,7 +13,18 @@
     <h2>Here are all the types of stock currently in the system: </h2>
 </div>
 
-<table id = 'viewTable' style="max-width: 900px;">
+<div id = "miniMenu">
+    <a href='stockTypeAdd.php' style="float: right;">
+        <div id = "homeLink"
+             onMouseOver="this.style.backgroundColor='#03C73D'"
+             onMouseOut="this.style.backgroundColor='#06E047'"
+             style="background-color: #06E047; font-size: 16px; padding: 10px;  height: 20px;">
+            Add New Stock type
+        </div>
+    </a>
+</div>
+
+<table id = 'viewTable' ">
     <tr>
         <th>Stock Type</th>
         <th>Active?</th>

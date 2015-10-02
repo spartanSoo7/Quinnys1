@@ -96,9 +96,15 @@ header{
     font-size: 20px;
 }
 
+.homeLine{
+    width: 100%;
+    border-bottom: 2px #333333 solid;
+    display: inline-block;
+    margin: 25px 0px;
+}
 
 #homeLink{
-    height: 32px;
+    height: 60px;
     width: 150px;
     float: left;
     text-align: center;
@@ -247,7 +253,7 @@ input{
     margin: 0 auto;
     text-align: center;
     font-size: 18px;
-
+    height: 70px;
 }
 
 #custForm input{
@@ -257,7 +263,6 @@ input{
 
 #custFormFloat{
     float: left;
-    height: 34px;
     display: block;
     margin-right: 10px;
     line-height: 32px;

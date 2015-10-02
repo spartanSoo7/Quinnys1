@@ -70,12 +70,6 @@ else{
 }
 
 
-/*
- * change to delete
- * 
- * 
- */
-
 
 //delete hire line table row
 

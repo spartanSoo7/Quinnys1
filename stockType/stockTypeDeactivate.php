@@ -31,14 +31,21 @@ if ($result->num_rows > 0) {
 }
 ?>
 
-
-
-
       <h2 style="text-align: center">
             </br>
             </br>
-            Are you sure?
-            <a href="stockTypeDeactivated.php?STOCK_TYPE_ID=<?php echo "$STOCK_TYPE_ID" ?>">Yes</a> - <a href="stockTypeView.php">No</a>
+            Are you sure?</br>
+            <a href="stockTypeDeactivatedAll.php?STOCK_TYPE_ID=<?php echo "$STOCK_TYPE_ID" ?>">
+                  Yes and ALL the stock items of this type
+            </a>
+            </br></br>
+            <a href="stockTypeDeactivated.php?STOCK_TYPE_ID=<?php echo "$STOCK_TYPE_ID" ?>">
+                  Yes, and NOT the stock items of this type
+            </a>
+            </br></br>
+            <a href="stockTypeView.php">
+                  No
+            </a>
       </h2>
 
 

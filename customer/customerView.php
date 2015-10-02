@@ -13,7 +13,16 @@
     <h2>Here are all the customers currently in the system: </h2>
 </div>
 
-
+    <div id = "miniMenu">
+        <a href='customerAdd.php' style="float: right;">
+            <div id = "homeLink"
+                 onMouseOver="this.style.backgroundColor='#03C73D'"
+                 onMouseOut="this.style.backgroundColor='#06E047'"
+                 style="background-color: #06E047; font-size: 16px; padding: 10px;  height: 20px;">
+                Add New Customer
+            </div>
+        </a>
+    </div>
 
 <?php
 //MYSQLI
@@ -21,7 +30,7 @@ $sql = "SELECT CUSTOMER_ID, CUSTOMER_ACTIVE, CUSTOMER_NAME FROM CUSTOMER_TABLE O
 $result = $conn->query($sql);
 ?>
 
-<table id="viewTable" style="width: 80%;">
+<table id="viewTable" style="width: 90%;">
     <tr>
         <th>Customer Name</th>
         <th>View</th>

@@ -26,7 +26,7 @@ if ($active == 0) {
                 <a href=\"stockItemsActivate.php?STOCK_ID=$id\" style ='padding-bottom: 10px; margin: 5px; display: block;'> Enable? </a></p></th>";
 }
 
-echo "  <td style='text-align: center; width: 50'>
+echo "  <td style='text-align: center; width: 50%; '>
                     <a href=\"stockItemsUpdate.php?STOCK_ID=$id\" style ='padding-bottom: 10px; margin: 5px; display: block;'> Update </a>
         </td></tr></table>
                 ";

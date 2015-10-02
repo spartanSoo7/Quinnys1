@@ -15,9 +15,9 @@ include_once("../include/databaselogin.php");
 <div id = "miniMenu">
     <a href='../hireLine/hireLineAdd.php' style="float: right;">
         <div id = "homeLink"
-             onMouseOver="this.style.backgroundColor='rgb(245, 90, 153)'"
-             onMouseOut="this.style.backgroundColor='rgb(247, 108, 164)'"
-             style="background-color: rgb(247, 108, 164); font-size: 21px; padding: 10px;">
+             onMouseOver="this.style.backgroundColor='#03C73D'"
+             onMouseOut="this.style.backgroundColor='#06E047'"
+             style="background-color: #06E047; font-size: 21px; padding: 10px;  height: 20px;">
             New Hire Line
         </div>
     </a>
@@ -26,7 +26,7 @@ include_once("../include/databaselogin.php");
         <div id = "homeLink"
              onMouseOver="this.style.backgroundColor='rgb(245, 90, 153)'"
              onMouseOut="this.style.backgroundColor='rgb(247, 108, 164)'"
-             style="background-color: rgb(247, 108, 164); font-size: 21px; padding: 10px;">
+             style="background-color: rgb(247, 108, 164); font-size: 21px; padding: 10px;  height: 20px;">
             Billing
         </div>
     </a>
@@ -107,14 +107,9 @@ if(isset($_POST['submit'])) {
             </div>
 
             <div id="custFormFloat" style="width: 27%; font-size: 14px; height: 64px; min-width: 320px; margin-top: 2px; ">
-                Name/ Description  |  Type  |  Size  |  Colour)
+                Stock (Name/ Description  |  Type  |  Size  |  Colour)
                 <select name="STOCK_ID" id="STOCK_ID" style="width: 100%; font-size: 16px; " required>
                     <?php
-
-                    //need to add
-                    //defualt selected
-                    //all opton
-
 
                     $sql = "
 SELECT
@@ -160,7 +155,7 @@ ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
                 </select>
             </div>
 
-            <div id="custFormFloat" style="width: 6%; margin-top: 34px;  margin-top: 39px; ">
+            <div id="custFormFloat" style="width: 6%; margin-top: 34px;  margin-top: 39px; height: 17px; ">
                 <input type="submit" name="submit" value="Go!">
             </div>
         </form>
@@ -174,6 +169,11 @@ ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
     //add time
     $startDateFormatted = $startDateFormatted . ' 00:00:00';
     $endDateFormatted = $endDateFormatted . ' 23:59:59';  //without telling the query the end date ends at midnight it doesnt out put data on that day
+
+    if($startDateFormatted > $endDateFormatted){
+        echo "<h2 style = 'text-align: center; '>Start date is after end date</h2>";
+        die();
+    }
 
     $dateSQL = "n.HIRE_DATE between '" .$startDateFormatted. "' and '" .$endDateFormatted. "'";
 
@@ -283,11 +283,19 @@ if ($result->num_rows > 0)
         <?php
         $icount++;
     }
-
+}else{
+    echo"
+        <tr>
+            <td colspan='9'>
+                No records found
+            </td>
+        </tr>
+    ";
+}
 echo "<tr><td colspan='9' align='center'><a href='hireLineAdd.php'>Add a new hire line</a></td></tr>";
 echo "<tr><td colspan='9' align='center'> You have ".$icount." Total lines of hired stock</td> </tr>";
 echo "</table>";
-    }
+
 }
 else{
 //user has filled in a form yet
@@ -304,7 +312,7 @@ else{
                 <input type="text" class="datepicker" size="6" name="endDate" required>
             </div>
 
-            <!--ADD stock-->
+            <!--ADD date val-->
 
             <div id="custFormFloat" style="width: 20%; font-size: 14px; height: 64px; min-width: 209px; margin-top: 3px; ">
                 Customer (Name and Address)
@@ -333,7 +341,7 @@ else{
             </div>
 
             <div id="custFormFloat" style="width: 27%; font-size: 14px; height: 64px; min-width: 320px; margin-top: 2px; ">
-                Name/ Description  |  Type  |  Size  |  Colour)
+                Stock (Name/ Description  |  Type  |  Size  |  Colour)
                 <select name="STOCK_ID" id="STOCK_ID" style="width: 100%; font-size: 16px; " required>
                     <option selected disabled hidden value=''></option>
                     <option id='All' value = 'All'>All</option>

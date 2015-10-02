@@ -16,6 +16,7 @@ include_once("../include/databaselogin.php");
       include 'customerDetails.php';
 ?>
         </table>
+        <p style="width: 60%; margin: 15px auto; ">Please do not disable a customer if they have an outstanding bill, as it will remove this customer form the list of selectable customers</p>
       <h2 style="text-align: center">
             Are you sure you want to deactivate this customer?
        </br>

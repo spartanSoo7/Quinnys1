@@ -1,5 +1,5 @@
 <style>
-    html{
+    #wrapper{
         background-color: black;
     }
     h1{
