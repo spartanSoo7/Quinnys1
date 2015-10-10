@@ -179,7 +179,7 @@
         </div>
     </a>
 
-    <a href='../stockType/stockTypeAdd.php'>
+    <a href='../stockItems/stockItemsView.php'>
         <div id = "homeLink"
              onMouseOver="this.style.backgroundColor='rgb(1,168,226)';"
              onMouseOut="this.style.backgroundColor='#00BDFF';"
@@ -188,7 +188,7 @@
         </div>
     </a>
 
-    <a href='../customerStock/customerStockView.php'>
+    <a href='../stockType/stockTypeAdd.php'>
         <div id = "homeLink"
              onMouseOver="this.style.backgroundColor='#E09F03'"
              onMouseOut="this.style.backgroundColor='#FFB401'"
@@ -197,7 +197,7 @@
         </div>
     </a>
 
-    <a href='../stockType/stockTypeView.php.php'>
+    <a href='../stockType/stockTypeView.php'>
         <div id = "homeLink"
              onMouseOver="this.style.backgroundColor='rgb(239, 104, 40)'"
              onMouseOut="this.style.backgroundColor='rgb(255, 112, 44)'"

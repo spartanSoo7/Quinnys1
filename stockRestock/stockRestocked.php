@@ -56,7 +56,7 @@ $total = $updatedTotal;
 
 $stmt->execute();
 
-echo "<h1 style='text-align: center'>records updated successfully</h1></br>";
+echo "<h1 style='text-align: center'>Total Stock Records updated successfully</h1></br>";
 
 $stmt->close();
 $conn->close();

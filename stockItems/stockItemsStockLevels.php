@@ -48,41 +48,83 @@ echo "<tr>
 
 $neededCust = 0;
 $needOwned = 0;
-$active;
 $icount = 0 ;
+$disabledCount = 0;
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
         $STOCK_ID = $row["STOCK_ID"];
         $activeType = $row["STOCK_TYPE_ACTIVE"];
+        //if shortage at all/any customer
+        $stockOut = $row["STOCK_OUT"];
+        $stockHold = $row["STOCK_NEEDED"];
+        $stockNeeded = $stockHold - $stockOut;
+
+        //if need is lager than owned
+        $stockTotal = $row["STOCK_TOTAL"];
 
         echo "    <tr ";
-        if ( ($activeType == 1 || $row["ACTIVE"]) || ($activeType == 1 && $row["ACTIVE"]) ){     //if stock type disabled or stock item disabled or stockktype and stock item disabled
-            echo " style = 'background-color: rgba(255, 102, 102, 0.61);'";
-        }
-        echo ">";
+        if ( ($activeType == 1 || $row["ACTIVE"]) || ($activeType == 1 && $row["ACTIVE"]) )
+        {     //if stock type disabled or stock item disabled or stockktype and stock item disabled
 
+            echo " style = 'background-color: rgba(177, 171, 171, 0.61);'";
+            $disabledCount++;
+            echo ">";
+            echo "    <td ";
 
-        echo "    <td ";
-        if ($row["ACTIVE"] == 1) {
-            echo " style = 'background-color: #FF6666;'";
-        }
-        echo ">" .$row["STOCK_NAME"]. "</td>";
+            if ($row["ACTIVE"] == 1) {
+                echo " style = 'background-color: #B7B2B2;'";
+            }
 
-            //if shortage at all/any customer
-            $stockOut = $row["STOCK_OUT"];
-            $stockHold = $row["STOCK_NEEDED"];
-            $stockNeeded = $stockHold - $stockOut;
+            echo ">" .$row["STOCK_NAME"]. "</td>";
 
-            //if need is lager than owned
-            $stockTotal = $row["STOCK_TOTAL"];
 
             //if stocktype disabled
             echo "    <td ";
             if ($activeType == 1) {
-                echo " style = 'background-color: #FF6666;'";
+                echo " style = 'background-color: #B7B2B2;'";
             }
             echo ">" .$row["STOCK_TYPE_NAME"]. "</td>";
+
+            echo "    <td> " .$row["SIZE"]. "</td>";
+            echo "    <td> " .$row["COLOUR1"]. "</td>";
+            echo "    <td> " .$row["STOCK_IN"]. "</td>";
+            echo "<td>" .$stockTotal . "</td>";
+
+            echo "    <td";
+            if ($stockHold > $stockTotal) {
+                echo " style = 'background-color: #FF6666;'";
+            }
+            echo ">" .$stockHold. "</td>";
+
+            echo "    <td";
+            if ($stockHold > $stockOut) {
+                echo " style = 'background-color: #FF8944;'";
+            }
+            echo ">" . $stockNeeded . "</td>";
+
+
+            echo "    <td";
+            if ($stockHold > $stockTotal) {
+                echo " style = 'background-color: #FF6666;'";
+            }
+            echo ">" .$stockTotal. "</td>";
+
+
+            echo "<td>
+                <a href='../stockRestock/stockRestockItem.php?STOCK_ID=" .$STOCK_ID. "'>
+                    Restock
+                </a>
+              </td>";
+            echo "<tr>";
+            $icount++; //make sure this is outside of the IF statement, to not embarrise yourself infron of the client... again
+        }
+        else
+        {
+            echo ">";
+            echo "    <td>" .$row["STOCK_NAME"]. "</td>";
+
+            echo "    <td>" .$row["STOCK_TYPE_NAME"]. "</td>";
 
             echo "    <td> " .$row["SIZE"]. "</td>";
             echo "    <td> " .$row["COLOUR1"]. "</td>";
@@ -117,18 +159,27 @@ if ($result->num_rows > 0) {
                 </a>
               </td>";
             echo "<tr>";
+            $icount++; //make sure this is outside of the IF statement, to not embarrise yourself infron of the client... again
         }
-        $icount++; //make sure this is outside of the IF statement, to not embarrise yourself infron of the client... again
+
+    }
 }
 if($needOwned > 0)
 {
-    echo "<tr><td colspan='10' align='center' style='padding: 5px; background-color: #FF6666;'> You have <b>".$needOwned."</b> stock items(s) that are needed more than you have in total stock</td> </tr>";
+    echo "<tr><td colspan='10' align='center' style='padding: 5px; background-color: #FF6666;'> You have <b>".$needOwned."</b> active stock items(s) that are needed more than you have in total stock</td> </tr>";
 }
 if($neededCust > 0)
 {
-    echo "<tr><td colspan='10' align='center' style='padding: 5px; background-color: #FF8944;'> You have <b>".$neededCust."</b> stock items(s) that needs more at the customer(s)</td> </tr>";
+    echo "<tr><td colspan='10' align='center' style='padding: 5px; background-color: #FF8944;'> You have <b>".$neededCust."</b> active stock items(s) that needs more at the customer(s)</td> </tr>";
 }
-echo "<tr><td colspan='10' align='center' style='padding: 5px; '> You have <b>".$icount."</b> stock items</td> </tr>";
+if($disabledCount > 0)
+{
+    echo "<tr><td colspan='10' align='center' style='padding: 5px; background-color: rgba(177, 171, 171, 0.61);'> You have <b>".$disabledCount."</b> stock items(s) that have been disabled</td> </tr>";
+}
+$acitveStockCount = $icount - $disabledCount;
+echo "<tr><td colspan='10' align='center' style='padding: 5px; '> You have <b>".$acitveStockCount."</b> active stock items in total</td> </tr>";
+
+echo "<tr><td colspan='10' align='center' style='padding: 5px; '> You have <b>".$icount."</b> stock items in total</td> </tr>";
 echo "</table>";
 
 
