@@ -1,7 +1,7 @@
+<!--
+--Page was built by Kane Wardle
+-->
 <?php
-
-//????change timestamp on update????????
-
 include '../include/head.php';
 require("../include/securitycheck.php");
 include '../include/header.php';

@@ -21,129 +21,7 @@
     <favorites_list name="Quinnys1" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="customerStockView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/customerStock/customerStockView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="320" column="2" selection-start-line="320" selection-start-column="2" selection-end-line="320" selection-end-column="2" />
-              <folding>
-                <element signature="e#7#63#0#PHP" expanded="true" />
-                <marker date="1443913977949" expanded="true" signature="1765:1925" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
-                <marker date="1443913977949" expanded="true" signature="3524:3669" placeholder="SELECT `CUST..." />
-                <marker date="1443913977949" expanded="true" signature="9815:10566" placeholder="SELECT i.STO..total_at_customer_table..." />
-                <marker date="1443913977949" expanded="true" signature="14329:14379" placeholder="..." />
-                <marker date="1443913977949" expanded="true" signature="14967:15007" placeholder="..." />
-                <marker date="1443913977949" expanded="true" signature="16094:16201" placeholder="SELECT `CUST..." />
-                <marker date="1443913977949" expanded="true" signature="17526:17686" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/home/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.346153">
-              <caret line="199" column="43" selection-start-line="199" selection-start-column="43" selection-end-line="199" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stockRestocked.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stockRestock/stockRestocked.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.23077">
-              <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
-              <folding>
-                <marker date="1444433549761" expanded="true" signature="557:637" placeholder="INSERT INTO ..." />
-                <marker date="1444433549761" expanded="true" signature="801:819" placeholder="..." />
-                <marker date="1444433549761" expanded="true" signature="996:1091" placeholder="UPDATE STOCK..." />
-                <marker date="1444433549761" expanded="true" signature="1275:1293" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stockRestockUpdated.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockUpdated.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.846153">
-              <caret line="113" column="50" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
-              <folding>
-                <marker date="1444433688795" expanded="true" signature="284:563" placeholder="SELECT i.STO..stock_restock_table..." />
-                <marker date="1444433688795" expanded="true" signature="1241:1327" placeholder="UPDATE STOCK..." />
-                <marker date="1444433688795" expanded="true" signature="1956:1974" placeholder="..." />
-                <marker date="1444433688795" expanded="true" signature="2598:2693" placeholder="UPDATE STOCK..." />
-                <marker date="1444433688795" expanded="true" signature="2877:2895" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stockItemsStockLevels.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/stockItems/stockItemsStockLevels.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77155656">
-              <caret line="179" column="111" selection-start-line="179" selection-start-column="111" selection-end-line="179" selection-end-column="111" />
-              <folding>
-                <marker date="1444435463172" expanded="true" signature="480:661" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
-                <marker date="1444435463172" expanded="true" signature="867:966" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="901:913" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="979:1448" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="1004:1019" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="1067:1077" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="1171:1181" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="1226:1236" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="1276:1286" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="1327:1337" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="1380:1390" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="3561:3719" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="3650:3699" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="4932:5090" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="5021:5070" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="5340:5380" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="5576:5616" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="5801:5859" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="6046:6060" placeholder="..." />
-                <marker date="1444435463172" expanded="true" signature="6192:6206" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customerStockAdd.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/customerStock/customerStockAdd.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="24" />
-              <folding>
-                <marker date="1442469318659" expanded="true" signature="990:1097" placeholder="SELECT `CUST..." />
-                <marker date="1442469318659" expanded="true" signature="2461:2621" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customerStockAdded.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/customerStock/customerStockAdded.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
-              <folding>
-                <marker date="1443851681675" expanded="true" signature="409:1216" placeholder="SELECT i.STO..total_at_customer_table..." />
-                <marker date="1443851681675" expanded="true" signature="2987:3136" placeholder="INSERT INTO ..." />
-                <marker date="1443851681675" expanded="true" signature="4013:4031" placeholder="..." />
-                <marker date="1443851681675" expanded="true" signature="4233:4314" placeholder="SELECT STOCK..STOCK_ITEMS_TABLE..." />
-                <marker date="1443851681675" expanded="true" signature="4706:4784" placeholder="UPDATE STOCK..." />
-                <marker date="1443851681675" expanded="true" signature="5498:5516" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -156,57 +34,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/customerStock/customerStockPrint.php" />
-        <option value="$PROJECT_DIR$/customerStock/customerStockPrintCust.php" />
-        <option value="$PROJECT_DIR$/include/head.php" />
-        <option value="$PROJECT_DIR$/login/adminLogin.php" />
-        <option value="$PROJECT_DIR$/hireLine/hireLineAdded.php" />
-        <option value="$PROJECT_DIR$/hireLine/hireLineUpdated.php" />
-        <option value="$PROJECT_DIR$/hireLine/hireLineAdd.php" />
-        <option value="$PROJECT_DIR$/customer/customerActivated.php" />
-        <option value="$PROJECT_DIR$/customer/customerDeactivated.php" />
-        <option value="$PROJECT_DIR$/customer/customerUpdated.php" />
-        <option value="$PROJECT_DIR$/customerStock/customerStockActivated.php" />
-        <option value="$PROJECT_DIR$/customerStock/customerStockDeactivated.php" />
-        <option value="$PROJECT_DIR$/stockItems/stockItemsActivated.php" />
-        <option value="$PROJECT_DIR$/stockItems/stockItemsDeactivated.php" />
-        <option value="$PROJECT_DIR$/stockItems/stockItemsUpdated.php" />
-        <option value="$PROJECT_DIR$/stockItems/stockItemsAdded.php" />
-        <option value="$PROJECT_DIR$/stockType/stockTypeActivated.php" />
-        <option value="$PROJECT_DIR$/stockType/stockTypeDeactivated.php" />
-        <option value="$PROJECT_DIR$/stockType/stockTypeAdded.php" />
-        <option value="$PROJECT_DIR$/stockType/stockTypeUpdated.php" />
-        <option value="$PROJECT_DIR$/stockRestock/stockRestockItemsView.php" />
-        <option value="$PROJECT_DIR$/customerStock/customerStockUpdated.php" />
-        <option value="$PROJECT_DIR$/stockType/stockTypeActivate.php" />
-        <option value="$PROJECT_DIR$/stockType/stockTypeDeactivate.php" />
-        <option value="$PROJECT_DIR$/stockType/stockTypeDeactivatedAll.php" />
-        <option value="$PROJECT_DIR$/stockRestock/stockRestockItem.php" />
-        <option value="$PROJECT_DIR$/customer/customerDeactivate.php" />
-        <option value="$PROJECT_DIR$/stockItems/stockItemsAdd.php" />
-        <option value="$PROJECT_DIR$/hireLine/hireLineViewDatePrint.php" />
-        <option value="$PROJECT_DIR$/stockRestock/stockRestockViewPrint.php" />
-        <option value="$PROJECT_DIR$/stockItems/stockItemsDetailsView.php" />
-        <option value="$PROJECT_DIR$/include/Error.php" />
-        <option value="$PROJECT_DIR$/customer/customerAdded.php" />
-        <option value="$PROJECT_DIR$/nav/home.html" />
-        <option value="$PROJECT_DIR$/customer/customerView.php" />
-        <option value="$PROJECT_DIR$/stockItems/stockItemsView.php" />
-        <option value="$PROJECT_DIR$/stockType/stockTypeView.php" />
         <option value="$PROJECT_DIR$/hireLine/hireLineDeleted.php" />
-        <option value="$PROJECT_DIR$/stockRestock/stockRestockDeleted.php" />
-        <option value="$PROJECT_DIR$/stockRestock/stockRestockUpdate.php" />
-        <option value="$PROJECT_DIR$/stockRestock/stockRestockDelete.php" />
-        <option value="$PROJECT_DIR$/stockRestock/stockRestockView.php" />
-        <option value="$PROJECT_DIR$/include/main.css" />
-        <option value="$PROJECT_DIR$/hireLine/hireLineViewDate.php" />
+        <option value="$PROJECT_DIR$/hireLine/hireLineDetails.php" />
+        <option value="$PROJECT_DIR$/hireLine/hireLineDetailsView.php" />
+        <option value="$PROJECT_DIR$/hireLine/hireLineUpdate.php" />
+        <option value="$PROJECT_DIR$/hireLine/hireLineUpdated.php" />
         <option value="$PROJECT_DIR$/hireLine/hireLineView.php" />
-        <option value="$PROJECT_DIR$/customerStock/customerStockAdded.php" />
-        <option value="$PROJECT_DIR$/customerStock/customerStockView.php" />
+        <option value="$PROJECT_DIR$/hireLine/hireLineViewDate.php" />
+        <option value="$PROJECT_DIR$/hireLine/hireLineViewDatePrint.php" />
         <option value="$PROJECT_DIR$/home/index.php" />
-        <option value="$PROJECT_DIR$/stockRestock/stockRestocked.php" />
-        <option value="$PROJECT_DIR$/stockRestock/stockRestockUpdated.php" />
+        <option value="$PROJECT_DIR$/include/databaselogin.php" />
+        <option value="$PROJECT_DIR$/include/Error.php" />
+        <option value="$PROJECT_DIR$/include/footer.php" />
+        <option value="$PROJECT_DIR$/include/head.php" />
+        <option value="$PROJECT_DIR$/include/header.php" />
+        <option value="$PROJECT_DIR$/include/main.css" />
+        <option value="$PROJECT_DIR$/include/securitycheck.php" />
+        <option value="$PROJECT_DIR$/login/adminLogin.php" />
+        <option value="$PROJECT_DIR$/login/login.php" />
+        <option value="$PROJECT_DIR$/login/loginSuccess.php" />
+        <option value="$PROJECT_DIR$/login/Logout.php" />
+        <option value="$PROJECT_DIR$/login/Validatelogin.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsActivate.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsActivated.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsAdd.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsAdded.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsDeactivate.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsDeactivated.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsDetails.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsDetailsView.php" />
         <option value="$PROJECT_DIR$/stockItems/stockItemsStockLevels.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsUpdate.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsUpdated.php" />
+        <option value="$PROJECT_DIR$/stockItems/stockItemsView.php" />
+        <option value="$PROJECT_DIR$/stockRestock/stockRestockDelete.php" />
+        <option value="$PROJECT_DIR$/stockRestock/stockRestockDeleted.php" />
+        <option value="$PROJECT_DIR$/stockRestock/stockRestocked.php" />
+        <option value="$PROJECT_DIR$/stockRestock/stockRestockItem.php" />
+        <option value="$PROJECT_DIR$/stockRestock/stockRestockUpdate.php" />
+        <option value="$PROJECT_DIR$/stockRestock/stockRestockUpdated.php" />
+        <option value="$PROJECT_DIR$/stockRestock/stockRestockView.php" />
+        <option value="$PROJECT_DIR$/stockRestock/stockRestockViewPrint.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeActivate.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeActivated.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeAdd.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeAdded.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeDeactivate.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeDeactivated.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeDeactivatedAll.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeUpdate.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeUpdated.php" />
+        <option value="$PROJECT_DIR$/stockType/stockTypeView.php" />
       </list>
     </option>
   </component>
@@ -224,8 +102,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -250,8 +128,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -280,96 +156,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stockRestock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stockItems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nav" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hireLine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Quinnys1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customerStock" />
+              <option name="myItemId" value="stockType" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,11 +175,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp2\htdocs\Quinnys1\nav" />
       <recent name="C:\xampp2\htdocs\Quinnys1\stockRestock" />
       <recent name="C:\xampp2\htdocs\Quinnys1\stockType" />
       <recent name="C:\xampp2\htdocs\Quinnys1\hireLine" />
       <recent name="C:\xampp2\htdocs\Quinnys1\customerStock" />
-      <recent name="C:\xampp2\htdocs\Quinnys1\customer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp2\htdocs\Quinnys1\stockItems" />
@@ -437,10 +231,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.196875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -483,417 +277,656 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/stockType/stockTypeDeactivated.php">
+    <entry file="file://$PROJECT_DIR$/hireLine/hireLineDeleted.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30995792">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713145353" expanded="true" signature="-1:-1" placeholder="SELECT /*sto..hire_transaction_table..." />
+            <marker date="1444713145353" expanded="true" signature="-1:-1" placeholder="/*stock tabl..." />
+            <marker date="1444713145353" expanded="true" signature="-1:-1" placeholder="/*total at c..." />
+            <marker date="1444713145353" expanded="true" signature="-1:-1" placeholder="/*hire line ..." />
+            <marker date="1444713145353" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713145353" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1444713145353" expanded="true" signature="-1:-1" placeholder="UPDATE total..." />
+            <marker date="1444713145353" expanded="true" signature="-1:-1" placeholder="UPDATE stock..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stockType/stockTypeActivated.php">
+    <entry file="file://$PROJECT_DIR$/hireLine/hireLineDetails.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713153582" expanded="true" signature="-1:-1" placeholder="SELECT i.*, ..hire_transaction_table..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stockType/stockTypeUpdated.php">
+    <entry file="file://$PROJECT_DIR$/hireLine/hireLineDetailsView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09537167">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713164488" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713164488" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713164488" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713164488" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713164488" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stockType/stockTypeAdded.php">
+    <entry file="file://$PROJECT_DIR$/hireLine/hireLineUpdate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.43057504">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="4" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customerStock/customerStockUpdated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.615385">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hireLine/hireLineAdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.995221">
-          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hireLine/hireLineAdded.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.1589007">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="4" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockType/stockTypeDeactivate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.264151">
-          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockType/stockTypeDeactivatedAll.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6296296">
-          <caret line="31" column="81" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockType/stockTypeActivate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75149345">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/customerDeactivate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3655914">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.071528755">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding>
+            <marker date="1444713176109" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hireLine/hireLineUpdated.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.269231">
-          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="197" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsAdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hireLine/hireLineViewDatePrint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4516129">
-          <caret line="243" column="22" selection-start-line="243" selection-start-column="22" selection-end-line="243" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockViewPrint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsDeactivate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsDetailsView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6676017">
-          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/customerAdded.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.346154">
-          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/customerUpdated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0014025">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/customerActivated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35764375">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customerStock/customerStockPrintCust.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6465638">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customerStock/customerStockUpdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsUpdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.047685836">
-          <caret line="28" column="79" selection-start-line="28" selection-start-column="79" selection-end-line="28" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsDetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="45.115383">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/Error.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsUpdated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.5">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="64" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nav/hire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nav/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nav/stockRestock.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22341697">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6642772">
-          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockType/stockTypeView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52807647">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17084827">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/customerView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40621266">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nav/stockItems.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.609319">
-          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nav/customer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hireLine/hireLineDelete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hireLine/hireLineDeleted.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockDelete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26086956">
-          <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockUpdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14165498">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockDeleted.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6900421">
-          <caret line="110" column="61" selection-start-line="110" selection-start-column="61" selection-end-line="110" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38590202">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="122" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6848204">
-          <caret line="265" column="0" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hireLine/hireLineViewDate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.076923">
-          <caret line="117" column="6" selection-start-line="30" selection-start-column="0" selection-end-line="117" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713184560" expanded="true" signature="-1:-1" placeholder="SELECT /*sto..hire_transaction_table..." />
+            <marker date="1444713184560" expanded="true" signature="-1:-1" placeholder="/*stock tabl..." />
+            <marker date="1444713184560" expanded="true" signature="-1:-1" placeholder="/*total at c..." />
+            <marker date="1444713184560" expanded="true" signature="-1:-1" placeholder="/*hire line ..." />
+            <marker date="1444713184560" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713184560" expanded="true" signature="-1:-1" placeholder="UPDATE hire_..." />
+            <marker date="1444713184560" expanded="true" signature="-1:-1" placeholder="UPDATE total..." />
+            <marker date="1444713184560" expanded="true" signature="-1:-1" placeholder="UPDATE stock..." />
+            <marker date="1444713184560" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hireLine/hireLineView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customerStock/customerStockAdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding>
-            <marker date="1442469318659" expanded="true" signature="990:1097" placeholder="SELECT `CUST..." />
-            <marker date="1442469318659" expanded="true" signature="2461:2621" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
+            <marker date="1444713191614" expanded="true" signature="-1:-1" placeholder="SELECT `CUST..." />
+            <marker date="1444713191614" expanded="true" signature="-1:-1" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
+            <marker date="1444713191614" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713191614" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..hire_transaction_table..." />
+            <marker date="1444713191614" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713191614" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713191614" expanded="true" signature="-1:-1" placeholder="SELECT `CUST..." />
+            <marker date="1444713191614" expanded="true" signature="-1:-1" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/customerStock/customerStockAdded.php">
+    <entry file="file://$PROJECT_DIR$/hireLine/hireLineViewDate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding>
-            <marker date="1443851681675" expanded="true" signature="409:1216" placeholder="SELECT i.STO..total_at_customer_table..." />
-            <marker date="1443851681675" expanded="true" signature="2987:3136" placeholder="INSERT INTO ..." />
-            <marker date="1443851681675" expanded="true" signature="4013:4031" placeholder="..." />
-            <marker date="1443851681675" expanded="true" signature="4233:4314" placeholder="SELECT STOCK..STOCK_ITEMS_TABLE..." />
-            <marker date="1443851681675" expanded="true" signature="4706:4784" placeholder="UPDATE STOCK..." />
-            <marker date="1443851681675" expanded="true" signature="5498:5516" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="SELECT `CUST..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..hire_transaction_table..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..DAMAGED_TABLE..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713199939" expanded="true" signature="-1:-1" placeholder="SELECT `CUST..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/customerStock/customerStockView.php">
+    <entry file="file://$PROJECT_DIR$/hireLine/hireLineViewDatePrint.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="320" column="2" selection-start-line="320" selection-start-column="2" selection-end-line="320" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding>
-            <element signature="e#7#63#0#PHP" expanded="true" />
-            <marker date="1443913977949" expanded="true" signature="1765:1925" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
-            <marker date="1443913977949" expanded="true" signature="3524:3669" placeholder="SELECT `CUST..." />
-            <marker date="1443913977949" expanded="true" signature="9815:10566" placeholder="SELECT i.STO..total_at_customer_table..." />
-            <marker date="1443913977949" expanded="true" signature="14329:14379" placeholder="..." />
-            <marker date="1443913977949" expanded="true" signature="14967:15007" placeholder="..." />
-            <marker date="1443913977949" expanded="true" signature="16094:16201" placeholder="SELECT `CUST..." />
-            <marker date="1443913977949" expanded="true" signature="17526:17686" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="SELECT CUSTO..CUSTOMER_TABLE..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..hire_transaction_table..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..DAMAGED_TABLE..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713205786" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
-          <caret line="199" column="43" selection-start-line="199" selection-start-column="43" selection-end-line="199" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestocked.php">
+    <entry file="file://$PROJECT_DIR$/include/databaselogin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.23077">
-          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/securitycheck.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/adminLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14305751">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/loginSuccess.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/Logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <marker date="1444433549761" expanded="true" signature="557:637" placeholder="INSERT INTO ..." />
-            <marker date="1444433549761" expanded="true" signature="801:819" placeholder="..." />
-            <marker date="1444433549761" expanded="true" signature="996:1091" placeholder="UPDATE STOCK..." />
-            <marker date="1444433549761" expanded="true" signature="1275:1293" placeholder="..." />
+            <marker date="1444713570627" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713570627" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockUpdated.php">
+    <entry file="file://$PROJECT_DIR$/login/Validatelogin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.846153">
-          <caret line="113" column="50" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.14305751">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
           <folding>
-            <marker date="1444433688795" expanded="true" signature="284:563" placeholder="SELECT i.STO..stock_restock_table..." />
-            <marker date="1444433688795" expanded="true" signature="1241:1327" placeholder="UPDATE STOCK..." />
-            <marker date="1444433688795" expanded="true" signature="1956:1974" placeholder="..." />
-            <marker date="1444433688795" expanded="true" signature="2598:2693" placeholder="UPDATE STOCK..." />
-            <marker date="1444433688795" expanded="true" signature="2877:2895" placeholder="..." />
+            <marker date="1444713614522" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsActivate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsActivated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713650199" expanded="true" signature="-1:-1" placeholder="UPDATE STOCK..." />
+            <marker date="1444713650199" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsAdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <marker date="1444713656895" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsAdded.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713663296" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1444713663296" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsDeactivate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsDeactivated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713678532" expanded="true" signature="-1:-1" placeholder="UPDATE STOCK..." />
+            <marker date="1444713678532" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+          <folding>
+            <marker date="1444713691350" expanded="true" signature="-1:-1" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsDetailsView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713700247" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713700247" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stockItems/stockItemsStockLevels.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77155656">
-          <caret line="179" column="111" selection-start-line="179" selection-start-column="111" selection-end-line="179" selection-end-column="111" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding>
-            <marker date="1444435463172" expanded="true" signature="480:661" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
-            <marker date="1444435463172" expanded="true" signature="867:966" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="901:913" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="979:1448" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="1004:1019" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="1067:1077" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="1171:1181" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="1226:1236" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="1276:1286" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="1327:1337" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="1380:1390" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="3561:3719" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="3650:3699" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="4932:5090" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="5021:5070" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="5340:5380" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="5576:5616" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="5801:5859" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="6046:6060" placeholder="..." />
-            <marker date="1444435463172" expanded="true" signature="6192:6206" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713706543" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsUpdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713711245" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1444713711245" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsUpdated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713716713" expanded="true" signature="-1:-1" placeholder="UPDATE STOCK..." />
+            <marker date="1444713716713" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockItems/stockItemsView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713722269" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockDelete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713737398" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..stock_restock_table..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockDeleted.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713742039" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..stock_restock_table..." />
+            <marker date="1444713742039" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1444713742039" expanded="true" signature="-1:-1" placeholder="UPDATE STOCK..." />
+            <marker date="1444713742039" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestocked.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713746633" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1444713746633" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713746633" expanded="true" signature="-1:-1" placeholder="UPDATE STOCK..." />
+            <marker date="1444713746633" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713750567" expanded="true" signature="-1:-1" placeholder="SELECT STOCK..STOCK_ITEMS_TABLE..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockUpdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713755018" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..stock_restock_table..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockUpdated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713759276" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..stock_restock_table..." />
+            <marker date="1444713759276" expanded="true" signature="-1:-1" placeholder="UPDATE STOCK..." />
+            <marker date="1444713759276" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713759276" expanded="true" signature="-1:-1" placeholder="UPDATE STOCK..." />
+            <marker date="1444713759276" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713763267" expanded="true" signature="-1:-1" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
+            <marker date="1444713763267" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713763267" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..stock_restock_table..." />
+            <marker date="1444713763267" expanded="true" signature="-1:-1" placeholder="SELECT i.*, ..STOCK_ITEMS_TABLE..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockRestock/stockRestockViewPrint.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713767469" expanded="true" signature="-1:-1" placeholder="SELECT STOCK..STOCK_ITEMS_TABLE..." />
+            <marker date="1444713767469" expanded="true" signature="-1:-1" placeholder="SELECT i.STO..stock_restock_table..." />
+            <marker date="1444713767469" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713767469" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713767469" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeActivate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713803781" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeActivated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713810507" expanded="true" signature="-1:-1" placeholder="UPDATE stock..." />
+            <marker date="1444713810507" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeAdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeAdded.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713818768" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1444713818768" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeDeactivate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713825053" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeDeactivated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713832588" expanded="true" signature="-1:-1" placeholder="UPDATE stock..." />
+            <marker date="1444713832588" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeDeactivatedAll.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713837539" expanded="true" signature="-1:-1" placeholder="UPDATE stock..." />
+            <marker date="1444713837539" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713837539" expanded="true" signature="-1:-1" placeholder="UPDATE stock..." />
+            <marker date="1444713837539" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeUpdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713841714" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeUpdated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713845734" expanded="true" signature="-1:-1" placeholder="UPDATE STOCK..." />
+            <marker date="1444713845734" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stockType/stockTypeView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.047685836">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <marker date="1444713849577" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1444713849577" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713849577" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713849577" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713849577" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713849577" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713849577" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713849577" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713849577" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444713849577" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444713849577" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>

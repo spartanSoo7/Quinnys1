@@ -3,6 +3,10 @@ include '../include/head.php';
 include '../include/header.php';
 include_once("../include/databaselogin.php");
 
+/**
+**Page was built by Kane Wardle
+**/
+
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }

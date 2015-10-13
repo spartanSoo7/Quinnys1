@@ -1,5 +1,10 @@
-<?php include '../include/head.php';?>
-<?php include '../include/header.php';?>
+<?php
+include '../include/head.php';
+include '../include/header.php';
+?>
+    <!--
+    --Page was built by Kane Wardle
+    -->
     <div id = "centerTitle">
         <h2>Login</h2>
         </div>

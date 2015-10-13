@@ -1,12 +1,7 @@
+<!--
+--Page was built by Kane Wardle
+-->
 <?php
-
-/*
- * Send to new hireline from this page??
- *
- *
- *
- */
-
 include '../include/head.php';
 require("../include/securitycheck.php");
 include '../include/header.php';
@@ -16,19 +11,33 @@ include_once("../include/databaselogin.php");
 <div id = "backBtn">
     <a href="../home/index.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Home </a>
 </div>
-<div id = "miniMenu">
-    <a href='customerStockAdd.php' style="float: right; margin-top: 50px;">
-        <div id = "homeLink"
-             onMouseOver="this.style.backgroundColor='#03C73D'"
-             onMouseOut="this.style.backgroundColor='#06E047'"
-             style="background-color: #06E047; font-size: 21px; padding: 10px;  height: 20px;">
-            New Hold Level
-        </div>
-    </a>
-</div>
 
-<div id = "centerTitle">
+
+<div id = "centerTitle" style="margin-bottom: 25px; ">
     <h2>Customer Stock Levels: </h2>
+
+
+    <div id = "miniMenu" style="position: static; left: 0px; width: 100%;">
+        <a href='customerStockAdd.php' style="float: left; margin-left: 31%;">
+            <div id = "homeLink"
+                 onMouseOver="this.style.backgroundColor='#03C73D'"
+                 onMouseOut="this.style.backgroundColor='#06E047'"
+                 style="background-color: #06E047; font-size: 21px; padding: 10px;  height: 20px;">
+                New Hold Level
+            </div>
+        </a>
+
+        <a href='../stockItems/stockItemsStockLevels.php' style="float: left;">
+            <div id = "homeLink"
+                 onMouseOver="this.style.backgroundColor='rgb(245, 90, 153)'"
+                 onMouseOut="this.style.backgroundColor='rgb(247, 108, 164)'"
+                 style="background-color: rgb(247, 108, 164); font-size: 18px; padding: 10px;  height: 20px;">
+                Total Stock Levels
+            </div>
+        </a>
+    </div>
+
+
     <a href="../customerStock/customerStockPrint.php">Print friendly version (all active hold levels)</a>
 </br>
 </br>
@@ -578,7 +587,7 @@ ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
             </div>
         </form>
     </div>
-    <p style="margin-top: 300px; text-align: center;  ">*If the stock item or the customer is not available to select, it has been disabled. If you want to select the stock item/ customer, please enable it first. <br>(You can view them by: selecting show "all" and select "active" as "no" or "both")</p>
+    <p style="margin-top: 400px; text-align: center; width: 100%;">*If the stock item or the customer is not available to select, it has been disabled. If you want to select the stock item/ customer, please enable it first. <br>(You can view them by: selecting show "all" and select "active" as "no" or "both")</p>
 
     <?php
 }

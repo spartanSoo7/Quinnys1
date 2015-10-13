@@ -4,7 +4,9 @@ require("../include/securitycheck.php");
 include '../include/header.php';
 include_once("../include/databaselogin.php");
 ?>
-
+<!--
+--Page was built by Kane Wardle
+-->
       <div id = "backBtn">
             <a href="stockItemsView.php" style ='padding-bottom: 10px; margin: 5px; display: block;'> Back </a>
       </div>

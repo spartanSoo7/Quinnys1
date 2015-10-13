@@ -1,4 +1,8 @@
- <?php 
+<?php
+/**
+**Page was built by Kane Wardle
+**/
+
  	// Connects to Our Database 
  	/*mysql_connect("127.0.0.1", "test", "password") or die(mysql_error());
  	mysql_select_db("quinn") or die(mysql_error());*/

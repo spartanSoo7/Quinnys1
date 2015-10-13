@@ -1,3 +1,6 @@
+<!--
+--Details was built by Kane Wardle
+-->
 <?php
 $STOCK_ID = $_GET['STOCK_ID'];
 

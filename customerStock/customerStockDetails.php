@@ -1,3 +1,6 @@
+<!--
+--Page was built by Kane Wardle
+-->
 <?php
 $HIRE_NUMBER = $_GET['HIRE_NUMBER'];
 

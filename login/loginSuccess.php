@@ -2,6 +2,9 @@
 	include '../include/head.php';
 	include '../include/header.php';
 ?>
+	<!--
+    --Page was built by Kane Wardle
+    -->
 
 			<div id="login">
 				<h2 style="color:green;">Login was successful, redirecting you to the home page</h2>

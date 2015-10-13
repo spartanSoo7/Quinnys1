@@ -1,3 +1,6 @@
+<!--
+--Page was built by Kane Wardle
+-->
 <?php
     include '../include/head.php';
     require("../include/securitycheck.php");
@@ -34,7 +37,7 @@ echo "<tr>
        <td colspan='5'>Stock levels</td>
 </tr>";
 echo "<tr>
-            <th style='/*width: 15%*/;'>Name/ Description</th>
+            <th style='/*width: 15%*/'>Name/ Description</th>
             <th style='width: 8%;'>Type</th>
             <th>Size</th>
             <th>Main Colour</th>

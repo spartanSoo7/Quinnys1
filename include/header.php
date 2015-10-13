@@ -1,6 +1,9 @@
 <html>
     <body>
         <header>
+<!--
+--Header was built by Kane Wardle
+-->
             <a href="../home/index.php" style="float: left;">
                 <img border="0" alt="Quinnys logo" height = "90px" src="../img/logo.png">
             </a>
@@ -49,20 +52,26 @@
                     $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 
 
-                    if (strpos($url,'home') !== false) {
-                        include '../nav/home.html';
+                    if (strpos($url,'Level') !== false){//stock levels
+                        include '../nav/stockLevels.html';
                     }
-                    else if (strpos($url,'RestockItems') !== false){
-                        include '../nav/stockRestock.html';
+                    else if (strpos($url,'customerStock') !== false){//stock levels
+                        include '../nav/stockLevels.html';
                     }
-                    else if (strpos($url,'stock') !== false){
+                    else if (strpos($url,'stock') !== false){   //stock
                         include '../nav/stockItems.html';
                     }
-                    else if (strpos($url,'customer') !== false){
+                    else if (strpos($url,'customer') !== false){    //customer
                         include '../nav/customer.html';
                     }
-                    else if (strpos($url,'hire') !== false){
+                    else if (strpos($url,'hire') !== false){        //hire
                         include '../nav/hire.html';
+                    }
+                    else if (strpos($url,'return') !== false){        //Return
+                        include '../nav/return.html';
+                    }
+                    else{       //else all options tab
+                        include '../nav/home.html';
                     }
                     ?>
 

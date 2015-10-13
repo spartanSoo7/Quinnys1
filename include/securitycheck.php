@@ -1,4 +1,7 @@
 <?php
+/**
+**Security check built by Kane Wardle
+**/
 if (session_status() == PHP_SESSION_NONE) {
      session_start();
 }
