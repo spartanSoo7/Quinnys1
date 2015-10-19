@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 
@@ -17,16 +16,14 @@ WHERE STOCK_ID ='$STOCK_ID'";
 
 if (mysqli_query($conn, $sql)) {
 
-    echo "<h1 style='text-align: center'>The stock item has been activated successfully </h1> </br>";
-    header("refresh:3; url=stockItemsView.php");
+    header("refresh:0; url=stockItemsView.php");
 
 } else {
+    include '../include/header.php';
     include '../include/Error.php';
     echo "Error updating record: " . mysqli_error($conn);
 }
 
 $conn->close();
-include '../include/footer.php';
-
 ?>
 

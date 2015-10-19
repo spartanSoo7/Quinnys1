@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 
@@ -41,18 +40,20 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if ( false===$stmt )
 {
-  //if not a valid/ready statement object
-  include '../include/Error.php';
-  die('prepare() failed: ' . htmlspecialchars($mysqli->error));
+    //if not a valid/ready statement object
+    include '../include/header.php';
+    include '../include/Error.php';
+    die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
 $stmt->bind_param("siddssssiiii", $name, $type, $hire, $replace, $stock_size, $col1, $col2, $col3, $tot, $out, $need, $in);
 
 if ( false===$stmt )
 {
-  //if can't bind the parameters.
-  include '../include/Error.php';
-  die('bind_param() failed: ' . htmlspecialchars($stmt->error));
+    //if can't bind the parameters.
+    include '../include/header.php';
+    include '../include/Error.php';
+    die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
 
 // set parameters and execute
@@ -73,18 +74,15 @@ $stmt->execute();
 
 if ( false===$stmt )
 {
-  //if execute() failed
-  include '../include/Error.php';
-  die('execute() failed: ' . htmlspecialchars($stmt->error));
+    //if execute() failed
+    include '../include/header.php';
+    include '../include/Error.php';
+    die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
-
-echo "<h1 style='text-align: center'>The stock item has been added successfully </h1> </br>";
-
-include '../include/footer.php';
 
 $stmt->close();
 $conn->close();
 
-header("refresh:3; url=stockItemsView.php");
+header("refresh:0; url=stockItemsView.php");
 
 ?>

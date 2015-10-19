@@ -2,28 +2,47 @@
 --Page was built by Kane Wardle
 -->
 <?php
-include '../include/head.php';
 require("../include/securitycheck.php");
+include '../include/head.php';
 include_once("../include/databaselogin.php");
 
 //$HIRE_LINE_NUMBER = $_POST['HIRE_LINE_NUMBER'];
-$HIRE_QUANTITY = $_POST['HIRE_QUANTITY'];
+$RETURNED_QUANTITY = $_POST['RETURNED_QUANTITY'];
 $CUSTOMER_ID = $_POST['CUSTOMER_ID'];
 $STOCK_ID = $_POST['STOCK_ID'];
-$HIRE_NUMBER;
-$TOTAL_QUANTITY_IN;
 
 
-//find stock price for further down
-$HIRE_COST;
+echo "<br>Returned amount: " .$RETURNED_QUANTITY;
+echo "<br>Customer id: " .$CUSTOMER_ID;
+echo "<br>Stock id: " .$STOCK_ID;
+
+/*check to see if customer has any of the stock they are trying to return
+ *
+ *check to see if customer actually has that amount of stock on their premises to actually return
+ *
+ * check to see if any damaged goods are being return
+ *      add damaged table
+ *
+ * add returned line
+ *
+ * change customer stock lvls
+ *
+ * change quinnys stock lvls
+ */
+
+
+
 
 //to use further down, while updating stock levels at quinnys
 $STOCK_IN;
 $STOCK_OUT;
+$STOCK_NAME;
+$HIRE_NUMBER;
+$TOTAL_QUANTITY_IN;
 
 
-//query
-$sqlTotAtCust = "SELECT `HIRE_COST`, `STOCK_IN`, `STOCK_OUT` FROM `stock_items_table`
+//query to get quinnys current stock lvls
+$sqlTotAtCust = "SELECT `STOCK_IN`, `STOCK_NAME`, `STOCK_OUT` FROM `stock_items_table`
                     WHERE STOCK_ID = '$STOCK_ID' ";
 
 //run query
@@ -32,34 +51,48 @@ $result = $conn->query($sqlTotAtCust);
 if ($result->num_rows > 0) {
     // output data of each row
 
-    while ($row = $result->fetch_assoc()) {
-        //echo "</br>Stock Price is: " .$row["HIRE_COST"];
-        $HIRE_COST = $row["HIRE_COST"];
-
+    while ($row = $result->fetch_assoc())
+    {
         //set value to be used futher down
         $STOCK_IN = $row["STOCK_IN"];
         $STOCK_OUT = $row["STOCK_OUT"];
+        $STOCK_NAME = $row["STOCK_NAME"];
+
+        echo "<br>Stock in at quinnys: " .$STOCK_IN;
+        echo "<br>Stock out at quinnys: " .$STOCK_OUT;
+        echo "<br>Stock name: " .$STOCK_NAME;
+    }
+}
+
+
+//For errors
+//get customer name
+$sqlTotAtCust = "SELECT `CUSTOMER_NAME` FROM `customer_table` WHERE CUSTOMER_ID = '$CUSTOMER_ID' ";
+
+//run query
+$result = $conn->query($sqlTotAtCust);
+
+
+if ($result->num_rows > 0) {
+    // output data of each row
+
+    while ($row = $result->fetch_assoc()) {
+        //echo "hire number: " .$row["HIRE_NUMBER"];
+        $CUSTOMER_NAME = $row["CUSTOMER_NAME"];
+
     }
 }
 else{
     include '../include/header.php';
     include '../include/Error.php';
-    echo "<h3 style = 'color: white; text-align: center;'>Something broke</h3>";
+    echo "<h3 style = 'color: white; text-align: center;'>Error getting Customer Name</h3>";
     Die();
+
 }
-
-if($HIRE_QUANTITY > $STOCK_IN){
-    include '../include/header.php';
-    include '../include/Error.php';
-    echo "<h3 style = 'color: white; text-align: center;'>You cannot hire out more stock than you have instock at your premises</h3>";
-    Die();
-}
+//end of getting customer name
 
 
-
-//check to see if a row in the total_at_customer_table has been created
-//may not be created if there is no hold level set and this is the first time the customer is ordering this stock item
-
+//check to see if a row in the total_at_customer_table exists
 $sqlTotAtCust = "SELECT `HIRE_NUMBER`, `TOTAL_QUANTITY_IN` FROM `total_at_customer_table`
                     WHERE STOCK_ID = '$STOCK_ID' AND CUSTOMER_ID = '$CUSTOMER_ID' ";
 
@@ -74,97 +107,41 @@ if ($result->num_rows > 0) {
         //echo "hire number: " .$row["HIRE_NUMBER"];
         $HIRE_NUMBER = $row["HIRE_NUMBER"];
         $TOTAL_QUANTITY_IN = $row["TOTAL_QUANTITY_IN"];  //for later when updating this record
+        //we have confirmed that this customer has stock totals for this stock
+
+        echo "<br>The hire number is: " .$HIRE_NUMBER;
+        echo "<br>The total quantity in at customer is: " .$TOTAL_QUANTITY_IN;
+
+        //next we have to make sure the customers stock total doesnt go into the negative
+        if($RETURNED_QUANTITY > $TOTAL_QUANTITY_IN)
+        {
+            include '../include/header.php';
+            include '../include/Error.php';
+            echo "<h3 style = 'color: white; text-align: center;'>The  customer: " .$CUSTOMER_NAME. " only has: " .$TOTAL_QUANTITY_IN. " on at their premises. You are trying to return: " .$RETURNED_QUANTITY. "</h3>";
+            Die();
+        }
 
     }
 }
 else{
-    //echo "brah it dont exist yet</br>Just let me create it</br></br>";
-
-    $TOTAL_QUANTITY_IN = 0;
-    $TOTAL_QUANTITY_NEEDED = 0;
-    $HIRE_ACTIVE = 0;
-
-
-// prepare and bind
-    $stmt = $conn->prepare("INSERT INTO total_at_customer_table (
-  STOCK_ID,
-  CUSTOMER_ID,
-  TOTAL_QUANTITY_IN,
-  TOTAL_QUANTITY_NEEDED,
-  HIRE_ACTIVE
-)
-VALUES (?, ?, ?, ?, ?)");
-
-    if ( false===$stmt )
-    {
-        //if not a valid/ready statement object
-        include '../include/header.php';
-        include '../include/Error.php';
-        die('prepare() failed: ' . htmlspecialchars($mysqli->error));
-    }
-
-    $stmt->bind_param("iiiii", $sockID, $customerID, $totalIn, $totalNeed, $active);
-
-    if ( false===$stmt )
-    {
-        //if can't bind the parameters.
-        include '../include/header.php';
-        include '../include/Error.php';
-        die('bind_param() failed: ' . htmlspecialchars($stmt->error));
-    }
-
-// set parameters and execute
-    $sockID = $STOCK_ID;
-    $customerID = $CUSTOMER_ID;
-    $totalIn = $TOTAL_QUANTITY_IN;
-    $totalNeed = $TOTAL_QUANTITY_NEEDED;
-    $active = $HIRE_ACTIVE;
-
-    $stmt->execute();
-
-    if ( false===$stmt )
-    {
-        //if execute() failed
-        include '../include/header.php';
-        include '../include/Error.php';
-        die('execute() failed: ' . htmlspecialchars($stmt->error));
-    }
-
-    //echo "brah New total at customer has been created successfully, with a hold level of 0";
-
-    /*
-     * Find new hire_number
-     */
-    $sqlTotAtCust = "SELECT `HIRE_NUMBER`, `TOTAL_QUANTITY_IN` FROM `total_at_customer_table`
-                    WHERE STOCK_ID = '$STOCK_ID' AND CUSTOMER_ID = '$CUSTOMER_ID' ";
-
-//run query
-    $result = $conn->query($sqlTotAtCust);
-
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-
-        while ($row = $result->fetch_assoc()) {
-            //echo "<br><br>hire number: " .$row["HIRE_NUMBER"];
-            $HIRE_NUMBER = $row["HIRE_NUMBER"];
-            $TOTAL_QUANTITY_IN = $row["TOTAL_QUANTITY_IN"];  //for later when updating this record
-        }
-    }
-    else{
-        include '../include/header.php';
-        include '../include/Error.php';
-        echo "<h3 style = 'color: white; text-align: center'>Something broke</h3>";
-        die();
-    }
-
+    //there is no record of this stock at this customer, so the records will not be created
+    include '../include/header.php';
+    include '../include/Error.php';
+    echo "<h3 style = 'color: white; text-align: center;'>No record found for customer: " .$CUSTOMER_NAME. " for the stock: " .$STOCK_NAME. "</h3>";
+    Die();
 }
-/*
- * checked to see if a total_at_customer_table row has been created
- * if it did not exist yet, it exists now
- */
 
 
+
+die();
+
+
+
+
+//need to check that code works
+
+//haven't done past
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /*
@@ -188,8 +165,8 @@ VALUES (?,?,?) ");
 if ( false===$stmt )
 {
     //if not a valid/ready statement object
-    include '../include/header.php';
     include '../include/Error.php';
+
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
@@ -227,8 +204,8 @@ WHERE HIRE_NUMBER = '$HIRE_NUMBER' ");
 if ( false===$stmt )
 {
     //if not a valid/ready statement object
-    include '../include/header.php';
     include '../include/Error.php';
+
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
@@ -237,8 +214,8 @@ $stmt->bind_param("i", $totalIn);
 if ( false===$stmt )
 {
     //if can't bind the parameters.
-    include '../include/header.php';
     include '../include/Error.php';
+
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
 
@@ -284,8 +261,8 @@ WHERE STOCK_ID = '$STOCK_ID' ");
 if ( false===$stmt )
 {
     //if not a valid/ready statement object
-    include '../include/header.php';
     include '../include/Error.php';
+
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
@@ -294,8 +271,8 @@ $stmt->bind_param("ii", $out, $in);
 if ( false===$stmt )
 {
     //if can't bind the parameters.
-    include '../include/header.php';
     include '../include/Error.php';
+
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
 
@@ -309,8 +286,8 @@ $stmt->execute();
 if ( false===$stmt )
 {
     //if execute() failed
-    include '../include/header.php';
     include '../include/Error.php';
+
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
@@ -321,5 +298,5 @@ if ( false===$stmt )
 //$stmt->close();
 $conn->close();
 
-header("refresh:0; url=hireLineView.php");
+//header("refresh:0; url=hireLineView.php");
 ?>

@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 
@@ -33,6 +32,7 @@ WHERE CUSTOMER_ID ='$CUSTOMER_ID'");
 if ( false===$stmt )
 {
   //if not a valid/ready statement object
+  include '../include/header.php';
   include '../include/Error.php';
   die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
@@ -54,17 +54,15 @@ $stmt->execute();
 if ( false===$stmt )
 {
   //if execute() failed
+  include '../include/header.php';
   include '../include/Error.php';
   die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
-
-
-echo "<h1 style='text-align: center'>Customer updated successfully </h1> </br>";
 
 include '../include/footer.php';
 
 $stmt->close();
 $conn->close();
 
-header("refresh:3; url=customerView.php");
+header("refresh:0; url=customerView.php");
 ?>

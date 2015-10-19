@@ -4,9 +4,7 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
-
 
 $STOCK_ID = $_POST['STOCK_ID'];
 $CUSTOMER_ID = $_POST['CUSTOMER_ID'];
@@ -61,7 +59,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-
+    include '../include/header.php';
     while ($row = $result->fetch_assoc()) {
         ?>
         <div id = "backBtn">
@@ -98,6 +96,7 @@ if ($result->num_rows > 0) {
             </tr>
         </table>
         <?php
+        Die();
     }
 }
 else { //this combination of stock and customer must not exist
@@ -116,6 +115,7 @@ VALUES (?, ?, ?, ?, ?)");
 
     if (false === $stmt) {
         //if not a valid/ready statement object
+        include '../include/header.php';
         include '../include/Error.php';
         die('prepare() failed: ' . htmlspecialchars($mysqli->error));
     }
@@ -124,6 +124,7 @@ VALUES (?, ?, ?, ?, ?)");
 
     if (false === $stmt) {
         //if can't bind the parameters.
+        include '../include/header.php';
         include '../include/Error.php';
         die('bind_param() failed: ' . htmlspecialchars($stmt->error));
     }
@@ -139,12 +140,10 @@ VALUES (?, ?, ?, ?, ?)");
 
     if (false === $stmt) {
         //if execute() failed
+        include '../include/header.php';
         include '../include/Error.php';
         die('execute() failed: ' . htmlspecialchars($stmt->error));
     }
-
-
-    echo "<h1 style='text-align: center'>Customer stock totals/Hold level has been Added successfully </h1> </br>";
 
 
 //save the new hold lvl into the total hold lvl on the stock page
@@ -172,6 +171,7 @@ WHERE STOCK_ID = '$STOCK_ID' ");
 
     if (false === $stmt) {
         //if not a valid/ready statement object
+        include '../include/header.php';
         include '../include/Error.php';
         die('prepare() failed: ' . htmlspecialchars($mysqli->error));
     }
@@ -180,6 +180,7 @@ WHERE STOCK_ID = '$STOCK_ID' ");
 
     if (false === $stmt) {
         //if can't bind the parameters.
+        include '../include/header.php';
         include '../include/Error.php';
         die('bind_param() failed: ' . htmlspecialchars($stmt->error));
     }
@@ -191,18 +192,15 @@ WHERE STOCK_ID = '$STOCK_ID' ");
 
     if (false === $stmt) {
         //if execute() failed
+        include '../include/header.php';
         include '../include/Error.php';
         die('execute() failed: ' . htmlspecialchars($stmt->error));
     }
 
 
-    echo "<h1 style='text-align: center'>Total stock Hold level has been updated successfully </h1> </br>";
-
-    include '../include/footer.php';
-
     $stmt->close();
     $conn->close();
 
-header("refresh:3; url=customerStockView.php");
+header("refresh:0; url=customerStockView.php");
 }
 ?>

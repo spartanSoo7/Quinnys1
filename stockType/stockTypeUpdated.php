@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 //MYSQLI
@@ -19,6 +18,7 @@ WHERE STOCK_TYPE_ID = '$STOCK_TYPE_ID' ");
 if ( false===$stmt )
 {
     //if not a valid/ready statement object
+    include '../include/header.php';
     include '../include/Error.php';
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
@@ -28,6 +28,7 @@ $stmt->bind_param("s", $name);
 if ( false===$stmt )
 {
     //if can't bind the parameters.
+    include '../include/header.php';
     include '../include/Error.php';
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
@@ -40,14 +41,12 @@ $stmt->execute();
 if ( false===$stmt )
 {
     //if execute() failed
+    include '../include/header.php';
     include '../include/Error.php';
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
-echo "<h1 style='text-align: center'>The stock type has been updated successfully </h1> </br>";
-
-include '../include/footer.php';
-
 $stmt->close();
 $conn->close();
-header("refresh:3; url=stockTypeView.php");
+header("refresh:0; url=stockTypeView.php");
+?>

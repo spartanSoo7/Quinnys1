@@ -92,7 +92,7 @@ if ($result->num_rows > 0) {
             echo "    <td> " .$row["SIZE"]. "</td>";
             echo "    <td> " .$row["COLOUR1"]. "</td>";
             echo "    <td> " .$row["STOCK_IN"]. "</td>";
-            echo "<td>" .$stockTotal . "</td>";
+            echo "<td>" .$stockOut . "</td>";
 
             echo "    <td";
             if ($stockHold > $stockTotal) {

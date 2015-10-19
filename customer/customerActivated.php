@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 //MYSQLI
@@ -16,9 +15,9 @@ WHERE CUSTOMER_ID ='$CUSTOMER_ID'";
 
 //echo $sql. "</BR>";
 if (mysqli_query($conn, $sql)) {
-    echo "<h1 style='text-align: center'>Customer activated successfully </h1> </br>";
-    header("refresh:3; url=customerView.php");
+    header("refresh:0; url=customerView.php");
 } else {
+    include '../include/header.php';
     include '../include/Error.php';
     echo "Error updating record: " . mysqli_error($conn);
 }

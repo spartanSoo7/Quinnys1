@@ -3,8 +3,8 @@
 -->
 <?php
 include '../include/head.php';
-require("../include/securitycheck.php");
 include '../include/header.php';
+require("../include/securitycheck.php");
 include_once("../include/databaselogin.php");
 ?>
 

@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 
@@ -41,6 +40,13 @@ if ($result->num_rows > 0) {
         $oldRESTOCK_QUANTITY = $row["RESTOCK_QUANTITY"];
     }
 }
+else{
+    include '../include/header.php';
+    include '../include/Error.php';
+    echo "<h3 style = 'color: white; text-align: center;'>Getting stock details failed</h3>";
+    Die();
+
+}
 //echo "<br>new restock quantity: " .$RESTOCK_QUANTITY;
 
 //delete to restock table
@@ -57,8 +63,8 @@ $stmt = $conn->prepare("
 if ( false===$stmt )
 {
     //if not a valid/ready statement object
+    include '../include/header.php';
     include '../include/Error.php';
-    echo "SQL statment";
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
@@ -67,6 +73,7 @@ $stmt->bind_param("i", $id);
 if ( false===$stmt )
 {
     //if can't bind the parameters.
+    include '../include/header.php';
     include '../include/Error.php';
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
@@ -79,13 +86,10 @@ $stmt->execute();
 if ( false===$stmt )
 {
     //if execute() failed
+    include '../include/header.php';
     include '../include/Error.php';
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
-
-echo "<br>Restock record has been deleted successfully";
-
-
 
 
 
@@ -109,13 +113,12 @@ $stmt->bind_param("ii", $in, $total);
 $in = $updatedIn;
 $total = $updatedTotal;
 
+//go
 $stmt->execute();
 
-echo "<h1 style='text-align: center'>total stock records have updated successfully</h1></br>";
 
 $stmt->close();
 $conn->close();
-header("refresh:3; url=stockRestockView.php");
+header("refresh:0; url=stockRestockView.php");
 
-include '../include/footer.php';
 ?>

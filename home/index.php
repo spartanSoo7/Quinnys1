@@ -82,7 +82,7 @@
             </div>
         </a>
 
-        <a href='#'>
+        <a href='../return/returnView.php'>
             <div id = "homeLink"
                  onMouseOver="this.style.backgroundColor='rgb(1,168,226)';"
                  onMouseOut="this.style.backgroundColor='#00BDFF';"

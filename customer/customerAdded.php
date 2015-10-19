@@ -2,9 +2,7 @@
 --Page was built by Kane Wardle
 -->
 <?php
-include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 $CUSTOMER_NAME = $conn->real_escape_string($_POST['CUSTOMER_NAME']);
@@ -65,12 +63,9 @@ if ( false===$stmt )
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
-echo "<h1 style='text-align: center'>Customer added successfully </h1> </br>";
-
-include '../include/footer.php';
 
 $stmt->close();
 $conn->close();
 
-header("refresh:3; url=customerView.php");
+header("refresh:0; url=customerView.php");
 ?>

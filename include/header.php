@@ -76,9 +76,5 @@
                     ?>
 
 
-
-
-
-
         </header>
         <div id = "wrapper">

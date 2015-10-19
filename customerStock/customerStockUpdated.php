@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 
@@ -25,6 +24,12 @@ if ($result1->num_rows > 0) {
         $STOCK_ID = $row["STOCK_ID"];
     }
 }
+else{
+    include '../include/header.php';
+    include '../include/Error.php';
+    echo "Error finding origional record";
+    Die();
+}
 
 
 // prepare and bind
@@ -35,6 +40,7 @@ WHERE HIRE_NUMBER = '$HIRE_NUMBER' ");
 if ( false===$stmt )
 {
     //if not a valid/ready statement object
+    include '../include/header.php';
     include '../include/Error.php';
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
@@ -45,6 +51,7 @@ if ( false===$stmt )
 {
     //if can't bind the parameters.
     include '../include/Error.php';
+    include '../include/header.php';
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
 
@@ -57,12 +64,10 @@ $stmt->execute();
 if ( false===$stmt )
 {
     //if execute() failed
+    include '../include/header.php';
     include '../include/Error.php';
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
-
-
-echo "<h1 style='text-align: center'>Customer stock totals/Hold level has been updated successfully </h1> </br>";
 
 
 
@@ -95,6 +100,7 @@ WHERE STOCK_ID = '$STOCK_ID' ");
 if ( false===$stmt )
 {
     //if not a valid/ready statement object
+    include '../include/header.php';
     include '../include/Error.php';
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
@@ -104,6 +110,7 @@ $stmt->bind_param("i", $totHoldLvl);
 if ( false===$stmt )
 {
     //if can't bind the parameters.
+    include '../include/header.php';
     include '../include/Error.php';
     die('bind_param() failed: ' . htmlspecialchars($stmt->error));
 }
@@ -116,19 +123,13 @@ $stmt->execute();
 if ( false===$stmt )
 {
     //if execute() failed
+    include '../include/header.php';
     include '../include/Error.php';
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
-
-echo "<h1 style='text-align: center'>Total stock Hold level has been updated successfully </h1> </br>";
-
-
-
-include '../include/footer.php';
-
 $stmt->close();
 $conn->close();
 
-header("refresh:3; url=customerStockView.php");
+header("refresh:0; url=customerStockView.php");
 ?>

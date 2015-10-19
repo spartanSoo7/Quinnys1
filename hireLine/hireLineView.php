@@ -212,7 +212,8 @@ ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
           n.HIRE_LINE_NUMBER,
           n.HIRE_QUANTITY,
           n.HIRE_LINE_COST_TOTAL,
-          n.HIRE_DATE
+          n.HIRE_DATE,
+          n.HIRE_NUMBER
 
 FROM
     hire_transaction_table n inner join total_at_customer_table s

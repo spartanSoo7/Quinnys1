@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 
@@ -18,8 +17,9 @@ WHERE STOCK_TYPE_ID ='$STOCK_TYPE_ID'";
 
 if (mysqli_query($conn, $sql)) {
 
-    echo "<h1 style='text-align: center'>The stock type has been deactivated successfully </h1> </br>";
 } else {
+    include '../include/header.php';
+    include '../include/Error.php';
     echo "Error disabling stock type: " . mysqli_error($conn);
 }
 
@@ -30,16 +30,17 @@ $sql = "UPDATE stock_items_table SET
 WHERE STOCK_TYPE_ID ='$STOCK_TYPE_ID'";
 
 
-if (mysqli_query($conn, $sql)) {
+if (mysqli_query($conn, $sql))
+{
 
-    echo "<h1 style='text-align: center'>All stock that are this stock type, have been deactivated successfully </h1> </br>";
-    header("refresh:3; url=stockTypeView.php");
+    header("refresh:0; url=stockTypeView.php");
 
 } else {
+    include '../include/header.php';
+    include '../include/Error.php';
     echo "Error disabling all stock items that are of this type " . mysqli_error($conn);
 }
 
 $conn->close();
-include '../include/footer.php';
 
 ?>

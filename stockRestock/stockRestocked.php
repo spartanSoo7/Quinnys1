@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 
@@ -38,9 +37,6 @@ $stmt->execute();
 
 
 
-echo "<h1 style='text-align: center'>New Restock record created successfully</h1></br>";
-
-
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -59,11 +55,9 @@ $total = $updatedTotal;
 
 $stmt->execute();
 
-echo "<h1 style='text-align: center'>Total Stock Records updated successfully</h1></br>";
 
 $stmt->close();
 $conn->close();
-header("refresh:3; url=stockRestockItemsView.php");
+header("refresh:0; url=stockRestockItemsView.php");
 
-include '../include/footer.php';
 ?>

@@ -4,7 +4,6 @@
 <?php
 include '../include/head.php';
 require("../include/securitycheck.php");
-include '../include/header.php';
 include_once("../include/databaselogin.php");
 
 
@@ -16,16 +15,16 @@ $sql = "UPDATE stock_type_table SET
 WHERE STOCK_TYPE_ID ='$STOCK_TYPE_ID'";
 
 
-if (mysqli_query($conn, $sql)) {
-
-    echo "<h1 style='text-align: center'>The stock type has been deactivated successfully </h1> </br>";
-    header("refresh:3; url=stockTypeView.php");
+if (mysqli_query($conn, $sql))
+{
+    header("refresh:0; url=stockTypeView.php");
 
 } else {
+    include '../include/header.php';
+    include '../include/Error.php';
     echo "Error updating record: " . mysqli_error($conn);
 }
 
 $conn->close();
-include '../include/footer.php';
 
 ?>

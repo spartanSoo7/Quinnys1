@@ -3,20 +3,12 @@
 -->
 <?php
 include '../include/head.php';
-include_once("../include/databaselogin.php");
 require("../include/securitycheck.php");
-?>
-<style>
+include_once("../include/databaselogin.php");
 
-  HTML{
-      color: white;
-  }
 
-</style>
-
-<?php
-$HIRE_LINE_NUMBER = $_GET['HIRE_LINE_NUMBER'];
-echo $HIRE_LINE_NUMBER;
+$RETURN_ID = $_POST['RETURN_ID'];
+$RETURNED_QUANTITY = $_POST['RETURNED_QUANTITY'];
 
 
 $sql = "SELECT
@@ -32,18 +24,18 @@ $sql = "SELECT
           s.TOTAL_QUANTITY_IN,
 
 /*hire line table*/
-          n.HIRE_LINE_NUMBER,
+          n.RETURN_ID,
           n.HIRE_NUMBER,
-          n.HIRE_QUANTITY
+          n.RETURNED_QUANTITY
 
 FROM
-    hire_transaction_table n inner join total_at_customer_table s
+    retured_table n inner join total_at_customer_table s
     on n.HIRE_NUMBER = s.HIRE_NUMBER
 
     inner join STOCK_ITEMS_TABLE i
     on s.STOCK_ID = i.STOCK_ID
 
-WHERE HIRE_LINE_NUMBER = '$HIRE_LINE_NUMBER'
+WHERE RETURN_ID = '$RETURN_ID'
 ";
 
 
@@ -53,35 +45,34 @@ if ($result->num_rows > 0) {
     // output data of each row
 
     while ($row = $result->fetch_assoc()) {
-        //set all the variables required
+
         $HIRE_NUMBER = $row["HIRE_NUMBER"];
         $CUSTOMER_ID =$row["CUSTOMER_ID"];
         $STOCK_ID = $row["STOCK_ID"];
-        $HIRE_COST = $row["HIRE_COST"];
         $TOTAL_QUANTITY_IN = $row["TOTAL_QUANTITY_IN"];
         $STOCK_OUT = $row["STOCK_OUT"];
         $STOCK_IN = $row["STOCK_IN"];
-        $origQuantity = $row["HIRE_QUANTITY"];
+        $origQuantity = $row["RETURNED_QUANTITY"];
     }
 
 }
 else{
     include '../include/header.php';
     include '../include/Error.php';
-    echo "<h3 style = 'color: white; text-align: center'>Something broke</h3>";
+    echo "<h3 style = 'color: white; text-align: center'>Error: Cannot find the record to update</h3>";
     die();
 }
 
 
+//calc new total at customer            //add orginal hire quantity, remove new quantity
+$newTotalCust = ($TOTAL_QUANTITY_IN - $origQuantity) + $RETURNED_QUANTITY;
 
-//delete hire line table row
+//change hire line table
 
 // prepare and bind
-$stmt = $conn->prepare("
-  DELETE FROM hire_transaction_table
-  WHERE
-  HIRE_LINE_NUMBER = ?
-");
+$stmt = $conn->prepare("UPDATE retured_table SET
+    RETURNED_QUANTITY = ?
+WHERE RETURN_ID = '$RETURN_ID' ");
 
 if ( false===$stmt )
 {
@@ -91,7 +82,7 @@ if ( false===$stmt )
     die('prepare() failed: ' . htmlspecialchars($mysqli->error));
 }
 
-$stmt->bind_param("i", $id);
+$stmt->bind_param("i", $quantity);
 
 if ( false===$stmt )
 {
@@ -102,7 +93,7 @@ if ( false===$stmt )
 }
 
 // set parameters and execute
-$id = $HIRE_LINE_NUMBER;
+$quantity = $RETURNED_QUANTITY;
 
 $stmt->execute();
 
@@ -114,18 +105,9 @@ if ( false===$stmt )
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
-echo "<br>hire transaction table deleted successfully";
-
-
-/*
- * end of change to delete
- */
 
 
 //change stock totals at customer
-
-//calc new total at customer            //orginal hire quantity
-$newTotalCust = $TOTAL_QUANTITY_IN - $origQuantity;
 
 // prepare and bind
 $stmt = $conn->prepare("UPDATE total_at_customer_table SET
@@ -156,8 +138,6 @@ $totalIn = $newTotalCust;
 
 $stmt->execute();
 
-echo "<br>Total at customer table updated successfully";
-
 
 
 
@@ -165,24 +145,24 @@ echo "<br>Total at customer table updated successfully";
 //get total stock in + $origQuantity - $HIRE_QUANTITY
 //get total stock out - $origQuantity + $HIRE_QUANTITY
 
-//-5 = 8 - 13   //changed for delete
-$quantityDiff = $origQuantity;
+//-5 = 8 - 13
+$quantityDiff = $origQuantity  - $RETURNED_QUANTITY;
 
-$newTotalStockIn = $STOCK_IN  + $quantityDiff;
+$newTotalStockIn = $STOCK_IN  - $quantityDiff;
 
-$newTotalStockOut = $STOCK_OUT - $quantityDiff;
+$newTotalStockOut = $STOCK_OUT + $quantityDiff;
 
-echo "<br><br>
+/*echo "<br><br>
         origional quantity: " .$origQuantity.
-    "<br>new quantity" .$HIRE_QUANTITY. "<br><br>
+        "<br>new quantity" .$RETURNED_QUANTITY. "<br><br>
 
         differnce: " .$quantityDiff. "<br><br>
         --------------------------------------
 
         <br><br>original stock in at quinnys: " .$STOCK_IN. "<br>original Stock out at quinnys: " . $STOCK_OUT.
-    "<br><br>
+"<br><br>
 newTotalStockIn: " .$newTotalStockIn. "<br> newTotalStockOut: " .$newTotalStockOut. "<br>
-";
+";*/
 
 
 //change stock table
@@ -215,6 +195,7 @@ if ( false===$stmt )
 $out = $newTotalStockOut;
 $in = $newTotalStockIn;
 
+
 $stmt->execute();
 
 if ( false===$stmt )
@@ -225,10 +206,8 @@ if ( false===$stmt )
     die('execute() failed: ' . htmlspecialchars($stmt->error));
 }
 
-echo "<br>stock table updated successfully";
-
 
 $stmt->close();
 $conn->close();
-header( 'Location:hireLineView.php' );
+//header( 'Location:returnView.php' );
 ?>

@@ -96,7 +96,7 @@ while ($row = $result->fetch_assoc())
         </tr>
         <tr>
             <th>
-                    <label for="SIZE">Size: </label>
+                    <label for="SIZE" style="color: #888;">Size: </label>
             </th>
             <td>
                 <input id="SIZE" name="SIZE" type="text" value="<?php echo $row["SIZE"] ?>" maxlength="15" minlength="2" />
@@ -114,7 +114,7 @@ while ($row = $result->fetch_assoc())
 
         <tr>
             <th>
-                    <label for="COLOUR2">Secondary colour: </label>
+                    <label for="COLOUR2" style="color: #888;">Secondary colour: </label>
             </th>
             <td>
                 <input id="COLOUR2" name="COLOUR2" type="text" value="<?php echo $row["COLOUR2"] ?>" maxlength="25" minlength="3"/>
@@ -123,7 +123,7 @@ while ($row = $result->fetch_assoc())
 
         <tr>
             <th>
-                    <label for="COLOUR3">Tertiary colour: </label>
+                    <label for="COLOUR3" style="color: #888;">Tertiary colour: </label>
             </th>
             <td>
                 <input id="COLOUR3" name="COLOUR3" type="text" value="<?php echo $row["COLOUR3"] ?>" maxlength="25" minlength="3"/>

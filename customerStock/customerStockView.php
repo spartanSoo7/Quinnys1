@@ -60,6 +60,50 @@ if(isset($_POST['submit']))
     <div id="custForm">
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
+        <div id="custFormFloat" style="width: 20%; font-size: 14px; height: 64px; min-width: 209px; margin-top: 3px; ">
+            Customer (Name and Address)
+            <select name="CUSTOMER_ID" id="CUSTOMER_ID" style="width: 100%; font-size: 17px; " required>
+                <?php
+                $sql = "
+      SELECT
+        `CUSTOMER_ID`,
+        `CUSTOMER_NAME`,
+        `CUSTOMER_ACTIVE`,
+        `CUSTOMER_PHYSICAL_ADDRESS`
+      FROM `customer_table`
+    ";
+
+                $result2 = $conn->query($sql);
+
+                if ($result2->num_rows > 0)
+                {
+                    // output data of each row
+                    if($CUSTOMER_ID == "All")
+                    {
+                        echo "<option id='All' value = 'All' selected>All</option>";
+                    }
+                    else
+                    {
+                        echo "<option id='All' value = 'All'>All</option>";
+                    }
+
+                    while ($row = $result2->fetch_assoc())
+                    {
+                        $activeCustomer = $row["CUSTOMER_ACTIVE"];
+
+                            echo "<option id='" . $row["CUSTOMER_ID"] . "' value = '" . $row["CUSTOMER_ID"] . "'";
+
+                            if ($row["CUSTOMER_ID"] == $CUSTOMER_ID)
+                            {
+                                echo "selected";
+                            }
+
+                            echo ">" . $row["CUSTOMER_NAME"] . " | " . $row["CUSTOMER_PHYSICAL_ADDRESS"] . "</option>";
+                    }
+                }
+                ?>
+            </select>
+        </div>
 
         <div id="custFormFloat" style="width: 27%; font-size: 14px; height: 64px; min-width: 320px; margin-top: 2px; ">
             Stock (Name/ Description  |  Type  |  Size  |  Colour)
@@ -89,9 +133,6 @@ ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
                     }
                     while ($row = $result3->fetch_assoc())
                     {
-                        $activeStock = $row["ACTIVE"];
-                        if ($activeStock == 0)
-                        {
                             $name = $row["STOCK_NAME"];
                             $outputString = $row["STOCK_NAME"]. " | " .$row["STOCK_TYPE_NAME"]. " |  " .$row["SIZE"]. " |  " .$row["COLOUR1"];
 
@@ -102,60 +143,13 @@ ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
                                 echo "selected";
                             }
                             echo ">" .$outputString. "</option>";
-                        }
                     }
                 }
                 ?>
             </select>
         </div>
 
-        <div id="custFormFloat" style="width: 20%; font-size: 14px; height: 64px; min-width: 209px; margin-top: 3px; ">
-            Customer (Name and Address)
-            <select name="CUSTOMER_ID" id="CUSTOMER_ID" style="width: 100%; font-size: 17px; " required>
-<?php
-    $sql = "
-      SELECT
-        `CUSTOMER_ID`,
-        `CUSTOMER_NAME`,
-        `CUSTOMER_ACTIVE`,
-        `CUSTOMER_PHYSICAL_ADDRESS`
-      FROM `customer_table`
-    ";
 
-    $result2 = $conn->query($sql);
-
-            if ($result2->num_rows > 0)
-            {
-                // output data of each row
-                if($CUSTOMER_ID == "All")
-                {
-                    echo "<option id='All' value = 'All' selected>All</option>";
-                }
-                else
-                {
-                    echo "<option id='All' value = 'All'>All</option>";
-                }
-
-                while ($row = $result2->fetch_assoc())
-                {
-                    $activeCustomer = $row["CUSTOMER_ACTIVE"];
-
-                        if ($activeCustomer == 0)
-                        {
-                            echo "<option id='" . $row["CUSTOMER_ID"] . "' value = '" . $row["CUSTOMER_ID"] . "'";
-
-                            if ($row["CUSTOMER_ID"] == $CUSTOMER_ID)
-                            {
-                                echo "selected";
-                            }
-
-                            echo ">" . $row["CUSTOMER_NAME"] . " | " . $row["CUSTOMER_PHYSICAL_ADDRESS"] . "</option>";
-                        }
-                }
-            }
-?>
-            </select>
-       </div>
 
        <!--Radio btns for if active---->
        <div id="custFormFloat" style="width: 20%; font-size: 18px; height: 64px; min-width: 224px; margin-top: 34px; ">

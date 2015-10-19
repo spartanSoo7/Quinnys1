@@ -74,7 +74,7 @@ include_once("../include/databaselogin.php");
 
         <tr>
             <th>
-                    <label for="SIZE">Size: </label>
+                    <label for="SIZE" style="color: #888;">Size: </label>
             </th>
             <td>
                 <input id="SIZE" name="SIZE" type="text" value="" maxlength="15" minlength="2" />
@@ -92,7 +92,7 @@ include_once("../include/databaselogin.php");
 
         <tr>
             <th>
-                    <label for="COLOUR2">Secondary colour: </label>
+                    <label for="COLOUR2" style="color: #888;">Secondary colour: </label>
             </th>
             <td>
                 <input id="COLOUR2" name="COLOUR2" type="text" value="" maxlength="25" minlength="3"/>
@@ -101,7 +101,7 @@ include_once("../include/databaselogin.php");
 
         <tr>
             <th>
-                    <label for="COLOUR3">Tertiary colour: </label>
+                    <label for="COLOUR3" style="color: #888;">Tertiary colour: </label>
             </th>
             <td>
                 <input id="COLOUR3" name="COLOUR3" type="text" value="" maxlength="25" minlength="3"/>
