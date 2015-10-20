@@ -111,11 +111,16 @@ ORDER BY STOCK_TYPE_NAME ASC, STOCK_NAME ASC
     <tr>
         <td colspan="2"  style="padding-bottom: 10px; color: #676565">Optional Damaged billing</td>
     </tr>
-        <tr>
-            <th style="color: #676565;">Damaged Quantity: </th>
-            <td><input id="DAMAGED_QUANTITY" name="DAMAGED_QUANTITY" style="width: 100%;" type="number" value="" maxlength="9" minlength="1" /></td>
-        </tr>
+    <tr>
+        <th style="color: #676565;">Damaged Quantity: </th>
+        <td><input id="DAMAGED_QUANTITY" name="DAMAGED_QUANTITY" style="width: 100%;" type="number" value="" maxlength="9" minlength="1" /></td>
+    </tr>
+    <tr>
+        <th style="color: #676565;">Damaged Description: </th>
+        <td><textarea id="DAMAGED_DESC" name="DAMAGED_DESC" style="width: 100%;" type="text" value="" maxlength="50" /></textarea></td>
+    </tr>
 </table>
+
 <table class = "updateTable2">
 
         <tr style="border-bottom: 0px; ">

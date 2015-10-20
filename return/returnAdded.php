@@ -11,25 +11,14 @@ $RETURNED_QUANTITY = $_POST['RETURNED_QUANTITY'];
 $CUSTOMER_ID = $_POST['CUSTOMER_ID'];
 $STOCK_ID = $_POST['STOCK_ID'];
 
+//if there is damaged stock
+$DAMAGED_QUANTITY = $_POST['DAMAGED_QUANTITY'];
+$DAMAGED_DESC = $conn->real_escape_string($_POST['DAMAGED_DESC']);
 
-echo "<br>Returned amount: " .$RETURNED_QUANTITY;
+
+/*echo "<br>Returned amount: " .$RETURNED_QUANTITY;
 echo "<br>Customer id: " .$CUSTOMER_ID;
-echo "<br>Stock id: " .$STOCK_ID;
-
-/*check to see if customer has any of the stock they are trying to return
- *
- *check to see if customer actually has that amount of stock on their premises to actually return
- *
- * check to see if any damaged goods are being return
- *      add damaged table
- *
- * add returned line
- *
- * change customer stock lvls
- *
- * change quinnys stock lvls
- */
-
+echo "<br>Stock id: " .$STOCK_ID;*/
 
 
 
@@ -42,7 +31,7 @@ $TOTAL_QUANTITY_IN;
 
 
 //query to get quinnys current stock lvls
-$sqlTotAtCust = "SELECT `STOCK_IN`, `STOCK_NAME`, `STOCK_OUT` FROM `stock_items_table`
+$sqlTotAtCust = "SELECT `STOCK_IN`, `REPLACE_COST`, `STOCK_TOTAL`, `STOCK_NAME`, `STOCK_OUT` FROM `stock_items_table`
                     WHERE STOCK_ID = '$STOCK_ID' ";
 
 //run query
@@ -57,11 +46,21 @@ if ($result->num_rows > 0) {
         $STOCK_IN = $row["STOCK_IN"];
         $STOCK_OUT = $row["STOCK_OUT"];
         $STOCK_NAME = $row["STOCK_NAME"];
+        $REPLACE_COST = $row["REPLACE_COST"];
+        $STOCK_TOTAL = $row["STOCK_TOTAL"];
 
-        echo "<br>Stock in at quinnys: " .$STOCK_IN;
+       /* echo "<br><br>Stock in at quinnys: " .$STOCK_IN;
         echo "<br>Stock out at quinnys: " .$STOCK_OUT;
+        echo "<br>Stock total: " .$STOCK_TOTAL;
         echo "<br>Stock name: " .$STOCK_NAME;
+        echo "<br>Stock replacement cost: " .$REPLACE_COST;*/
     }
+}
+else{
+    include '../include/header.php';
+    include '../include/Error.php';
+    echo "<h3 style = 'color: white; text-align: center;'>Error getting Stock totals at the Quinnys</h3>";
+    Die();
 }
 
 
@@ -87,7 +86,6 @@ else{
     include '../include/Error.php';
     echo "<h3 style = 'color: white; text-align: center;'>Error getting Customer Name</h3>";
     Die();
-
 }
 //end of getting customer name
 
@@ -109,8 +107,8 @@ if ($result->num_rows > 0) {
         $TOTAL_QUANTITY_IN = $row["TOTAL_QUANTITY_IN"];  //for later when updating this record
         //we have confirmed that this customer has stock totals for this stock
 
-        echo "<br>The hire number is: " .$HIRE_NUMBER;
-        echo "<br>The total quantity in at customer is: " .$TOTAL_QUANTITY_IN;
+        /*echo "<br><br>The hire number is: " .$HIRE_NUMBER;
+        echo "<br>The total quantity in at customer is: " .$TOTAL_QUANTITY_IN;*/
 
         //next we have to make sure the customers stock total doesnt go into the negative
         if($RETURNED_QUANTITY > $TOTAL_QUANTITY_IN)
@@ -130,170 +128,217 @@ else{
     echo "<h3 style = 'color: white; text-align: center;'>No record found for customer: " .$CUSTOMER_NAME. " for the stock: " .$STOCK_NAME. "</h3>";
     Die();
 }
+//if got to this point, the customer do have this stock on there premises to return and have enough stock to return
 
 
 
-die();
-
-
-
-
-//need to check that code works
-
-//haven't done past
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-/*
- * Now we can make the hire_transaction, as the total_at_customer row exists.
- * but first we need to find the stock price from above
- */
-
-
-//but whats the overall cost of this transaction?
-//cost * quantity
-$HIRE_LINE_COST_TOTAL = $HIRE_COST * $HIRE_QUANTITY;
-
-// prepare and bind
-$stmt = $conn->prepare("INSERT INTO hire_transaction_table (
-  HIRE_NUMBER,
-  HIRE_QUANTITY,
-  HIRE_LINE_COST_TOTAL
-)
-VALUES (?,?,?) ");
-
-if ( false===$stmt )
+//dont save anything if the user is trying to save more damaged stock then they are returning or not returning any damaged stock
+if($DAMAGED_QUANTITY <= $RETURNED_QUANTITY || $DAMAGED_QUANTITY == 0)
 {
-    //if not a valid/ready statement object
-    include '../include/Error.php';
 
-    die('prepare() failed: ' . htmlspecialchars($mysqli->error));
-}
-
-$stmt->bind_param("iid", $HIRE_NUM, $HIRE_QUAN, $HIRE_COST);
-
-
-// set parameters and execute
-$HIRE_NUM = $HIRE_NUMBER;
-$HIRE_QUAN = $HIRE_QUANTITY;
-$HIRE_COST = $HIRE_LINE_COST_TOTAL;
-
-$stmt->execute();
+    //create the return line
+    // prepare and bind
+    $stmt = $conn->prepare("INSERT INTO retured_table (
+      HIRE_NUMBER,
+      RETURNED_QUANTITY
+    )
+    VALUES (?,?) ");
 
 
-//echo "New hire transaction has been created successfully";
+
+    if ( false===$stmt )
+    {
+        //if not a valid/ready statement object
+        include '../include/header.php';
+        include '../include/Error.php';
+        die('prepare() failed: ');
+    }
+
+    $stmt->bind_param("ii", $HIRE_NUM, $RETURN_QUAN);
 
 
-/*
- * The transaction has now been recorded, now we need to update the customer stock levels and total stock levels
- *
- * lets do the customer stock levels first
- */
+    // set parameters and execute
+    $HIRE_NUM = $HIRE_NUMBER;
+    $RETURN_QUAN = $RETURNED_QUANTITY;
+
+    $stmt->execute();
+
+    //find return id
+    $returnID = $conn->insert_id;
+
+    //for error checking
+    /*echo "<br><br>the return key is: " .$returnID;
+    echo "<br>the damaged amout is: " .$DAMAGED_QUANTITY;
+    echo "<br>the damaged decription is: " .$DAMAGED_DESC;*/
+
+
+    //need total cost
+    $totalCost = $DAMAGED_QUANTITY * $REPLACE_COST;
+
+    //echo "<br>the total cost is: " .$totalCost;
+
+    //if damage quanity is one or more
+    if($DAMAGED_QUANTITY >= 1)
+    {
+        //save new damaged line
+
+        // prepare and bind
+        $stmt = $conn->prepare("INSERT INTO damaged_table (
+            STOCK_ID,
+            RETURN_ID,
+            CUSTOMER_ID,
+            DAMAGE_TYPE,
+            DAMAGED_QUANTITY,
+            DAMAGED_TOTAL_COST,
+            DAMAGED_DESC
+        )
+        VALUES (?,?,?,?,?,?,?) ");
+
+        if ( false===$stmt )
+        {
+            //if not a valid/ready statement object
+            include '../include/header.php';
+            include '../include/Error.php';
+            die('prepare() failed: ');
+        }
+
+        $stmt->bind_param("iiisids", $stockID, $returnedID, $custId, $damType, $damQuan, $damTotalCost, $damDesc);
+
+
+        // set parameters and execute
+        $stockID = $STOCK_ID;
+        $returnedID = $returnID;
+        $custId = $CUSTOMER_ID;
+        $damType = "CUST";
+        $damQuan = $DAMAGED_QUANTITY;
+        $damTotalCost = $totalCost;
+        $damDesc = $DAMAGED_DESC;
+
+        $stmt->execute();
+
+    }
+
+
 
 //get current customer stock level from above, that we have already found
 
 
-//calc new total at customer
-$newTotalCust = $TOTAL_QUANTITY_IN + $HIRE_QUANTITY;
+//calc new total at customer after the total return amount as been saved
+    $newTotalCust = $TOTAL_QUANTITY_IN - $RETURNED_QUANTITY;
 
 // prepare and bind
-$stmt = $conn->prepare("UPDATE total_at_customer_table SET
+    $stmt = $conn->prepare("UPDATE total_at_customer_table SET
     TOTAL_QUANTITY_IN = ?
 WHERE HIRE_NUMBER = '$HIRE_NUMBER' ");
 
-if ( false===$stmt )
-{
-    //if not a valid/ready statement object
-    include '../include/Error.php';
+    if ( false===$stmt )
+    {
+        //if not a valid/ready statement object
+        include '../include/header.php';
+        include '../include/Error.php';
+        die('prepare() failed: ' . htmlspecialchars($mysqli->error));
+    }
 
-    die('prepare() failed: ' . htmlspecialchars($mysqli->error));
-}
+    $stmt->bind_param("i", $totalIn);
 
-$stmt->bind_param("i", $totalIn);
-
-if ( false===$stmt )
-{
-    //if can't bind the parameters.
-    include '../include/Error.php';
-
-    die('bind_param() failed: ' . htmlspecialchars($stmt->error));
-}
+    if ( false===$stmt )
+    {
+        //if can't bind the parameters.
+        include '../include/header.php';
+        include '../include/Error.php';
+        die('bind_param() failed: ' . htmlspecialchars($stmt->error));
+    }
 
 // set parameters and execute
-$totalIn = $newTotalCust;
+    $totalIn = $newTotalCust;
 
 
-$stmt->execute();
+    $stmt->execute();
 
-//echo "<br>Total at customer table updated successfully";
 
-/*
- * the total at the customer is now set, now the total stock for quinnys needs to be updated
- */
+    /*
+     * the total at the customer is now set, now the total stock for quinnys needs to be updated
+     */
 
+
+    /*
+     * change stock table including removing damaged stock
+     */
 
 //what to change stock totals to
 //get total stock in (from further up) - $HIRE_QUANTITY
 //get total stock out (from further up) + $HIRE_QUANTITY
 
-$newTotalStockIn = $STOCK_IN  - $HIRE_QUANTITY;
-$newTotalStockOut = $STOCK_OUT + $HIRE_QUANTITY;
+    $newTotalStockIn = ($STOCK_IN  + $RETURNED_QUANTITY) - $DAMAGED_QUANTITY;
+    $newTotalStockOut = $STOCK_OUT - $RETURNED_QUANTITY;
+    $newTotalStockTotal = $STOCK_TOTAL - $DAMAGED_QUANTITY;
 
-
-/*echo "<br>quantity going out" .$HIRE_QUANTITY. "<br><br>
+    /*echo "<br><br>quantity coming in: " .$RETURNED_QUANTITY. "<br><br>
         <br>original stock in at quinnys: " .$STOCK_IN.
+        "<br>origional total in at quinnys: " .$STOCK_TOTAL.
         "<br>original Stock out at quinnys: " . $STOCK_OUT.
         "<br><br>new stock in at quinnys:: " .$newTotalStockIn. "
-        <br> new Stock out at quinnys: " .$newTotalStockOut. "<br>
-";*/
-
-
-/*
- * change stock table
- */
+        <br> new Stock out at quinnys: " .$newTotalStockOut. "
+        <br>new stock total at quinnys " .$newTotalStockTotal;*/
 
 // prepare and bind
-$stmt = $conn->prepare("UPDATE stock_items_table SET
+    $stmt = $conn->prepare("UPDATE stock_items_table SET
     STOCK_OUT = ?,
-    STOCK_IN = ?
+    STOCK_IN = ?,
+    STOCK_TOTAL = ?
 WHERE STOCK_ID = '$STOCK_ID' ");
 
-if ( false===$stmt )
-{
-    //if not a valid/ready statement object
-    include '../include/Error.php';
+    if ( false===$stmt )
+    {
+        //if not a valid/ready statement object
+        include '../include/header.php';
+        include '../include/Error.php';
+        die('prepare() failed: ' . htmlspecialchars($mysqli->error));
+    }
 
-    die('prepare() failed: ' . htmlspecialchars($mysqli->error));
-}
+    $stmt->bind_param("iii", $out, $in, $total);
 
-$stmt->bind_param("ii", $out, $in);
-
-if ( false===$stmt )
-{
-    //if can't bind the parameters.
-    include '../include/Error.php';
-
-    die('bind_param() failed: ' . htmlspecialchars($stmt->error));
-}
+    if ( false===$stmt )
+    {
+        //if can't bind the parameters.
+        include '../include/header.php';
+        include '../include/Error.php';
+        die('bind_param() failed: ' . htmlspecialchars($stmt->error));
+    }
 
 // set parameters and execute
-$out = $newTotalStockOut;
-$in = $newTotalStockIn;
+    $out = $newTotalStockOut;
+    $in = $newTotalStockIn;
+    $total = $newTotalStockTotal;
+
+    $stmt->execute();
+
+    if ( false===$stmt )
+    {
+        //if execute() failed
+        include '../include/header.php';
+        include '../include/Error.php';
+        die('execute() failed: ' . htmlspecialchars($stmt->error));
+    }
+
+    /*
+     * Quinnys stock levels are now updated
+     */
 
 
-$stmt->execute();
 
-if ( false===$stmt )
+
+}
+else
 {
-    //if execute() failed
+    include '../include/header.php';
     include '../include/Error.php';
-
-    die('execute() failed: ' . htmlspecialchars($stmt->error));
+    echo "<h3 style = 'color: white; text-align: center;'>You cannot remove more damaged stock than what the customer is returning on this page, NOTHING has been saved/ processed</h3>";
+    Die();
 }
 
-/*
- * Quinnys stock levels are now updated
- */
+
+
 
 //$stmt->close();
 $conn->close();

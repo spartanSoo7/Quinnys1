@@ -65,7 +65,7 @@ else{
 
 
 //calc new total at customer            //add orginal hire quantity, remove new quantity
-$newTotalCust = ($TOTAL_QUANTITY_IN - $origQuantity) + $RETURNED_QUANTITY;
+$newTotalCust = ($TOTAL_QUANTITY_IN + $origQuantity) - $RETURNED_QUANTITY;
 
 //change hire line table
 
